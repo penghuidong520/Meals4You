@@ -26,11 +26,11 @@ Meal 4 You is an app that have a spinning board and chooses the meal off of defa
 
 ## Bonus Features
 ### Comments/Likes
-    * add comments to other users' board
-    * able to like other users' board
+* add comments to other users' board
+* able to like other users' board
 
 ### Recommendations
-    * use yelp API to have a recommended selection for users to choose after board picked a random dish
+* use yelp API to have a recommended selection for users to choose after board picked a random dish
 
 ## Group Members and Roles
 - Payton Dong (Project Lead)
