@@ -9,13 +9,16 @@ const { isProduction } = require('./config/keys');
 
 require('./models/User');
 require('./models/Tweet');
+require('./models/Wheel');
 
 require('./config/passport');
 
 const passport = require('passport');
 const usersRouter = require('./routes/api/users');
-const tweetsRouter = require('./routes/api/tweets');
 const csrfRouter = require('./routes/api/csrf');
+
+const tweetsRouter = require('./routes/api/tweets');
+const wheelsRouter = require('./routes/api/wheels');
 
 
 const app = express();
@@ -50,6 +53,7 @@ app.use(
 app.use('/api/users', usersRouter);
 app.use('/api/tweets', tweetsRouter);
 app.use('/api/csrf', csrfRouter);
+app.use('api/wheels', wheelsRouter);
 
 // Express custom middleware for catching all unmatched requests and formatting
 // a 404 error to be sent as the response.
