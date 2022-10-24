@@ -10,7 +10,7 @@ const FnameField = styled(TextField)({
       color: 'black',
     },
     // '& label': {
-    //     color: 'grey',
+    //     color: 'blue',
     // },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'blue',

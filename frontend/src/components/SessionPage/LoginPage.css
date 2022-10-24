@@ -82,4 +82,13 @@
 
 #sign-in-link {
     font-family: 'Ubuntu Condensed', sans-serif;
+    text-decoration: none;
+}
+
+#sign-in-link:visited {
+    color: blue;
+}
+
+#sign-in-link:hover {
+    text-decoration: underline;
 }
