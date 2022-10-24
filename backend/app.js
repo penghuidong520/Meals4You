@@ -51,9 +51,9 @@ app.use(
 	
 // Attach Express routers
 app.use('/api/users', usersRouter);
-app.use('/api/tweets', tweetsRouter);
 app.use('/api/csrf', csrfRouter);
-app.use('api/wheels', wheelsRouter);
+app.use('/api/tweets', tweetsRouter);
+app.use('/api/wheels', wheelsRouter);
 
 // Express custom middleware for catching all unmatched requests and formatting
 // a 404 error to be sent as the response.

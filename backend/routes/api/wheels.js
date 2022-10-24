@@ -3,15 +3,16 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const Wheel = mongoose.model('Wheel');
-const { requireUser } = require('../../config/passport');
+const { requireUser, restoreUser } = require('../../config/passport');
 const validateWheelInput = require('../../validations/wheels');
 
 // wheels index
 router.get('/', async (req, res) => {
     try {
-        const wheels = await Wheel.find().populate("owner", "_id, username")
-            .sort({ createdAt: -1 })
-            .limit(5);
+        const wheels = await Wheel.find()
+            .populate("owner", "_id, email")
+            .sort({ createdAt: -1 });
+            // .limit(5);
         return res.json(wheels);
     }
     catch(err) {
@@ -20,16 +21,20 @@ router.get('/', async (req, res) => {
 });
 
 // wheels post
-router.post('/', requireUser, validateWheelInput, async (req, res, next) => {
+router.post('/', validateWheelInput, restoreUser, async (req, res, next) => {
     try {
         const newWheel = new Wheel({
             title: req.body.title,
             contents: req.body.contents,
             owner: req.user._id
         });
-
         let wheel = await newWheel.save();
-        wheel = await wheel.populate('owner', '_id, username');
+        // save to user wheels
+        const user = await User.findById(req.user._id);
+        user.wheels.push(wheel)
+        user.save()
+        
+        wheel = await wheel.populate('owner', '_id, email');
         return res.json(wheel);
     }
     catch(err) {
@@ -37,11 +42,71 @@ router.post('/', requireUser, validateWheelInput, async (req, res, next) => {
     }
 });
 
+// wheel delete
+router.delete('/:id', restoreUser, async (req, res, next) => {
+    try {
+        // console.log(req.params.id);
+        const wheelToRemove = await Wheel.findByIdAndDelete(req.params.id);
+        // console.log(wheel);
+        let user = await User.findById(req.user._id);
+        // console.log(user);
+        // console.log(user.wheels);
+        // user.wheels = user.wheels.filter(wheel => {
+        //     // console.log(wheel.owner);
+        //     // console.log(Wheel.findById(wheel));
+        //     // console.log(Wheel.findById(wheel).owner);
+        //     console.log('\n');
+        //     console.log(wheel._id);
+        //     console.log(wheelToRemove._id);
+        //     console.log(wheelToRemove._id === wheel._id);
+        //     return wheel._id !== wheelToRemove._id;
+        // });
+
+        User.updateOne({_id: req.user._id}, {$pull: { wheels: req.params.id}}, (err, wheel) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("success")
+                console.log(wheel);
+            }
+        });
+
+        // console.log(user.wheels)
+        // console.log(wheelToRemove._id)
+        // console.log(user.wheels);
+        // user.save();
+
+        return res.json(wheelToRemove);
+    }
+    catch(err) {
+        const error = new Error('Wheel not found');
+        error.statusCode = 404;
+        error.errors = { message: "No wheel found with that id" };
+        return next(err);
+    }
+});
+
+// wheel update
+router.patch('/:id', restoreUser, async (req, res, next) => {
+    try {
+        let wheel = await Wheel.findOneAndUpdate( { id: req.params.id })
+        // let user = await User.findById(req.user._id);
+        wheel = wheel.update(req.body);
+        return res.json(wheel);
+    }
+    catch(err) {
+        const error = new Error('Wheel not found');
+        error.statusCode = 404;
+        error.errors = { message: "No wheel found with that id" };
+        return next(err);
+    }
+})
+
 // wheels show
 router.get('/:id', async (req, res, next) => {
     try {
         const wheel = await Wheel.findById(req.params.id)
-            .populate('owner', '_id, username');
+            .populate('owner', '_id, email');
         return res.json(wheel);
     }
     catch(err) {
@@ -67,7 +132,7 @@ router.get('/user/:userId', async (req, res, next) => {
     try {
         const wheel = await Wheel.find({ owner: user._id })
             .sort({ createdAt: -1 })
-            .populate("owner", "_id, username");
+            .populate("owner", "_id, email");
         return res.json(wheel);
     }
     catch(err) {

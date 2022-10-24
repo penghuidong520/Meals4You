@@ -10,15 +10,20 @@ const wheelSchema = Schema({
         type: String,
         required: true
     },
-    contents: [
-        {
-        type: String,
+    contents: {
+        type: [String],
         required: true,
-        min: [2, 'At Least 2']
-        }
-    ]
+        minItems: 2
+    }
+    // [
+    //     {
+    //     type: String,
+    //     required: true,
+    //     min: [2, 'At Least 2']
+    //     }
+    // ]
 }, {
     timestamps: true
-})
+});
 
 module.exports = mongoose.model('Wheel', wheelSchema);
