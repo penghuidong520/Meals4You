@@ -1,7 +1,8 @@
 import Header from "../Header/Header";
 import SpinWheel from "../SpinWheel/SpinWheel";
-
 import './MainPage.css'; 
+
+
 
 function MainPage() {
     return (

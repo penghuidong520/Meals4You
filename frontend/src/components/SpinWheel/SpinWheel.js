@@ -1,10 +1,11 @@
 import './SpinWheel.css'; 
+// import Canvas from ''
 
 function SpinWheel() {
     return (
       <div className="spinwheel-container">
           <div className='spinwheel-box'>
-            123
+            Spinwheel-Box
           </div>
       </div>
     );
