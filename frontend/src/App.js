@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import MainPage from './components/MainPage/MainPage';
+import LoginPage from './components/SessionPage/LoginPage';
+import SignUpPage from './components/SessionPage/SignUpPage';
 import { getCurrentUser } from './store/session';
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
   return loaded && (
     <>
       <Switch>
-        <Route exact to="/" component={MainPage} />
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/login" component={LoginPage} />
       </Switch>
     </>
   );

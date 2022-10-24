@@ -1,10 +1,7 @@
 function MainPage() {
     return (
       <>
-        <p>A Twitter Clone</p>
-        <footer>
-          Copyright &copy; 2022 Chirper
-        </footer>
+        <h1>ljdsl;fjdsl;kfj</h1>
       </>
     );
   }
