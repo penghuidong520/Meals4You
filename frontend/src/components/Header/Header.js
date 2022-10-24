@@ -1,56 +1,29 @@
 import React from 'react';
+import logo  from '../../images/logo-meals4u.png';
+import './Header.css';
+import { Link } from 'react-router-dom';
 
-function Navigation() {
-  const sessionUser = useSelector(state => state.session.user);
-
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <ProfileButton user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
-      <>
-      <div className='signup'>
-        <Link id='signup' to="/signup">Sign Up</Link>
-      </div>
-      <div className='login'>
-        <Link id='login' to="/login">Log In</Link>
-      </div>
-      </>
-    );
-  }
-
+function Header() {
   return (
-    <>
-      <div className='nav'>
-        <div className='nav-left'>
-          {/* <Link className='explore'>explore</Link> */}
-            {/* <div>
-              explore
-            </div>
-            <div>
-              community
-            </div>
-            <div>
-              saved
-            </div>
-            <div>
-              shop
-            </div> */}
+    <div className='header'>
+        <div className='header-logo-container'>
+                <Link to='/' >
+                    <img id="header-logo" src={logo} alt="" />
+                </Link>
         </div>
-          <div className='logo'>
-            <Link id="logo-link" to='/'>
-              <img id='logo-img-home' src={logo2} alt="logo"></img> 
+        <div className='header-button-container'>
+            <Link className='header-button' to='/login'>
+                Log In
             </Link>
-          </div>
-
-          <div className='nav-right'>
-              {sessionLinks}
-          </div>
+            <Link className='header-button' to='/signup'>
+                Sign Up
+            </Link>
+            <div className='header-button'> Demo User
+                {/* <button to='/'>Demo User</button> */}
+            </div>
         </div>
-      </>
+    </div>
   );
 }
 
-export default Navigation;
+export default Header;

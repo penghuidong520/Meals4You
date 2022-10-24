@@ -1,8 +1,14 @@
+import Header from "../Header/Header";
+import SpinWheel from "../SpinWheel/SpinWheel";
+
+import './MainPage.css'; 
+
 function MainPage() {
     return (
-      <>
-        <h1>ljdsl;fjdsl;kfj</h1>
-      </>
+      <div className="mainpage">
+          <Header/>
+          <SpinWheel />
+      </div>
     );
   }
   

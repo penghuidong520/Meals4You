@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+.header{
+    background-color: #E0cdcf;
+    width: 100%;
+    min-width: 850px;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.header-logo-container{
+    width: 40%;
+    min-width: 300px;
+    height: 9vh;
+    /* display: flex; */
+    justify-content: left;
+}
+
+#header-logo{
+    height: 9vh;
+    width: auto;
+    margin-left: 10%;
+}
+
+.header-button-container{
+    display: flex;
+    flex: right; 
+    height: 9vh;
+    width: 40%;
+    min-width: 500px;
+    justify-content: space-around;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.header-button{
+    background-color: #a29e9e5c;
+    width: 25%;
+    min-width: 150px;
+    height: 45%;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: xx-large;
+    text-decoration: none;
+    color: black;
+}
