@@ -200,7 +200,9 @@ const SignUpPage = () => {
             <div className="sign-up-page">
                 <div className="left-container">
                     <div className="logo-container">
-                        <img src={logo} alt="" id="sign-up-logo" />
+                        <Link to="/">
+                            <img src={logo} alt="" id="sign-up-logo" />
+                        </Link>
                     </div>
                 </div>
                 <div className="right-container">

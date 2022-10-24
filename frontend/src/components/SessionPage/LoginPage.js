@@ -89,7 +89,9 @@ const LoginPage = () => {
             <div className="log-in-page">
                 <div className="left-container">
                     <div className="logo-container">
-                        <img src={logo} alt="" id="log-in-logo" />
+                        <Link to="/">
+                            <img src={logo} alt="" id="log-in-logo" />
+                        </Link>
                     </div>
                 </div>
                 <div className="right-container">
