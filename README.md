@@ -8,29 +8,29 @@ Meal 4 You is an app that have a spinning board and chooses the meal off of defa
 ## Functionality & MVP
 
 * Spinning Board
-- a default spnning board with around 6 values randomized from a collection of foods
-- able to customize the defaulted values on the board
-- picks 1 random result for users to consider
+    - a default spnning board with around 6 values randomized from a collection of foods
+    - able to customize the defaulted values on the board
+    - picks 1 random result for users to consider
 
 * CRUD Favorite Board
-- users can add to favorite of the current board they are using or have edited
-- will be able to delete and re-edit the board
+    - users can add to favorite of the current board they are using or have edited
+    - will be able to delete and re-edit the board
 
 * CRUD Favorite Dish
-- save specific dish to profile list
-- used for users to repeated add this specific dish to the board instead of editing the board everytime just to add this single dish
+    - save specific dish to profile list
+    - used for users to repeated add this specific dish to the board instead of editing the board everytime just to add this single dish
 
 * User Profile
-- users can view other users' profile, to see their favorited board and dishes
-- able to use/reference other users' board
+    - users can view other users' profile, to see their favorited board and dishes
+    - able to use/reference other users' board
 
 ## Bonus Features
 ### Comments/Likes
-* add comments to other users' board
-* able to like other users' board
+    * add comments to other users' board
+    * able to like other users' board
 
 ### Recommendations
-* use yelp API to have a recommended selection for users to choose after board picked a random dish
+    * use yelp API to have a recommended selection for users to choose after board picked a random dish
 
 ## Group Members and Roles
 - Payton Dong (Project Lead)
