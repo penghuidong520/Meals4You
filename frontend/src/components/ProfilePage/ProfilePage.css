@@ -1,23 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
 .profile-page {
     width: 100%;
-    height: 880px;
+    height: 100vh;
     display: flex;
+    background-color: #e0cdcf;
 }
 
 .save-wheels-container {
     width: 25%;
-    height: 800px;
-    border: 1px solid black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .center-wheel-container {
     width: 50%;
-    height: 800px;
-    border: 1px solid black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .edit-wheel-container {
     width: 25%;
-    height: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save-wheels {
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.save-wheel-title {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: xx-large;
+    margin-top: 20px;
+}
+
+.wheel-list {
+    width: 95%;
+    height: 85%;
     border: 1px solid black;
+}
+
+.center-wheel {
+    width: 90%;
+    height: 90%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.edit-wheel {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.save-dish-container {
+    width: 90%;
+    height: 75%;
+    border: 1px solid black;
+}
+
+
+#new-wheel-button,
+#explore-wheels-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
 }
