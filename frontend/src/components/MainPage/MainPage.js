@@ -7,7 +7,6 @@ import './MainPage.css';
 function MainPage() {
     return (
       <div className="mainpage">
-          <Header/>
           <SpinWheel />
       </div>
     );

@@ -4,6 +4,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout } from '../../store/session';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Header() {
     const dispatch = useDispatch();
@@ -37,12 +38,23 @@ function Header() {
                 {!sessionUser && <Link className='header-button' to='/signup'>
                     Sign Up
                 </Link>}
+                {sessionUser && <div className='header-message'>
+                                    <div className="header-message-text">
+                                        Welcome back 
+                                    </div>
+                                     <Link to="/">
+                                        <div className="header-icon">
+                                            <AccountCircleIcon style={{fontSize: "xxx-large"}}/>
+                                        </div>
+                                     </Link>
+                                </div> 
+                    }
                 {sessionUser && <button className='header-button' onClick={handleLogout}>
                     Log Out
                 </button>}
-                <button className='header-button' onClick={handleDemo} > Demo User
+                {!sessionUser && <button className='header-button' onClick={handleDemo} > Demo User
+                </button>}
                     {/* <button to='/'>Demo User</button> */}
-                </button>
             </div>
         </div>
     );

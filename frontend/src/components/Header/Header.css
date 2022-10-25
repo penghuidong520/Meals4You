@@ -51,3 +51,18 @@
     text-decoration: none;
     color: black;
 }
+
+.header-message {
+    display: flex;
+    width: 300px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.header-message-text {
+    height: 100%;
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
