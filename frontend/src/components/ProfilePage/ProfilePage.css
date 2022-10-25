@@ -1,0 +1,23 @@
+.profile-page {
+    width: 100%;
+    height: 880px;
+    display: flex;
+}
+
+.save-wheels-container {
+    width: 25%;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.center-wheel-container {
+    width: 50%;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.edit-wheel-container {
+    width: 25%;
+    height: 800px;
+    border: 1px solid black;
+}
