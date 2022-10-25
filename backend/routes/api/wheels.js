@@ -62,7 +62,7 @@ router.delete('/:id', restoreUser, async (req, res, next) => {
             });
         }
 
-        return res.json(wheelToRemove);
+        return res.json(wheel);
     }
     catch(err) {
         const error = new Error('Wheel not found');
@@ -82,11 +82,12 @@ router.patch('/:id', validateWheelInput,restoreUser, async (req, res, next) => {
             error.errors = { message: "Wheel cannot be removed by people other than owner" };
             return next(error);
         } else {
-            wheel.update(
-                { id: req.params.id },
+            console.log(wheel)
+            wheel = await Wheel.findByIdAndUpdate(
+                { _id: req.params.id },
                 { title: req.body.title, contents: req.body.contents });
-            return res.json(wheel);
         }
+        return res.json(wheel);
 
     }
     catch(err) {

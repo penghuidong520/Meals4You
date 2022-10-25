@@ -85,8 +85,8 @@ router.patch('/:id', validateDishInput, restoreUser, async (req, res, next) => {
             error.errors = { message: "Dish cannot be removed by people other than owner" };
             return next(error);
         } else {
-            dish.update(
-                {id: req.params.id},
+            dish = await Dish.findByIdAndUpdate(
+                {_id: req.params.id},
                 {name: req.body.name, description: req.body.description}
                 );
             return res.json(dish)
