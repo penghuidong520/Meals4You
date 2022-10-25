@@ -46,10 +46,6 @@ router.post('/', validateDishInput, restoreUser, async (req, res, next) => {
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
         const dish = await Dish.findById(req.params.id);
-        console.log(dish.owner === req.user);
-        console.log(dish.owner._id);
-        console.log(req.user._id);
-        console.log(req.user._id.equals(dish.owner._id));
         if (!dish.owner._id.equals(req.user._id)) {
             const error = new Error("Owner doesn't match");
             error.statusCode = 400;
