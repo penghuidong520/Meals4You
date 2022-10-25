@@ -31,8 +31,8 @@ router.post('/', validateWheelInput, restoreUser, async (req, res, next) => {
         let wheel = await newWheel.save();
         // save to user wheels
         const user = await User.findById(req.user._id);
-        user.wheels.push(wheel)
-        user.save()
+        user.wheels.push(wheel);
+        user.save();
         
         wheel = await wheel.populate('owner', '_id, email');
         return res.json(wheel);
@@ -67,7 +67,7 @@ router.delete('/:id', restoreUser, async (req, res, next) => {
 });
 
 // wheel update
-router.patch('/:id', restoreUser, async (req, res, next) => {
+router.patch('/:id', validateWheelInput,restoreUser, async (req, res, next) => {
     try {
         let wheel = await Wheel.findOneAndUpdate( 
             { id: req.params.id },

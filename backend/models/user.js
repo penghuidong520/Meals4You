@@ -21,6 +21,10 @@ const userSchema = Schema({
     wheels: [{
         type: Schema.Types.ObjectId,
         ref: 'Wheel'
+    }],
+    dishes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Dish'
     }]
 }, {
         timestamps: true
