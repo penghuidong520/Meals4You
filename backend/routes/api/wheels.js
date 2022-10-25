@@ -45,36 +45,16 @@ router.post('/', validateWheelInput, restoreUser, async (req, res, next) => {
 // wheel delete
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
-        // console.log(req.params.id);
         const wheelToRemove = await Wheel.findByIdAndDelete(req.params.id);
-        // console.log(wheel);
-        let user = await User.findById(req.user._id);
-        // console.log(user);
-        // console.log(user.wheels);
-        // user.wheels = user.wheels.filter(wheel => {
-        //     // console.log(wheel.owner);
-        //     // console.log(Wheel.findById(wheel));
-        //     // console.log(Wheel.findById(wheel).owner);
-        //     console.log('\n');
-        //     console.log(wheel._id);
-        //     console.log(wheelToRemove._id);
-        //     console.log(wheelToRemove._id === wheel._id);
-        //     return wheel._id !== wheelToRemove._id;
-        // });
 
         User.updateOne({_id: req.user._id}, {$pull: { wheels: req.params.id}}, (err, wheel) => {
             if (err) {
                 console.log(err);
             } else {
                 console.log("success")
-                console.log(wheel);
+                // console.log(wheel);
             }
         });
-
-        // console.log(user.wheels)
-        // console.log(wheelToRemove._id)
-        // console.log(user.wheels);
-        // user.save();
 
         return res.json(wheelToRemove);
     }
@@ -89,9 +69,12 @@ router.delete('/:id', restoreUser, async (req, res, next) => {
 // wheel update
 router.patch('/:id', restoreUser, async (req, res, next) => {
     try {
-        let wheel = await Wheel.findOneAndUpdate( { id: req.params.id })
-        // let user = await User.findById(req.user._id);
-        wheel = wheel.update(req.body);
+        let wheel = await Wheel.findOneAndUpdate( 
+            { id: req.params.id },
+            { title: req.body.title, contents: req.body.contents });
+        // User.updateOne(
+        //     { _id: req.user._id },
+        //     {$set: { wheels: req.body }})
         return res.json(wheel);
     }
     catch(err) {
@@ -132,7 +115,7 @@ router.get('/user/:userId', async (req, res, next) => {
     try {
         const wheel = await Wheel.find({ owner: user._id })
             .sort({ createdAt: -1 })
-            .populate("owner", "_id, email");
+            // .populate("owner", "_id, email");
         return res.json(wheel);
     }
     catch(err) {
