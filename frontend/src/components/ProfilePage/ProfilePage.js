@@ -1,12 +1,15 @@
 import './ProfilePage.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchUserDishes, getDishes } from '../../store/dishes';
 import DishIndex from '../DishIndex';
+import NewWheelModal from '../NewWheelModal/NewWheelModal';
+
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector(state => state.session.user);
+
 
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id))
@@ -33,7 +36,7 @@ const ProfilePage = () => {
 			<div className="edit-wheel-container">
 				<div className="edit-wheel">
 					<div className="new-wheel-button">
-						<button id="new-wheel-button">Create a new wheel</button>
+						<NewWheelModal />
 					</div>
 					<div className="explore-wheels">
 						<button id="explore-wheels-button">No ideas? Explore more wheels.</button>
