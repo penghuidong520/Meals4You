@@ -16,6 +16,7 @@ function App() {
   const signup = useRouteMatch("/signup");
   const login = useRouteMatch("/login");
 	const currentUser = useSelector(state => state.session.user);
+  // const dishes = useSelector(state => state.dishes);
 
   useEffect(()=>{
     // debugger

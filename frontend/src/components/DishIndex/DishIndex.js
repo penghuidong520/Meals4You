@@ -26,10 +26,10 @@ const DishIndex = () => {
             </label>
 
             <label>Description
-                <textarea value={description} onChange={e => setDescription(e.target.value)} />
+                <textarea placeholder="Optional..." value={description} onChange={e => setDescription(e.target.value)} />
             </label>
 
-            <button className="dishes-add-button" onClick={handleAddDish} >Add More</button>
+            <button className="dishes-action-button" onClick={handleAddDish} >Add More</button>
         </div>
     )
 }

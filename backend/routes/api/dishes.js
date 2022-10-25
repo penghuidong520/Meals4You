@@ -30,7 +30,6 @@ router.post('/', validateDishInput, restoreUser, async (req, res, next) => {
         });
         let dish = await newDish.save();
         const user = await User.findById(req.user._id);
-        console.log(user);
         user.dishes.push(dish);
         user.save();
         

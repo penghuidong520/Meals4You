@@ -1,17 +1,17 @@
 import jwtFetch from "./jwt";
-import { RECEIVE_USER_LOGOUT } from './session';
+// import { RECEIVE_USER_LOGOUT } from './session';
 
-const RECEIVE_DISHES = "dishes/RECEIVE_DISHES";
+// const RECEIVE_DISHES = "dishes/RECEIVE_DISHES";
 const RECEIVE_USER_DISHES = "dishes/RECEIVE_USER_DISHES"
 const RECEIVE_DISH = "dishes/RECEIVE_DISH";
 const DELETE_DISH = "dishes/DELETE_DISH";
 const RECEIVE_DISH_ERRORS = "dishes/RECEIVE_DISH_ERRORS";
 const CLEAR_DISH_ERRORS = "dishes/CLEAR_DISH_ERRORS"
 
-const receiveDishes = dishes => ({
-    type: RECEIVE_DISHES,
-    dishes
-});
+// const receiveDishes = dishes => ({
+//     type: RECEIVE_DISHES,
+//     dishes
+// });
 
 const receiveUserDishes = dishes => ({
     type: RECEIVE_USER_DISHES,
@@ -86,7 +86,7 @@ export const createDish = (dish) => async dispatch => {
 
 export const deleteDish = (dishId) => async dispatch => {
     try {
-        const res = await jwtFetch(`/api/dishes/${dishId}`, {
+        await jwtFetch(`/api/dishes/${dishId}`, {
             method: "DELETE"
         })
         dispatch(removeDish(dishId));
@@ -103,13 +103,14 @@ const dishesReducer = (state = {}, action) => {
     const nextState = {...state};
     switch(action.type) {
         case RECEIVE_DISH:
-            nextState[action.dish.id] = action.dish;
+            nextState[action.dish._id] = action.dish;
             return nextState;
         case RECEIVE_USER_DISHES:
             return action.dishes;
         case DELETE_DISH:
             delete nextState[action.dishId];
-            return nextState;
+            const newState = Object.values(nextState);
+            return newState.filter(item => item._id !== action.dishId);
         default:
             return state;
     }
