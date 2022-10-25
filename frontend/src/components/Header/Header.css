@@ -54,15 +54,18 @@
 
 .header-message {
     display: flex;
-    width: 300px;
-    border: 1px solid black;
+    width: fit-content;
     align-items: center;
 }
 
 .header-message-text {
     height: 100%;
-    width: 230px;
+    width: auto;
     display: flex;
     justify-content: center;
     font-size: x-large;
+}
+
+.header-icon {
+    margin-left: 10px;
 }
