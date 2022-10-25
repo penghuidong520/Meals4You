@@ -23,7 +23,6 @@ router.get('/', async (req, res) => {
 // create dish under user
 router.post('/', validateDishInput, restoreUser, async (req, res, next) => {
     try {
-        
         const newDish = new Dish({
             owner: req.user._id,
             name: req.body.name,
@@ -31,6 +30,7 @@ router.post('/', validateDishInput, restoreUser, async (req, res, next) => {
         });
         let dish = await newDish.save();
         const user = await User.findById(req.user._id);
+        console.log(user);
         user.dishes.push(dish);
         user.save();
         
@@ -112,7 +112,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // user dish index
-router.get('user/:userId', async (req, res, next) => {
+router.get('/user/:userId', async (req, res, next) => {
     let user;
     try {
         user = await User.findById(req.params.userId);

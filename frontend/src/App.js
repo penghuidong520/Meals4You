@@ -1,12 +1,13 @@
 
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MainPage from './components/MainPage/MainPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoginPage from './components/SessionPage/LoginPage';
 import SignUpPage from './components/SessionPage/SignUpPage';
+import { fetchUserDishes } from './store/dishes';
 import { getCurrentUser } from './store/session';
 
 function App() {
@@ -14,6 +15,12 @@ function App() {
   const dispatch = useDispatch();
   const signup = useRouteMatch("/signup");
   const login = useRouteMatch("/login");
+	const currentUser = useSelector(state => state.session.user);
+
+  useEffect(()=>{
+    // debugger
+    if (currentUser) dispatch(fetchUserDishes(currentUser?._id));
+  }, [dispatch, currentUser])
 
   useEffect(() => {
     dispatch(getCurrentUser()).then(() => setLoaded(true));

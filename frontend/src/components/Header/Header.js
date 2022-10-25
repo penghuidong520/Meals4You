@@ -9,7 +9,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 function Header() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser);
 
     useEffect(()=>{
 
