@@ -2,8 +2,10 @@ import './SignUpPage.css';
 import logo  from '../../images/logo-meals4u.png';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { signup, clearSessionErrors } from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
 
 const FnameField = styled(TextField)({
     '& label.Mui-focused': {
@@ -122,7 +124,7 @@ const ConfirmField = styled(TextField)({
 
 
 const SignUpPage = () => {
-    
+    const dispatch = useDispatch();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -134,6 +136,8 @@ const SignUpPage = () => {
     const [passwordError, setPasswordError] = useState(false);
     const [confirmPwError, setConfirmPwError] = useState(false);
     const [confirmPwMsg, setConfirmPwMsg] = useState("");
+    const sessionUser = useSelector(state => state.session.user);
+
     
     const isValidFname = (name) => {
         return name.length > 0;
@@ -184,6 +188,12 @@ const SignUpPage = () => {
         setPassword(e.target.value);
     }
 
+    useEffect(() => {
+      return () => {
+        dispatch(clearSessionErrors());
+      };
+    }, [dispatch]);
+
     const handleConfirmPw = (e) => {
         if (((e.target.value) === password) && (confirmPassword !== 0)) {
             setConfirmPwError(false)
@@ -194,6 +204,14 @@ const SignUpPage = () => {
         }
         setConfirmPassword(e.target.value)
     }
+
+    const handleRegister = (e) => {
+      e.preventDefault();
+      dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
+    }
+
+    if (sessionUser) return <Redirect to='/'/>
+
 
     return (
         <>
@@ -263,7 +281,7 @@ const SignUpPage = () => {
                             />
                         </div>
                         <div className="sign-up-button-container">
-                            <button id="sign-up-button">Register</button>
+                            <button id="sign-up-button" onClick={handleRegister} >Register</button>
                         </div>
                         <div className="have-account">
                             You have an account with us? <Link id="log-in-link" to="/login">Log In</Link>!

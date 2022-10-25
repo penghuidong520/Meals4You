@@ -2,8 +2,10 @@ import logo  from '../../images/logo-meals4u.png';
 import './LoginPage.css';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { login, clearSessionErrors } from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
 
 const LoginEmailField = styled(TextField)({
     '& label.Mui-focused': {
@@ -52,11 +54,12 @@ const LoginPasswordField = styled(TextField)({
 });
 
 const LoginPage = () => {
-
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+    const sessionUser = useSelector(state => state.session.user);
 
     const isValidEmail = (email) => {
         return /\S+@\S+\.\S+/.test(email);
@@ -82,6 +85,20 @@ const LoginPage = () => {
             setPasswordError(false);
         }
         setPassword(e.target.value);
+    }
+
+    useEffect(() => {
+        return () => {
+          dispatch(clearSessionErrors());
+        };
+    }, [dispatch]);
+
+    if (sessionUser) return <Redirect to='/'/>
+    
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        dispatch(login({ email: email, password: password }));
     }
 
     return (
@@ -120,7 +137,7 @@ const LoginPage = () => {
                             />
                         </div>
                         <div className="log-in-button">
-                            <button id="log-in-button">Log In</button>
+                            <button id="log-in-button" type="submit" onClick={handleLogin}>Log In</button>
                         </div>
                         <div className="create-acc">
                             Don't have an account? <Link id="sign-in-link" to="/signup">Sign Up</Link>!
