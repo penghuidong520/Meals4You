@@ -20,7 +20,8 @@ router.post('/register', validateRegisterInput, async (req, res, next) => {
 	
 	// validate user is not already registered
 	const user = await User.findOne({
-		$or: [{ email: req.body.email }, { username: req.body.username }]
+		email: req.body.email
+		// $or: [{ email: req.body.email }, { username: req.body.username }]
 	});
 	
 	if (user) {
@@ -31,16 +32,17 @@ router.post('/register', validateRegisterInput, async (req, res, next) => {
 		if (user.email === req.body.email) {
 			errors.email = "A user has already registered with this email";
 		}
-		if (user.username === req.body.username) {
-			errors.username = "A user has already registered with this username";
-		}
+		// if (user.username === req.body.username) {
+		// 	errors.username = "A user has already registered with this username";
+		// }
 		err.errors = errors;
 		return next(err);
 	}
 	
 	// register user logics
 	const newUser = new User({
-		username: req.body.username,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
 		email: req.body.email
 	});
 	
@@ -85,7 +87,8 @@ router.get('/current', restoreUser, (req, res) => {
 	if (!req.user) return res.json(null);
 	res.json({
 		_id: req.user._id,
-		username: req.user.username,
+		firstname: req.body.firstName,
+		lastName: req.body.lastName,
 		email: req.user.email
 	});
 });
