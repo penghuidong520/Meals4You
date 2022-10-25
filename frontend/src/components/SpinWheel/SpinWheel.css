@@ -5,15 +5,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid black; 
+    min-height: 600px;
 }
 
 .spinwheel-box{
     border: 2px solid black;
     width: 50%;
     height: 50vh;
-    min-height: 700px;
-    min-width: 800px;
-    /* position: absolute; */
+    min-height: 300px;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;

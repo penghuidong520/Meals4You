@@ -8,7 +8,9 @@ function MainPage() {
     return (
       <div className="mainpage">
           <Header/>
-          <SpinWheel />
+          <div className="spinwheel-container">
+            <SpinWheel />
+          </div>
       </div>
     );
   }
