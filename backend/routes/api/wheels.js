@@ -45,37 +45,50 @@ router.post('/', validateWheelInput, restoreUser, async (req, res, next) => {
 // wheel delete
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
-        const wheelToRemove = await Wheel.findByIdAndDelete(req.params.id);
+        const wheel = await Wheel.findById(req.params.id);
+        if (!wheel.owner._id.equals(req.user._id)) {
+            const error = new Error("Owner doesn't match");
+            error.statusCode = 400;
+            error.errors = { message: "Wheel cannot be removed by people other than owner" };
+            return next(error);
+        } else {
+            wheel.delete(req.params.id);
+            User.updateOne({_id: req.user._id}, {$pull: { wheels: req.params.id}}, (err, wheel) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("success")
+                }
+            });
+        }
 
-        User.updateOne({_id: req.user._id}, {$pull: { wheels: req.params.id}}, (err, wheel) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("success")
-                // console.log(wheel);
-            }
-        });
-
-        return res.json(wheelToRemove);
+        return res.json(wheel);
     }
     catch(err) {
         const error = new Error('Wheel not found');
         error.statusCode = 404;
         error.errors = { message: "No wheel found with that id" };
-        return next(err);
+        return next(error);
     }
 });
 
 // wheel update
 router.patch('/:id', validateWheelInput,restoreUser, async (req, res, next) => {
     try {
-        let wheel = await Wheel.findOneAndUpdate( 
-            { id: req.params.id },
-            { title: req.body.title, contents: req.body.contents });
-        // User.updateOne(
-        //     { _id: req.user._id },
-        //     {$set: { wheels: req.body }})
+        let wheel = await Wheel.findById(req.params.id);
+        if (!wheel.owner._id.equals(req.user._id)) {
+            const error = new Error("Owner doesn't match");
+            error.statusCode = 400;
+            error.errors = { message: "Wheel cannot be removed by people other than owner" };
+            return next(error);
+        } else {
+            console.log(wheel)
+            wheel = await Wheel.findByIdAndUpdate(
+                { _id: req.params.id },
+                { title: req.body.title, contents: req.body.contents });
+        }
         return res.json(wheel);
+
     }
     catch(err) {
         const error = new Error('Wheel not found');

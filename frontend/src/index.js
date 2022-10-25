@@ -5,6 +5,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from './store/store';
+import { getCurrentUser } from './store/session';
 
 const rootElement = document.getElementById('root')
 const root = ReactDOM.createRoot(rootElement);
@@ -30,11 +31,9 @@ const renderApplication = () => {
 	);
 }
 
-renderApplication();
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Root />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+if (localStorage.jwtToken) {
+  store.dispatch(getCurrentUser()).then(renderApplication());
+  // debugger
+} else {
+  renderApplication();
+}
