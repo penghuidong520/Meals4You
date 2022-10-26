@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import logo  from '../../images/logo-meals4u.png';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout } from '../../store/session';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -34,13 +34,13 @@ function Header() {
             </div>
             <div className="center-nav">
                 <div className="home">
-                    Home
+                    <NavLink exact to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink>
                 </div>
                 <div className="about">
-                    About
+                    <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>About</NavLink>   
                 </div>
                 <div className="profile">
-                    Profile
+                    <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Profile</NavLink>
                 </div>
             </div>
             <div className='header-button-container'>

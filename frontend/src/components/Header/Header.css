@@ -29,7 +29,7 @@
     display: flex;
     flex: right; 
     height: 9vh;
-    width: 40%;
+    width: 30%;
     min-width: 500px;
     justify-content: space-around;
     display: flex;
@@ -37,10 +37,35 @@
     align-items: center;
 }
 
+.header-button{
+    background-color: #a29e9e5c;
+    width: 20%;
+    min-width: 150px;
+    height: 40%;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: x-large;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
 .center-nav {
     display: flex;
-    border: 1px solid black;
-    width: 900px;
-    justify-content: space-between;
-    font-size: 2rem;
+    width: 600px;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    margin-right: 150px;
+}
+
+.active:visited {
+    color: yellow;
+}
+
+.inactive {
+    color: black;
+    text-decoration: none;
 }
