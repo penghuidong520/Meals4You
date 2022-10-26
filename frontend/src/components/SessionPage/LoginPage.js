@@ -2,7 +2,7 @@ import logo  from '../../images/logo-meals4u.png';
 import './LoginPage.css';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { login, clearSessionErrors } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
@@ -59,6 +59,8 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
     const sessionUser = useSelector(state => state.session.user);
 
     const isValidEmail = (email) => {
@@ -98,7 +100,13 @@ const LoginPage = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch(login({ email: email, password: password }));
+        if (isValidEmail(email) && isValidPassword(password)) {
+            dispatch(login({ email: email, password: password }));
+        } else {
+            setEmailError(true)
+            setPasswordError(true)
+            emailRef.current.focus();
+        }
     }
 
     const handleLoginDemo = (e) => {
@@ -129,6 +137,8 @@ const LoginPage = () => {
                                 onChange={handleEmail}
                                 variant="outlined"
                                 error={emailError}
+                                inputRef={emailRef}
+                                helperText={emailError ? "Please enter a valid email address.": "" }
                             />
                         </div>
                         <div className="log-in-password">
@@ -139,7 +149,9 @@ const LoginPage = () => {
                                 onChange={handlePassword}
                                 variant="outlined"
                                 error={passwordError}
+                                inputRef={passwordRef}
                                 type="password"
+                                helperText={passwordError ? "Please enter password with minimum 6 characters" : ""}
                             />
                         </div>
                         <div className="log-in-button">

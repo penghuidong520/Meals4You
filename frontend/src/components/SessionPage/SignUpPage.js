@@ -2,7 +2,7 @@ import './SignUpPage.css';
 import logo  from '../../images/logo-meals4u.png';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { signup, clearSessionErrors, login } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
@@ -136,10 +136,15 @@ const SignUpPage = () => {
     const [passwordError, setPasswordError] = useState(false);
     const [confirmPwError, setConfirmPwError] = useState(false);
     const [confirmPwMsg, setConfirmPwMsg] = useState("");
+    const fNameRef = useRef(null);
+    const lNameRef = useRef(null);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    const confirmPwRef = useRef(null);
     const sessionUser = useSelector(state => state.session.user);
 
     
-    const isValidFname = (name) => {
+    const isValidName = (name) => {
         return name.length > 0;
     }
 
@@ -152,7 +157,7 @@ const SignUpPage = () => {
     }
     
     const handleFname = e => {
-        if(isValidFname(e.target.value)) {
+        if(isValidName(e.target.value)) {
             setFnameError(false);
         } else {
             setFnameError(true);
@@ -161,7 +166,7 @@ const SignUpPage = () => {
     }
 
     const handleLname = e => {
-        if(isValidFname(e.target.value)) {
+        if(isValidName(e.target.value)) {
             setLnameError(false);
         } else {
             setLnameError(true);
@@ -207,7 +212,32 @@ const SignUpPage = () => {
 
     const handleRegister = (e) => {
       e.preventDefault();
-      dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
+      if (isValidName(firstName) && isValidName(lastName) &&
+          isValidEmail(email) && isValidPassword(password)
+      ) {
+        dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
+      } else {
+        if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
+          setConfirmPwError(true);
+          confirmPwRef.current.focus();
+        }
+        if (!isValidPassword(password)) {
+          setPasswordError(true);
+          passwordRef.current.focus();
+        }
+        if (!isValidEmail(email)) {
+          setEmailError(true);
+          emailRef.current.focus();
+        }
+        if (!isValidName(lastName)) {
+          setLnameError(true);
+          lNameRef.current.focus();
+        }
+        if (!isValidName(firstName)) {
+          setFnameError(true);
+          fNameRef.current.focus();
+        }
+      }
     }
 
     const handleDemo = (e) => {
@@ -238,6 +268,7 @@ const SignUpPage = () => {
                                 id="sign-up-fname" 
                                 label="First Name" 
                                 value={firstName}
+                                inputRef={fNameRef}
                                 onChange={handleFname}
                                 variant="outlined"
                                 error={fNameError}
@@ -248,6 +279,7 @@ const SignUpPage = () => {
                                 id="sign-up-lname" 
                                 label="Last Name" 
                                 value={lastName}
+                                inputRef={lNameRef}
                                 onChange={handleLname}
                                 variant="outlined" 
                                 error={lNameError}
@@ -258,6 +290,7 @@ const SignUpPage = () => {
                                 id="sign-up-email" 
                                 label="Email" 
                                 value={email}
+                                inputRef={emailRef}
                                 onChange={handleEmail}
                                 variant="outlined" 
                                 error={emailError}
@@ -268,6 +301,7 @@ const SignUpPage = () => {
                                 id="sign-up-password" 
                                 label="Password" 
                                 value={password}
+                                inputRef={passwordRef}
                                 onChange={handlePassword}
                                 variant="outlined"
                                 type="password"
@@ -279,6 +313,7 @@ const SignUpPage = () => {
                                 id="sign-up-confirm-password" 
                                 label="Confirm Password" 
                                 value={confirmPassword}
+                                inputRef={confirmPwRef}
                                 onChange={handleConfirmPw}
                                 variant="outlined" 
                                 type="password"
