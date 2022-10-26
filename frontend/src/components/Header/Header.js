@@ -15,11 +15,6 @@ function Header() {
 
     }, [sessionUser]);
 
-    const handleLogout = (e) => {
-        e.preventDefault();
-        dispatch(logout());
-    }
-
     const handleDemo = (e) => {
         e.preventDefault();
         dispatch(login( { email: "demo@user.io", password: "password" } ))
@@ -53,7 +48,6 @@ function Header() {
                 </Link>}
                 {!sessionUser && <button className='header-button' onClick={handleDemo} > Demo User
                 </button>}
-                    {/* <button to='/'>Demo User</button> */}
             </div>
         </div>
     );
