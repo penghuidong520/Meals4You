@@ -10,9 +10,8 @@
 }
 
 .left-column{
-  border: 2px solid black;
   height: 650px;
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,48 +19,86 @@
 }
 
 .welcome-mess{
-  border: 2px solid black;
+  /* border: 2px solid red; */
   height: 60%;
-  display: flex;
-  justify-content:flex-end;
+  width: 100%;
 }
 
 .intro1{
-  margin-top: 30%;
-  font-size: 60px;
-}
-
-#welcomeInfo-icon{
-  height: 34px;
-  animation-name: iconMove;
+  /* border: 2px solid green; */
+  font-size: 55px;
+  margin-top: 10%;
+  height: 40%;
+  animation-name: introMove;
   animation-timing-function: linear;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-fill-mode: forwards;
 }
 
-#welcomeInfo-icon:hover {
-animation-play-state: paused;
-}
+@keyframes introMove{
+  0% {transform: scale(100%)}
+  50% {transform: scale(104%) }
+  100% {transform: scale(100%) }
+  }
 
-@keyframes iconMove{
-0% {transform: scale(100%)}
-50% {transform: scale(150%) }
-100% {transform: scale(100%) }
-}
-
-.welcomeInfo-icon{
-  margin-top: 140px; 
-  margin-right: 50px; 
-  position: absolute;
-  height: 34px;
-  cursor: pointer;
+.intro2{
+  margin-top: 5%;
+  font-size: 60px;
+  height: 40%;
 }
 
 .selected-result{
-  border: 2px solid red;
+  width: auto;
+  display: flex;
+  margin-top: 6%;
 }
+
+.result-img{
+  width: 80px;
+}
+
+#result-img{
+  width: 80px;
+  height: 80px;
+  animation-name: resultImgMove;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes resultImgMove{
+  0% {transform: translateY(0%)}
+  50% {transform: translateY(-20%) }
+  100% {transform: translateY(20%) }
+  }
+
+.result-text{
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  animation-name: resultTextMove;
+  animation-timing-function: linear;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes resultTextMove{
+  0% {transform: scale(0%)}
+  60% {transform: scale(0%)}
+  70% {transform: scale(250%) }
+  80% {transform: scale(120%);}
+  100% {transform: scale(100%) }
+  }
+
 
 .spinwheel-box1{
     margin-left: -10%;
