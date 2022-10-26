@@ -1,3 +1,106 @@
 .about-container {
-    background-image: linear-gradient(#E0cdcf, lightgray);
+    background-image: linear-gradient(white, rgb(234, 223, 223));
+}
+
+.about-instruction {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.about-instruction-details {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#about-description {
+    width: 400px;
+    font-size: 18px;
+    text-align: justify;
+    margin-right: 20px;
+    line-height: 20px;
+}
+
+#about-instruction-steps-container {
+
+}
+
+#about-instruction-steps {
+    padding: 20px;
+    width: 400px;
+    margin-left: 20px;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+#about-instruction-title {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.about-list {
+    list-style: inside;
+    margin: 5px px;
+}
+
+.about-instruction-visualizer {
+    width: 30%;
+    min-width: 400px;
+    min-height: 200px;
+    height:max-content;
+    background-color: aqua;
+}
+
+.about-incentives-container {
+    margin: 50px 0;
+}
+
+.about-incentives {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-developers-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-developers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-developer {
+    height: 400px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.developer-img {
+    width: 280px;
+    height: 300px;
+    margin: auto;
+    border: 1px solid aqua;
+}
+
+.developer-links {
+    height: 99px;
+    width: 280px;
+    border: 1px solid pink;
+    margin: auto;
 }
