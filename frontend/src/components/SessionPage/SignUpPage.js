@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { signup, clearSessionErrors } from '../../store/session';
+import { signup, clearSessionErrors, login } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 
 const FnameField = styled(TextField)({
@@ -210,6 +210,11 @@ const SignUpPage = () => {
       dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
     }
 
+    const handleDemo = (e) => {
+      e.preventDefault();
+      dispatch(login( { email: "demo@user.io", password: "password" } ))
+    }
+
     if (sessionUser) return <Redirect to='/'/>
 
 
@@ -282,6 +287,9 @@ const SignUpPage = () => {
                         </div>
                         <div className="sign-up-button-container">
                             <button id="sign-up-button" onClick={handleRegister} >Register</button>
+                        </div>
+                        <div className="sign-up-button-container">
+                            <button id="sign-up-button" onClick={handleDemo} >Demo User</button>
                         </div>
                         <div className="have-account">
                             You have an account with us? <Link id="log-in-link" to="/login">Log In</Link>!

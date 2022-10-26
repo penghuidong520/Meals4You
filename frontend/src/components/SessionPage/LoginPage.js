@@ -101,6 +101,11 @@ const LoginPage = () => {
         dispatch(login({ email: email, password: password }));
     }
 
+    const handleLoginDemo = (e) => {
+        e.preventDefault();
+        dispatch(login( { email: "demo@user.io", password: "password" } ))
+    }
+
     return (
         <>
             <div className="log-in-page">
@@ -134,10 +139,14 @@ const LoginPage = () => {
                                 onChange={handlePassword}
                                 variant="outlined"
                                 error={passwordError}
+                                type="password"
                             />
                         </div>
                         <div className="log-in-button">
                             <button id="log-in-button" type="submit" onClick={handleLogin}>Log In</button>
+                        </div>
+                        <div className="log-in-button">
+                            <button id="log-in-button" type="submit" onClick={handleLoginDemo}>Demo User</button>
                         </div>
                         <div className="create-acc">
                             Don't have an account? <Link id="sign-in-link" to="/signup">Sign Up</Link>!
