@@ -5,6 +5,7 @@ import { fetchUserDishes, getDishes } from '../../store/dishes';
 import DishIndex from '../DishIndex';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
 import SpinWheel from '../SpinWheel/SpinWheel';
+import SavedWheels from '../SavedWheels';
 
 
 const ProfilePage = () => {
@@ -25,7 +26,7 @@ const ProfilePage = () => {
 						Saved Wheels
 					</div>
 					<div className="wheel-list">
-
+						<SavedWheels />
 					</div>
 				</div>
 			</div>
