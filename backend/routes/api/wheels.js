@@ -102,7 +102,8 @@ router.patch('/:id', validateWheelInput,restoreUser, async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const wheel = await Wheel.findById(req.params.id)
-            .populate('owner', '_id, email');
+            .populate('owner', '_id, email, firstName');
+        console.log(wheel);
         return res.json(wheel);
     }
     catch(err) {
