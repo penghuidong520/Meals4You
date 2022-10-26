@@ -12,7 +12,7 @@ const SavedWheelsItem = ({wheel}) => {
 
     const handleClickTitle = (e) => {
         e.preventDefault();
-        dispatch(updateContents(wheel.contents));
+        dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
 
     return (

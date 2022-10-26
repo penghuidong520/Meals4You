@@ -1,12 +1,15 @@
 const UPDATE_CONTENTS = "contents/UPDATE_CONTENTS";
 
-export const updateContents = contents => ({
+export const updateContents = wheel => ({
     type: UPDATE_CONTENTS,
-    contents
+    wheel
 })
 
 const defaultContents = {
-    contents: ["Payton", "Ronny", "Yanxi", "Ivy", "Peter", "Kin", "Ayce"]
+    wheel: {
+        title: "Default Wheel",
+        contents: ["Payton", "Ronny", "Yanxi", "Ivy", "Peter", "Kin", "Ayce"]
+    }
 }
 
 const contentsReducer = (state = defaultContents, action) => {
@@ -15,7 +18,7 @@ const contentsReducer = (state = defaultContents, action) => {
     switch(action.type) {
         case UPDATE_CONTENTS:
             // state.contents = action.contents;
-            return action.contents
+            return action.wheel
         default:
             return state;
     }
