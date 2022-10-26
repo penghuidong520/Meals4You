@@ -19,14 +19,20 @@
   font-size: larger;
 }
 
+.welcome-mess{
+  border: 2px solid black;
+  height: 60%;
+  display: flex;
+  justify-content:flex-end;
+}
+
 .intro1{
-  margin-top: 50%;
+  margin-top: 30%;
   font-size: 60px;
 }
 
 #welcomeInfo-icon{
   height: 34px;
-  cursor: pointer;
   animation-name: iconMove;
   animation-timing-function: linear;
   animation-duration: 4s;
@@ -39,35 +45,22 @@
 animation-play-state: paused;
 }
 
-
 @keyframes iconMove{
 0% {transform: scale(100%)}
 50% {transform: scale(150%) }
 100% {transform: scale(100%) }
 }
 
-
 .welcomeInfo-icon{
   margin-top: 140px; 
-  margin-left: 190px; 
+  margin-right: 50px; 
   position: absolute;
   height: 34px;
   cursor: pointer;
 }
 
-#intro-gif{
-  border: 2px solid gray;
-  border-radius: 30px;
-  height: 400px; 
-  position: absolute;
-  z-index: 10;
-  margin-top: -5px;
-  margin-left: -340px;
-  opacity: 0;
-}
-
-.welcomeInfo-icon:hover #intro-gif{
-  /* opacity: 1; */
+.selected-result{
+  border: 2px solid red;
 }
 
 .spinwheel-box1{

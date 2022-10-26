@@ -29,13 +29,9 @@ const SpinWheel = () => {
   const handleReset = e => {
       wheelRef.current.addEventListener('click', selectItem);
       setSelectedItem(null);
-    // else{
-    //   window.location.assign("/login")
-    // }
   };
 
 
-  const welcomeMessage = (sessionUser) ? 'Saved wheel' :'Click the SpinWheel \r\n Choose Meals for You';
   
   const wheelVars = {
     "--nb-item": items.length,
@@ -47,14 +43,16 @@ const SpinWheel = () => {
   return (
     <div className='spin-container'>
         <div className='left-column'>
-          <div className='intro1'>{welcomeMessage}</div>
-          {sessionUser == null && (
+          <div className='welcome-mess'>
+          <div className='intro1'>Click the SpinWheel Choose Meals for You</div>
             <div className='welcomeInfo-icon'>
               <img id='welcomeInfo-icon' src={welcomeInfo} alt="" />
-              {/* < img id='intro-gif' src={introGif} alt="" /> */}
             </div>
-             )}
-        </div> 
+          </div>
+          <div className='selected-result'>
+            selected result 
+          </div>
+        </div>
     <div className='spinwheel-box1'>
       <div className="wheel-container">
         <div
