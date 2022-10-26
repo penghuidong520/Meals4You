@@ -1,0 +1,35 @@
+.dishes-container span{
+    display: flex;
+    justify-content: center;
+
+}
+.dishes-action-button{
+    all: unset;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 #22222226;
+    border: 1px solid #22222226;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+}
+.dishes-action-button:hover{
+    box-shadow: 0 1px 6px 0 #1a191980;
+    border: 1px solid #22222226;
+    background-color: #d4babe;
+}
+.dish-edit-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.dish-edit-container label{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    text-indent: 5px;
+}
+.add-dishes{
+    border-radius: 5px;
+    border: 1px solid #22222226;
+}

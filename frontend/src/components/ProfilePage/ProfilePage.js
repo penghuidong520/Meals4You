@@ -45,7 +45,6 @@ const ProfilePage = () => {
 					</div>
 					<div className="save-dish-container">
 						<div className="save-dish-title">
-						Saved Dishes
 						</div>
 						<DishIndex />
 					</div>
