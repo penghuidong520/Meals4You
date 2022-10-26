@@ -4,8 +4,10 @@ import session from './session';
 import errors from './errors';
 import dishes from './dishes';
 import wheels from './wheels';
+import contents from './contents';
 
 const rootReducer = combineReducers({
+    contents,
     session,
     dishes,
     wheels,
