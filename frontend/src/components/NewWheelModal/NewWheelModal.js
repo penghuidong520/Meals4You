@@ -1,6 +1,7 @@
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 import './NewWheelModal.css';
+import NewSpinWheel from '../SpinWheel/NewSpinWheel'
 
 const style = {
     position: 'absolute',
@@ -33,14 +34,11 @@ const AddNewWheelModal = () => {
                     Add a new wheel
                 </div>
                 <div className="empty">
-                    <input type="text" />
-                </div>
-                <div className="empty">
-                    <input type="text" />
-                </div>
-                <div className="empty">
-                    <input type="text" />
-                </div>
+                    <input type="text" placeholder='WHEEL NAME... >w<'/>
+                        </div>
+                    < NewSpinWheel /> 
+                        {/* <div className="empty"> <input type="text" /> </div> */}
+                        {/* <div className="empty"> <input type="text" /> </div> */}
                 <div className="add-button-container">
                     <button>Save your new wheel</button>
                 </div>

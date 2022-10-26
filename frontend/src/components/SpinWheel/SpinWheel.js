@@ -69,7 +69,7 @@ const SpinWheel = () => {
       {selectedItem !== null && (
         <div className='reset-button'>
           <button id="reset-button" onClick={handleReset}>
-            <p id="text1"  >Don't Like {items[selectedItem]}?</p>
+            <p id="text1" >Don't Like {items[selectedItem]}?</p>
             <p id="text2">Click Me Reset</p>
           </button>
         </div>
