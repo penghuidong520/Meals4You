@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchUserDishes, getDishes } from '../../store/dishes';
 import DishIndex from '../DishIndex';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
-import SpinWheel from '../SpinWheel/SpinWheel';
+import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
 
 
@@ -32,7 +32,7 @@ const ProfilePage = () => {
 			</div>
 			<div className="center-wheel-container">
 				<div className="center-wheel">
-					<SpinWheel />
+					<ProfileSpin />
 				</div>
 			</div>
 			<div className="edit-wheel-container">

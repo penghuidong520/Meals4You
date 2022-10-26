@@ -58,15 +58,16 @@ animation-play-state: paused;
 #intro-gif{
   border: 2px solid gray;
   border-radius: 30px;
-  height: 300px; 
+  height: 400px; 
   position: absolute;
   z-index: 10;
-  margin-top: 20px;
+  margin-top: -5px;
+  margin-left: -340px;
   opacity: 0;
 }
 
 .welcomeInfo-icon:hover #intro-gif{
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .spinwheel-box1{
