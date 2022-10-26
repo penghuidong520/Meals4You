@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import React from 'react';
 import { useSelector } from 'react-redux'
 import welcomeInfo from '../../images/welcome-info.png';
-import introGif from '../../images/intro-gif.gif';
+// import introGif from '../../images/intro-gif.gif';
 
 
 const SpinWheel = () => {
@@ -51,7 +51,7 @@ const SpinWheel = () => {
           {sessionUser == null && (
             <div className='welcomeInfo-icon'>
               <img id='welcomeInfo-icon' src={welcomeInfo} alt="" />
-              < img id='intro-gif' src={introGif} alt="" />
+              {/* < img id='intro-gif' src={introGif} alt="" /> */}
             </div>
              )}
         </div> 
