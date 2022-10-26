@@ -40,7 +40,7 @@ const ProfilePage = () => {
 						<NewWheelModal />
 					</div>
 					<div className="explore-wheels">
-						<button id="explore-wheels-button">No ideas? Explore more wheels.</button>
+						<button id="explore-wheels-button">No ideas11? Explore more wheels.</button>
 					</div>
 					<div className="save-dish-container">
 						<div className="save-dish-title">
