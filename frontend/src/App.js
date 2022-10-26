@@ -7,6 +7,7 @@ import MainPage from './components/MainPage/MainPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoginPage from './components/SessionPage/LoginPage';
 import SignUpPage from './components/SessionPage/SignUpPage';
+import WheelIndexPage from './components/WheelIndexPage/WheelIndexPage';
 import { fetchUserDishes } from './store/dishes';
 import { getCurrentUser } from './store/session';
 
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
+        <Route path="/index" component={WheelIndexPage} />
       </Switch>
     </>
   );
