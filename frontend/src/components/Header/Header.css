@@ -37,36 +37,10 @@
     align-items: center;
 }
 
-.header-button{
-    background-color: #a29e9e5c;
-    width: 25%;
-    min-width: 150px;
-    height: 45%;
-    border-radius: 35px;
+.center-nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: xx-large;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-.header-message {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-}
-
-.header-message-text {
-    height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
-}
-
-.header-icon {
-    margin-left: 10px;
+    border: 1px solid black;
+    width: 900px;
+    justify-content: space-between;
+    font-size: 2rem;
 }

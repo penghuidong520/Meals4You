@@ -1,0 +1,21 @@
+.header-profile-container {
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-message {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    align-items: center;
+}
+
+#basic-button {
+    color: black;
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
