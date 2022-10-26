@@ -138,7 +138,7 @@ const LoginPage = () => {
                                 variant="outlined"
                                 error={emailError}
                                 inputRef={emailRef}
-                                helperText={emailError ? "Please enter a valid email address.": "" }
+                                helperText={emailError ? "Please make sure you've entered an correct email address!": "" }
                             />
                         </div>
                         <div className="log-in-password">
@@ -151,7 +151,7 @@ const LoginPage = () => {
                                 error={passwordError}
                                 inputRef={passwordRef}
                                 type="password"
-                                helperText={passwordError ? "Please enter password with minimum 6 characters" : ""}
+                                helperText={passwordError ? "Please make sure you've entered a correct password!" : ""}
                             />
                         </div>
                         <div className="log-in-button">
