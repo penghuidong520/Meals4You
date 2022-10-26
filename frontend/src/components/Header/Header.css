@@ -29,7 +29,7 @@
     display: flex;
     flex: right; 
     height: 9vh;
-    width: 40%;
+    width: 30%;
     min-width: 500px;
     justify-content: space-around;
     display: flex;
@@ -39,34 +39,33 @@
 
 .header-button{
     background-color: #a29e9e5c;
-    width: 25%;
+    width: 20%;
     min-width: 150px;
-    height: 45%;
+    height: 40%;
     border-radius: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: xx-large;
+    font-size: x-large;
     text-decoration: none;
     color: black;
     cursor: pointer;
 }
 
-.header-message {
+.center-nav {
     display: flex;
-    width: fit-content;
-    align-items: center;
+    width: 600px;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    margin-right: 150px;
 }
 
-.header-message-text {
-    height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
+.active:visited {
+    color: yellow;
 }
 
-.header-icon {
-    margin-left: 10px;
+.inactive {
+    color: black;
+    text-decoration: none;
 }

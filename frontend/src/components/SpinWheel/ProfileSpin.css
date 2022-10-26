@@ -1,0 +1,202 @@
+.profile-spin-container{
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 600px; */
+}
+
+.profile-spinwheel-box{
+    border: 2px solid green;
+    min-width: 650px;
+    height: 650px;
+    min-height: 650px;
+    min-width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --wheel-font: "Lato", "Quicksand", sans-serif;
+    --wheel-size: 600px;
+    --wheel-slice-spacing: 50px;
+    --wheel-border-size: 5px;
+    --wheel-color: #79adcbd6;
+    --neutral-color: white;
+    --PI: 3.14159265358979;
+    --nb-item: 0;
+    --item-nb: 0;
+    --selected-item: 0;
+    --nb-turn: 5;
+    --spinning-duration: 4s;
+    --reset-duration: 0.25s;
+  }
+
+  .wheel-container {
+    position: top;
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+    height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+    padding: 2px;
+    margin: auto;
+    background-color: var(--neutral-color);
+    border: solid var(--wheel-color) 3px;
+    border-radius: 50%;
+    user-select: none;
+  }
+
+  .wheel-container::before,
+  .wheel-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: solid transparent 30px;
+    border-left-width: 0;
+  }
+  .wheel-container::before {
+    right: 0px;
+    border-right-color: var(--wheel-color);
+  }
+  .wheel-container::after {
+    right: -5px;
+    border-right-color: var(--neutral-color);
+  }
+
+  .wheel {
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    margin: auto;
+    width: var(--wheel-size);
+    height: var(--wheel-size);
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid var(--wheel-color) var(--wheel-border-size);
+    background-color: var(--wheel-color);
+    transition: transform var(--reset-duration);
+    transform: rotate(0deg);
+    cursor: pointer;
+  }
+
+  .wheel.spinning {
+    transition: transform var(--spinning-duration);
+    transform: rotate(
+      calc(
+        var(--nb-turn) * 360deg +
+          (-360deg * var(--selected-item) / var(--nb-item, 1))
+      )
+    );
+  }
+
+  .wheel::after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: var(--neutral-color);
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .wheel-item {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform-origin: center left;
+    transform: translateY(-50%)
+      rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
+    color: var(--neutral-color);
+    text-align: right;
+    padding: 0 25px 0 50px;
+    font-family: var(--wheel-font);
+    font-size: 45px;
+  }
+
+  .wheel-item:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 0px;
+    opacity: 0.25;
+    --slice-max-width: calc(
+      var(--PI) * var(--wheel-size) + var(--wheel-size) / 2
+    );
+    --slice-width: calc(
+      (var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing)
+      );
+      border: solid transparent calc(var(--slice-width) / 2);
+      border-left: solid transparent 0;
+      border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
+    }
+    
+.profile-reset-containor{
+  height: 100px;
+  width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.profile-reset-button{
+  height: 100px;
+  min-width: 40px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+#profile-reset-button{
+  height: 100px;
+  min-width: 150px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0px solid transparent;
+  
+}
+
+#reset-text{
+    font-size: 1px;
+    background-color: transparent; 
+    animation-name: textMove;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+   
+}
+#reset-text:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes textMove{
+  0% {transform: scale(3000%)}
+  50% {transform: scale(4000%) }
+  100% {transform: scale(3000%) }
+}

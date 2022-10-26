@@ -1,0 +1,19 @@
+.dish-item-delete-button{
+    all: unset;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 #22222226;
+    border: 1px solid #22222226;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.dish-item-delete-button:hover{
+        box-shadow: 0 1px 6px 0 #1a191980;
+        border: 1px solid #22222226;
+        background-color: #d4babe;
+}
+.dish-item{
+    margin-top: 10px;
+    text-indent: 5px;
+}
