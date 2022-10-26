@@ -162,7 +162,7 @@
   }
   
   .reset-button{
-  border: 3px solid black;
+  /* border: 3px solid black; */
   height: 100px;
   width: 400px;
   z-index: 10;
@@ -170,7 +170,7 @@
   }
   
   #reset-button{
-  border: 3px solid black;
+  /* border: 3px solid black; */
   height: 100px;
   width: 400px;
   cursor: pointer;
