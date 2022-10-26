@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchUserDishes, getDishes } from '../../store/dishes';
 import DishIndex from '../DishIndex';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
+import SpinWheel from '../SpinWheel/SpinWheel';
 
 
 const ProfilePage = () => {
@@ -30,7 +31,7 @@ const ProfilePage = () => {
 			</div>
 			<div className="center-wheel-container">
 				<div className="center-wheel">
-					Canvas Goes Here
+					<SpinWheel />
 				</div>
 			</div>
 			<div className="edit-wheel-container">

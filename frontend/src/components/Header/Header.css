@@ -50,6 +50,7 @@
     font-size: xx-large;
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 .header-message {

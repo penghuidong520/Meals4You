@@ -42,7 +42,7 @@ function Header() {
                                     <div className="header-message-text">
                                         Welcome back, {sessionUser.firstName}
                                     </div>
-                                     <Link to="/">
+                                     <Link to="/profile">
                                         <div className="header-icon">
                                             <AccountCircleIcon style={{fontSize: "xxx-large"}}/>
                                         </div>

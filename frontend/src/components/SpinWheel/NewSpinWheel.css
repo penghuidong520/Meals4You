@@ -4,14 +4,12 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     min-height: 600px;
-}
-
-.spinwheel-box{
+  }
+  
+  .spinwheel-box{
     border: 2px solid black;
-    /* position: absolute; */
     width: 650px;
     height: 650px;
     min-height: 650px;
@@ -19,10 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
-    /* flex-direction: column; */
-}
-:root {
+    
+  }
+  :root {
     --wheel-font: "Lato", "Quicksand", sans-serif;
     --wheel-size: 600px;
     --wheel-slice-spacing: 50px;
@@ -37,7 +34,7 @@
     --spinning-duration: 4s;
     --reset-duration: 0.25s;
   }
-
+  
   .wheel-container {
     position: top;
     display: block;
@@ -52,7 +49,7 @@
     border-radius: 50%;
     user-select: none;
   }
-
+  
   .wheel-container::before,
   .wheel-container::after {
     content: "";
@@ -74,7 +71,7 @@
     right: -5px;
     border-right-color: var(--neutral-color);
   }
-
+  
   .wheel {
     display: block;
     position: relative;
@@ -90,7 +87,7 @@
     transform: rotate(0deg);
     cursor: pointer;
   }
-
+  
   .wheel.spinning {
     transition: transform var(--spinning-duration);
     transform: rotate(
@@ -100,7 +97,7 @@
       )
     );
   }
-
+  
   .wheel::after {
     display: block;
     position: absolute;
@@ -114,7 +111,7 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
-
+  
   .wheel-item {
     display: block;
     position: absolute;
@@ -131,7 +128,7 @@
     font-family: var(--wheel-font);
     font-size: 45px;
   }
-
+  
   .wheel-item:before {
     content: " ";
     display: block;
@@ -156,43 +153,69 @@
       border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
     }
     
-.reset-containor{
+  .reset-containor{
   border:2px solid green; 
   height: 100px;
   width: 650px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.reset-button{
+  align-items: flex-end;
+  }
+  
+  .reset-button{
   border: 3px solid black;
   height: 100px;
   width: 400px;
   z-index: 10;
   overflow: hidden;
-}
-
-#reset-button{
+  }
+  
+  #reset-button{
   border: 3px solid black;
   height: 100px;
   width: 400px;
   cursor: pointer;
-}
-
-#text1{
-      font-size: 25px;
-      display: block;
-      overflow: hidden;
-      animation: move 4s;
   }
-
-@keyframes move{
-  0% {transform: translateX(100%)}
-  90% {transform: translateX(99%) }
-  100% {transform: translateX(0%) }
-}
-
-#text2{
+  
+  
+  #text2{
     font-size: 35px;
-}
+  }
+  
+  .submit-containor{
+    border: 3px solid red;
+    height: 80px; 
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 70%;
+    margin-top: 30px;
+  }
+  
+  #newItem-input{
+    height: 20px;
+    background-color: #E3F8FA;
+  }
+  .submit-clear-containor{
+    display: flex;
+  }
+  .newItem-submit-button{
+      color: #444;
+      border: 1px solid #CCC ;
+      background: #DDD;
+      box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+  }
+  
+  .submit-clear-button{
+    color: #444;
+      border: 1px solid #CCC ;
+      background: #DDD;
+      box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+  }
+  
+  
