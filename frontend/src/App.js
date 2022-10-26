@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import AboutPage from './components/AboutPage';
 import Header from './components/Header/Header';
 import MainPage from './components/MainPage/MainPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
@@ -36,6 +37,7 @@ function App() {
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
+        <Route exact path="/about" component={AboutPage} />
         <Route path="/index" component={WheelIndexPage} />
       </Switch>
     </>

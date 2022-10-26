@@ -4,12 +4,10 @@ import React from 'react';
 import { useSelector } from 'react-redux'
 
 
-const ProfileSpin = () => {
-    const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+const ProfileSpin = ({wheel}) => {
+  const sessionUser = useSelector(state => state.session.user)
 
-
-  const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+  const items = wheel.contents;  
 
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();

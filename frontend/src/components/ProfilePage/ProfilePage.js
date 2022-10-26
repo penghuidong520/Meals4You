@@ -11,7 +11,7 @@ import SavedWheels from '../SavedWheels';
 const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector(state => state.session.user);
-
+	const wheel = useSelector(state => state.wheel);
 
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id))
@@ -32,7 +32,7 @@ const ProfilePage = () => {
 			</div>
 			<div className="center-wheel-container">
 				<div className="center-wheel">
-					<ProfileSpin />
+					<ProfileSpin wheel={wheel} />
 				</div>
 			</div>
 			<div className="edit-wheel-container">

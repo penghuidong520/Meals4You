@@ -82,7 +82,7 @@ const wheelsReducer = (state = {}, action) => {
     const nextState = {...state};
     switch(action.type) {
         case RECEIVE_WHEEL:
-            nextState[action.wheel.id] = action.dish;
+            nextState[action.wheel.id] = action.wheel;
             return nextState;
         case RECEIVE_USER_WHEELS:
             return action.wheels;

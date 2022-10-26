@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux'
 import welcomeInfo from '../../images/welcome-info.png';
 // import introGif from '../../images/intro-gif.gif';
-
+import spoonFork from '../../images/spoon-and-fork.png';
 
 const SpinWheel = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -44,13 +44,17 @@ const SpinWheel = () => {
     <div className='spin-container'>
         <div className='left-column'>
           <div className='welcome-mess'>
-          <div className='intro1'>Click the SpinWheel Choose Meals for You</div>
-            <div className='welcomeInfo-icon'>
-              <img id='welcomeInfo-icon' src={welcomeInfo} alt="" />
-            </div>
+            <div className='intro1'>Click SpinWheel <br/> </div>
+            <div className='intro2'>Choose <br /> Meals for You</div>
           </div>
           <div className='selected-result'>
-            selected result 
+            <div className='result-img'>
+              <img id='result-img' src={spoonFork} alt="" />
+            </div>
+            {selectedItem !== null && (
+            <div className='result-text'>
+                {items[selectedItem]}
+            </div>)}
           </div>
         </div>
     <div className='spinwheel-box1'>
