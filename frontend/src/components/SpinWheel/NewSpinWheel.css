@@ -1,14 +1,15 @@
-.spinwheel-container{
+.create-spin-container{
     border: 2px solid red;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 600px;
+    margin-top: 5%;
   }
   
-  .spinwheel-box{
+  .create-spinwheel-box{
     border: 2px solid black;
     width: 650px;
     height: 650px;
@@ -153,42 +154,46 @@
       border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
     }
     
-  .reset-containor{
-  border:2px solid green; 
-  height: 100px;
+  .create-reset-containor{
+  position: absolute;
+  height: 70px;
   width: 650px;
   display: flex;
-  align-items: flex-end;
-  }
-  
-  .reset-button{
-  border: 3px solid black;
-  height: 100px;
-  width: 400px;
+  align-items: center;
+  margin-top: 64%;
+}
+
+.create-reset-button{
+  height: 70px;
+  width: 200px;
   z-index: 10;
   overflow: hidden;
-  }
-  
-  #reset-button{
-  border: 3px solid black;
-  height: 100px;
-  width: 400px;
+  border-radius: 40px;
+}
+
+#create-reset-button{
+  border: transparent;
+  background-color: rgba(176, 168, 168, 0.351);
+  height: 70px;
+  width: 150px;
   cursor: pointer;
+  border-radius: 40px;
   }
   
   
-  #text2{
+  #create-text{
     font-size: 35px;
   }
   
   .submit-containor{
     border: 3px solid red;
-    height: 80px; 
-    width: 200px;
+    height: 30px; 
+    width: 600px;
     display: flex;
-    flex-direction: column;
-    margin-left: 70%;
+    /* flex-direction: column; */
+    /* margin-left: 70%; */
     margin-top: 30px;
+    justify-content: space-between;
   }
   
   #newItem-input{
@@ -205,6 +210,7 @@
       box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
       cursor: pointer;
       width: 100px;
+      height: 20px;
       text-align: center;
   }
   
@@ -215,6 +221,7 @@
       box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
       cursor: pointer;
       width: 100px;
+      height: 20px;
       text-align: center;
   }
   

@@ -53,8 +53,8 @@ const NewSpinWheel = () => {
   
 
   return (
-    <div className='spin-container'>
-    <div className='spinwheel-box'>
+    <div className='create-spin-container'>
+    <div className='create-spinwheel-box'>
       <div className="wheel-container">
         <div
           className={`wheel ${spinning}`}
@@ -73,9 +73,9 @@ const NewSpinWheel = () => {
           ))}
         </div>
           <div className='submit-containor'>
-          <h1>ADD NEW ITEM</h1>
           <p>New Odds:</p>
           <input id='newItem-input'
+            placeholder='add a new item ... '
             type="text"
             value={value}
             onChange={handleChange}
@@ -91,17 +91,17 @@ const NewSpinWheel = () => {
             onClick={handleClear}
             value="Clear"
           >
-            Clear
+            Clear Board
           </div>
           </div>
           </div>
       </div>
     </div>
-    <div className='reset-containor'>
+    <div className='create-reset-containor'>
       {selectedItem !== null && (
-        <div className='reset-button'>
-          <button id="reset-button" onClick={handleReset}>
-            <p id="text2">Click Me Reset</p>
+        <div className='create-reset-button'>
+          <button id="create-reset-button" onClick={handleReset}>
+            <p id="create-text">Reset</p>
           </button>
         </div>
       )}
