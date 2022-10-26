@@ -1,28 +1,30 @@
 .spinwheel-container{
     border: 2px solid red;
     width: 100%;
-    height: 90vh;
-    background-color: #e0cdcfab;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     min-height: 600px;
 }
 
 .spinwheel-box{
     border: 2px solid black;
-    width: 40vw;
-    height: 60vh;
-    min-height: 300px;
-    min-width: 300px;
+    /* position: absolute; */
+    width: 650px;
+    height: 650px;
+    min-height: 650px;
+    min-width: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
     /* flex-direction: column; */
 }
 :root {
     --wheel-font: "Lato", "Quicksand", sans-serif;
-    --wheel-size: 1000px;
+    --wheel-size: 600px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #79adcbd6;
@@ -72,7 +74,7 @@
     right: -5px;
     border-right-color: var(--neutral-color);
   }
-  /* Roue */
+
   .wheel {
     display: block;
     position: relative;
@@ -88,6 +90,7 @@
     transform: rotate(0deg);
     cursor: pointer;
   }
+
   .wheel.spinning {
     transition: transform var(--spinning-duration);
     transform: rotate(
@@ -97,7 +100,7 @@
       )
     );
   }
-  /* Centre de la roue = rond blanc au centre */
+
   .wheel::after {
     display: block;
     position: absolute;
@@ -111,26 +114,24 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
-  /* Element sur la roue */
+
   .wheel-item {
     display: block;
     position: absolute;
     box-sizing: border-box;
-    /* position de l'item */
     top: 50%;
     left: 50%;
     width: 50%;
     transform-origin: center left;
     transform: translateY(-50%)
       rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
-    /* texte */
     color: var(--neutral-color);
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
-    font-size: 70px;
+    font-size: 45px;
   }
-  /* Background de l'élément = triangle rose plus clair */
+
   .wheel-item:before {
     content: " ";
     display: block;
@@ -149,29 +150,48 @@
     );
     --slice-width: calc(
       (var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing)
-    );
-    border: solid transparent calc(var(--slice-width) / 2);
-    border-left: solid transparent 0;
-    border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
-  }
+      );
+      border: solid transparent calc(var(--slice-width) / 2);
+      border-left: solid transparent 0;
+      border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
+    }
+    
+.reset-containor{
+  border:2px solid green; 
+  height: 100px;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .reset-button{
-    border: 3px solid black;
-    height: 100px;
-    width: 300px;
-    z-index: 10;
-  }
+.reset-button{
+  border: 3px solid black;
+  height: 100px;
+  width: 400px;
+  z-index: 10;
+  overflow: hidden;
+}
 
-  #reset-button{
-    border: 3px solid black;
-    height: 100px;
-    width: 300px;
-    cursor: pointer;
+#reset-button{
+  border: 3px solid black;
+  height: 100px;
+  width: 400px;
+  cursor: pointer;
 }
 
 #text1{
       font-size: 25px;
+      display: block;
+      overflow: hidden;
+      animation: move 4s;
   }
+
+@keyframes move{
+  0% {transform: translateX(100%)}
+  90% {transform: translateX(99%) }
+  100% {transform: translateX(0%) }
+}
 
 #text2{
     font-size: 35px;
