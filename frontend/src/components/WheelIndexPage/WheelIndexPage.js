@@ -31,7 +31,7 @@ const WheelIndexPage = () => {
                     Check out our users's wheels.
                 </div>
                 <div className="refresh-button">
-                    <div className="refresh-message"> Don't really like these? Click to see more</div>
+                    <div className="refresh-message"> Don't really like these? Click to see others</div>
                     <button id='refresh-button' onClick={handleRefresh}><RefreshIcon /></button>
                 </div>
                 <div className="index-buttons">
