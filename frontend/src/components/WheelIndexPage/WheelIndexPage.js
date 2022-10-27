@@ -1,45 +1,43 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, getUsers } from '../../store/users';
-import UserAccordion from '../UserAccordion/UserAccordion';
 import './WheelIndexPage.css';
 import ButtonContent from './ButtonContent';
-import { fetchRandomWheels } from '../../store/randWheels';
+import { fetchRandomWheels, getRandWheels } from '../../store/randWheels';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 
 const WheelIndexPage = () => {
     const dispatch = useDispatch();
-    const users = useSelector(getUsers)
-    const [loadedUsers, setLoadedUsers] = useState(false);
-    let randWheels = useSelector(state => state.randWheels);
+    const [loadedWheels, setLoadedWheels] = useState(false);
+    const randWheels = useSelector(getRandWheels);
 
 
     useEffect(() => {
-        dispatch(fetchRandomWheels());
+        dispatch(fetchRandomWheels()).then(() => 
+        setLoadedWheels(true));
     },[dispatch])
 
+    const handleRefresh = () => {
+        dispatch(fetchRandomWheels())
+    }
 
-    return loadedUsers && (
+
+    return loadedWheels && (
         <>
             <div className="index-page">
                 <div className="index-title">
                     Check out our users's wheels.
                 </div>
+                <div className="refresh-button">
+                    <div className="refresh-message"> Don't really like these? Click to see others</div>
+                    <button id='refresh-button' onClick={handleRefresh}><RefreshIcon /></button>
+                </div>
                 <div className="index-buttons">
-                    {randWheels.map(randWheel => 
+                    {randWheels?.map(randWheel => 
                         (<ButtonContent key={randWheel._id} randWheel={randWheel}/>)
                     )}
                 </div>
-
-                {/* <div className="index-container">
-                    {users.map(user => <UserAccordion 
-                        expanded={expanded === user._id} 
-                        key={user._id} 
-                        user={user}
-                        // onChange={handleChange(user._id)}
-                        />)
-                    }
-                </div> */}
             </div>
         </>
     );

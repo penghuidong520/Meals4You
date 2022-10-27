@@ -7,6 +7,11 @@ const receiveRandomWheels = wheels => ({
     wheels
 });
 
+export const getRandWheels = ({ randWheels }) =>{
+    return ( randWheels ? randWheels : [])
+
+}
+
 export const fetchRandomWheels = () => async dispatch => {
     const res = await jwtFetch('/api/wheels');
     if (res.ok) {

@@ -3,7 +3,7 @@
     height: 900px;
     background-color: #e0cdcf;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
 }
@@ -11,12 +11,75 @@
 .index-title {
     font-size: 2rem;
     margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
 }
 
-.index-container {
-    width: 95%;
-    height: 98%;
-    margin-top: 20px;
+.index-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.index-button-container {
+    width: 700px;
+    margin-bottom: 40px;
+}
+
+#google-button {
+    width: 100%;
+    height: 50px;
+    background-color: #adccdf;
+}
+
+.pop-up {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pop-list {
+    width: 100%;
+    height: 270px;
+}
+
+#content-list {
+    margin: 10px;
+}
+
+.index-buttons {
     overflow-y: scroll;
+    width: 750px;
+    height: 600px;
 }
 
+.refresh-button {
+    margin-bottom: 30px;
+    height: 40px;
+    font-size: large;
+    display: flex;
+    align-items: center;
+}
+
+#refresh-button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+#save-button {
+    border-radius: 10px;
+    background-color: aqua;
+    border: none;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#save-button:hover {
+    background-color:cadetblue;
+    color: white;
+}
