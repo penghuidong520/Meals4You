@@ -54,7 +54,6 @@ const AddNewWheelModal = () => {
                     </div>
                     <div className="empty">
                         <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
-                    
                     <div className="add-button-container">
                         <button className="save-button" onClick={handleSaveWheel} >Save your new wheel</button>
                     </div>

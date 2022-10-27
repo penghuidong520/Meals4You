@@ -6,6 +6,7 @@ import savedWheelIcon from "../../images/tableware.png"
 import deleteIcon from "../../images/delete.png";
 import editIcon from "../../images/edit.png";
 
+
 const SavedWheelsItem = ({wheel}) => {
     const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ const SavedWheelsItem = ({wheel}) => {
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
             </div>
-            <button className="editButton">
+            <button className="editButton" >
                 <img id="editIcon" src={editIcon} alt=""/>
             </button>
             <button className="deleteButton" onClick={handleDelete} >
