@@ -104,22 +104,6 @@ const NewSpinWheel = ({setContents}) => {
             <p className="add-dish-text">Add Your New Dish:</p> 
             <div className='new-dish-index'>
               {itemList}
-              {/* <div className='one-dish'>
-                <li className="new-dish-name">
-                  div className: new-dish-index<br />show the list of dishes added on the wheel
-                </li>
-                < button className='delete-added-dish'>
-                  <img id='delete-added-dish-img' src={deleteIcon} alt="" />
-                </button>
-              </div> */}
-              {/* <div className='one-dish'>
-                <li className="new-dish-name">
-                  div className: new-dish-index<br />show the list of dishes added on the wheel
-                </li>
-                < button className='delete-added-dish'>
-                  <img id='delete-added-dish-img' src={deleteIcon} alt="" />
-                </button>
-              </div> */}
             </div>
             <input id='newItem-input'
               placeholder='add a new item ... '
@@ -127,14 +111,23 @@ const NewSpinWheel = ({setContents}) => {
               value={value}
               onChange={handleChange}
             />
+            <div className='submit-clear-box'>
             <div className='submit-clear-containor'>
               <div className='newItem-submit-button'
                 onClick={onClick}
                 value="Submit"
               >
-              Submit
+              Add Dish
             </div>
-          </div>
+            </div>
+            <div className='submit-clear-button'
+                  onClick={handleClear}
+                  value="Clear"
+                >
+                  Clear Board
+                  
+            </div>
+            </div>
           </div>
       </div>
     </div>
@@ -146,13 +139,6 @@ const NewSpinWheel = ({setContents}) => {
           </button>
         </div>
       )}
-      <div className='submit-clear-button'
-            onClick={handleClear}
-            value="Clear"
-          >
-            Clear Board
-            
-      </div>
       </div>
     </div>
   );
