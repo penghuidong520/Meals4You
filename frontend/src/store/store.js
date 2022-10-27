@@ -6,8 +6,10 @@ import dishes from './dishes';
 import wheels from './wheels';
 import wheel from './contents';
 import users from './users';
+import randWheels from './randWheels';
 
 const rootReducer = combineReducers({
+    randWheels,
     users,
     wheel,
     session,
