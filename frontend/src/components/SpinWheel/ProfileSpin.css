@@ -1,5 +1,5 @@
 .profile-spin-container{
-    border: 2px solid red;
+  border: 2px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,6 @@
     font-size: 40px;
 }
 .profile-spinwheel-box{
-    border: 2px solid green;
     height: 100%;
     width: 100%;
     overflow: hidden;

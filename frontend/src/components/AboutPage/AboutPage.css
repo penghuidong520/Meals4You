@@ -91,18 +91,27 @@
 }
 
 .developer-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .developer-links {
     height: 99px;
     width: 100px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
+    color: transparent;
 } 
+
+.developer-link-icon{
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    background-color: transparent;
+    /* border: 1px solid black; */
+}
 
 
 .instruction-text-containoer{
