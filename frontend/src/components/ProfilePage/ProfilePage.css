@@ -6,11 +6,8 @@
     display: flex;
     background-color: #e0cdcf;
 }
-.profile-page-button{
-    border: 1px solid red;
-}
 .profile-page-button *{
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .save-wheels-container {
     width: 25%;
@@ -67,7 +64,6 @@
 }
 
 .edit-wheel {
-    border: 1px solid purple;
     width: 90%;
     height: 85%;
     display: flex;
@@ -76,10 +72,8 @@
 }
 
 .save-dish-container {
-    margin-top: 20px;
     width: 95%;
 }
-
 
 #new-wheel-button,
 #explore-wheels-button {

@@ -1,19 +1,17 @@
 .profile-spin-container{
     border: 2px solid red;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     /* min-height: 600px; */
+    height: 80%;
 }
 
 .profile-spinwheel-box{
     border: 2px solid green;
-    min-width: 100%;
-    height: 100%;
-    min-height: 650px;
-    min-width: 650px;
+    height: 570px;
+    width: 570px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +19,7 @@
 
 :root {
     --wheel-font: "Lato", "Quicksand", sans-serif;
-    --wheel-size: 600px;
+    --wheel-size: 550px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #79adcbd6;
