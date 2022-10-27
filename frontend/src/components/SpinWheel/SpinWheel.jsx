@@ -8,11 +8,12 @@ import spoonFork from '../../images/spoon-and-fork.png';
 import { Link } from 'react-router-dom';
 
 const SpinWheel = () => {
-    const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+  const sessionUser = useSelector(state => state.session.user);
+  const defaultContents = useSelector(state => state.wheel);
 
+  // const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+  const items = defaultContents.contents;
 
-  const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
 
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
@@ -35,7 +36,7 @@ const SpinWheel = () => {
 
   
   const wheelVars = {
-    "--nb-item": items.length,
+    "--nb-item": items?.length,
     "--selected-item": selectedItem
   };
 

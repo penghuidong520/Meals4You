@@ -10,7 +10,7 @@ const SavedWheels = () => {
     const wheelList = wheels.map((wheel, index) => <SavedWheelsItem key={index} wheel={wheel} />);
     
     useEffect(() => {
-        dispatch(fetchUserWheels(sessionUser._id));
+        dispatch(fetchUserWheels(sessionUser?._id));
     }, [dispatch, sessionUser])
 
     return (

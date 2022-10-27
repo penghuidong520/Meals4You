@@ -7,14 +7,17 @@ import NewWheelModal from '../NewWheelModal/NewWheelModal';
 import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
 import { fetchUserWheels } from '../../store/wheels';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const sessionUser = useSelector(state => state.session.user);
 	const wheel = useSelector(state => state.wheel);
 	const [selectedItem, setSelectedItem] = useState(null);
+	
+	if (!sessionUser) {history.push("/login")}
 
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id));
