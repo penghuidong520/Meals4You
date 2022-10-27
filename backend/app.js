@@ -8,7 +8,7 @@ const csurf = require('csurf');
 const { isProduction } = require('./config/keys');
 
 // model
-require('./models/User');
+require('./models/user');
 require('./models/Tweet');
 require('./models/Wheel');
 require('./models/Dish');
