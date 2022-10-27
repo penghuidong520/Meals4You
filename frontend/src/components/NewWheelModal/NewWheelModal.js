@@ -4,6 +4,7 @@ import './NewWheelModal.css';
 import NewSpinWheel from '../SpinWheel/NewSpinWheel'
 import { useDispatch } from 'react-redux';
 import { createWheel } from '../../store/wheels';
+import { updateContents } from '../../store/contents';
 
 const style = {
     position: 'absolute',
@@ -28,6 +29,7 @@ const AddNewWheelModal = () => {
     const handleSaveWheel = (e) => {
         e.preventDefault();
         dispatch(createWheel({title, contents}));
+        dispatch(updateContents({title, contents}));
     }
 
     return (
