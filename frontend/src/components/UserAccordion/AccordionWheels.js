@@ -1,12 +1,11 @@
-import './ProfileSpin.css'; 
+import './AccordionWheels.css';
 import { useState, useRef } from 'react';
 import React from 'react';
-import { useSelector } from 'react-redux'
 
+const SpinWheel = () => {
 
-const ProfileSpin = ({wheel}) => {
-  const sessionUser = useSelector(state => state.session.user)
-  const items = wheel.contents;  
+  const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
   
@@ -25,6 +24,8 @@ const ProfileSpin = ({wheel}) => {
       setSelectedItem(null);
   };
 
+
+  
   const wheelVars = {
     "--nb-item": items.length,
     "--selected-item": selectedItem
@@ -33,19 +34,18 @@ const ProfileSpin = ({wheel}) => {
   const spinning = selectedItem !== null ? "spinning" : "";
   
   return (
-    <div className='profile-spin-container'>
-        <h1>Congracts you chose {items[selectedItem]}</h1>
-    <div className='profile-spinwheel-box'>
-      <div className="wheel-container">
+    <div className='spin-container5'>
+    <div className='spinwheel-box5'>
+      <div className="wheel-container5">
         <div
-          className={`wheel ${spinning}`}
+          className={`wheel5 ${spinning}`}
           style={wheelVars}
           ref={wheelRef}
           onClick={selectItem}
         >
           {items.map((item, index) => (
             <div
-              className="wheel-item"
+              className="wheel-item5"
               key={index}
               style={{ "--item-nb": index }}
               >
@@ -54,13 +54,12 @@ const ProfileSpin = ({wheel}) => {
           ))}
         </div>
       </div>
-    <div className='profile-reset-containor' >
+    <div className='reset-containor5'>
       {selectedItem !== null && (
-        <div className='profile-reset-button' onClick={handleReset} >
-            <p>Reset</p>
-          {/* <button id="profile-reset-button" onClick={handleReset}>
-            <p id="reset-text">Reset</p>
-          </button> */}
+        <div className='reset-button5'>
+          <button id="reset-button5" onClick={handleReset}>
+            <p id="reset-text5">Reset</p>
+          </button>
         </div>
       )}
       </div>
@@ -68,4 +67,5 @@ const ProfileSpin = ({wheel}) => {
     </div>
   );
 }
-export default ProfileSpin; 
+
+export default SpinWheel; 

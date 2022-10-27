@@ -141,6 +141,7 @@ const SignUpPage = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const confirmPwRef = useRef(null);
+    const errors = useSelector(state => state.errors.session)
     const sessionUser = useSelector(state => state.session.user);
 
     
@@ -262,6 +263,9 @@ const SignUpPage = () => {
                     <div className="sign-up-container">
                         <div className="sign-up-title">
                             Sign Up
+                        </div>
+                        <div className="sign-up-errors">
+                          {errors ? errors.email : ""}
                         </div>
                         <div className="sign-up-fname">
                             <FnameField 

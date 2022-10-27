@@ -4,11 +4,19 @@
     background-color: #e0cdcf;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-title {
+    font-size: 2rem;
+    margin-top: 10px;
 }
 
 .index-container {
-    width: 98%;
+    width: 95%;
     height: 98%;
-    border: 1px solid black;
+    margin-top: 20px;
+    overflow-y: scroll;
 }
 

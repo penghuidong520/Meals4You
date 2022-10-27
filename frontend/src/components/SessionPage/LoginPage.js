@@ -61,6 +61,7 @@ const LoginPage = () => {
     const [passwordError, setPasswordError] = useState(false);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
+    const errors = useSelector(state => state.errors.session)
     const sessionUser = useSelector(state => state.session.user);
 
     const isValidEmail = (email) => {
@@ -129,6 +130,7 @@ const LoginPage = () => {
                         <div className="log-in-title">
                             Log In
                         </div>
+                        <div className="login-errors">{errors?.email}</div>
                         <div className="log-in-email">
                             <LoginEmailField 
                                 id="log-in-email" 

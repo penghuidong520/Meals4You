@@ -93,3 +93,7 @@
 #sign-in-link:hover {
     text-decoration: underline;
 }
+
+.login-errors {
+    color: red;
+}
