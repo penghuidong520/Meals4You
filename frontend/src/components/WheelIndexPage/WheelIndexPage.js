@@ -3,19 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, getUsers } from '../../store/users';
 import UserAccordion from '../UserAccordion/UserAccordion';
 import './WheelIndexPage.css';
+import ButtonContent from './ButtonContent';
 
 
 const WheelIndexPage = () => {
     const dispatch = useDispatch();
     const users = useSelector(getUsers)
     const [loadedUsers, setLoadedUsers] = useState(false);
-    const [expanded, setExpanded] = useState("");
+
 
     useEffect(() => {
         dispatch(fetchUsers()).then(() => setLoadedUsers(true))
     },[dispatch])
-
-
 
     return loadedUsers && (
         <>
@@ -23,7 +22,11 @@ const WheelIndexPage = () => {
                 <div className="index-title">
                     Check out our users's wheels.
                 </div>
-                <div className="index-container">
+                <div className="index-buttons">
+                    <ButtonContent />
+                </div>
+
+                {/* <div className="index-container">
                     {users.map(user => <UserAccordion 
                         expanded={expanded === user._id} 
                         key={user._id} 
@@ -31,7 +34,7 @@ const WheelIndexPage = () => {
                         // onChange={handleChange(user._id)}
                         />)
                     }
-                </div>
+                </div> */}
             </div>
         </>
     );
