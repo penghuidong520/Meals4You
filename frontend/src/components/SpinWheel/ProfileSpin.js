@@ -6,9 +6,7 @@ import { useSelector } from 'react-redux'
 
 const ProfileSpin = ({wheel}) => {
   const sessionUser = useSelector(state => state.session.user)
-
   const items = wheel.contents;  
-
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
   
@@ -36,7 +34,7 @@ const ProfileSpin = ({wheel}) => {
   
   return (
     <div className='profile-spin-container'>
-        <span>Congracts you chose {items[selectedItem]}</span>
+        <h1>Congracts you chose {items[selectedItem]}</h1>
     <div className='profile-spinwheel-box'>
       <div className="wheel-container">
         <div
@@ -56,12 +54,13 @@ const ProfileSpin = ({wheel}) => {
           ))}
         </div>
       </div>
-    <div className='profile-reset-containor'>
+    <div className='profile-reset-containor' >
       {selectedItem !== null && (
-        <div className='profile-reset-button'>
-          <button id="profile-reset-button" onClick={handleReset}>
+        <div className='profile-reset-button' onClick={handleReset} >
+            <p>Reset</p>
+          {/* <button id="profile-reset-button" onClick={handleReset}>
             <p id="reset-text">Reset</p>
-          </button>
+          </button> */}
         </div>
       )}
       </div>
