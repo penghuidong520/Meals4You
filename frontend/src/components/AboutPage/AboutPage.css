@@ -1,4 +1,128 @@
-.about-container {
+.about-container{
+    border: 5px solid red;
+    height: 90vh;
+    display: flex;
+}
+
+.tab-container{
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+}
+
+.empty-block{
+    height: 10%;
+}
+
+.tab-text{
+    border: 2px solid blue;
+    font-size: 25px;
+    padding: 5%;
+    display: flex;
+    justify-content: end;
+}
+
+.tab-text:hover{
+    background: whitesmoke;
+	transition: all 0.5s linear;
+    border-right: 10px solid rgba(128, 128, 128, 0.375);
+}
+
+.tab-content{
+    border: 2px solid orange;
+    width: 100%;
+}
+
+.tab-content-detail{
+    position: absolute;
+    margin-left: 20vw;
+    margin-top: -38vh;
+    background-color: aqua;
+    width: 75vw;
+    height: 90vh;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-container>.tab-text:nth-child(1):hover~.tab-content>.tab-content-detail:nth-child(1),
+.tab-container>.tab-text:nth-child(2):hover~.tab-content>.tab-content-detail:nth-child(2),
+.tab-container>.tab-text:nth-child(3):hover~.tab-content>.tab-content-detail:nth-child(3),
+.tab-container>.tab-text:nth-child(4):hover~.tab-content>.tab-content-detail:nth-child(4),
+.tab-content-detail:hover{
+    z-index: 4;
+}
+
+.about-meals4u{
+    border: 2px solid red; 
+}
+
+
+
+.about-developers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-developer {
+    height: 400px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.developer-img {
+    width: 280px;
+    height: 280px;
+    margin: auto;
+    border: 1px solid aqua;
+}
+
+.developer-links {
+    height: 99px;
+    width: 280px;
+    border: 1px solid pink;
+    margin: auto;
+} 
+
+
+#about-instruction-steps {
+    padding: 20px;
+    width: 400px;
+    margin-left: 20px;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+#about-instruction-title {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.about-list {
+    list-style: inside;
+    margin: 5px px;
+}
+
+.about-instruction-visualizer {
+    width: 30%;
+    min-width: 400px;
+    min-height: 200px;
+    height:max-content;
+    background-color: white;
+}
+
+.about-incentives-container {
+    margin: 50px 0;
+}
+
+/* .about-container {
     background-image: linear-gradient(white, rgb(234, 223, 223));
 }
 
@@ -103,4 +227,4 @@
     width: 280px;
     border: 1px solid pink;
     margin: auto;
-}
+} */

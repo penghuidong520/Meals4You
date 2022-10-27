@@ -37,16 +37,17 @@ const ProfilePage = () => {
 			</div>
 			<div className="edit-wheel-container">
 				<div className="edit-wheel">
-					<div className="new-wheel-button">
-						<NewWheelModal />
-					</div>
-					<div className="explore-wheels">
-						<button id="explore-wheels-button">No ideas11? Explore more wheels.</button>
-					</div>
-					<div className="save-dish-container">
-						<div className="save-dish-title">
+					<div className='profile-page-button'>
+						<div className="new-wheel-button">
+							<NewWheelModal />
 						</div>
-						<DishIndex />
+						<div className="explore-wheels">
+							<button id="explore-wheels-button">No ideas? Explore more wheels.</button>
+						</div>
+					</div>
+
+					<div className="save-dish-container">
+							<DishIndex />
 					</div>
 				</div>
 			</div>
