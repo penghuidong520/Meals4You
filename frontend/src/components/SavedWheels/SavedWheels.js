@@ -15,6 +15,7 @@ const SavedWheels = () => {
 
     return (
         <>
+        <div className="saved-wheels-header">Delete</div>
             {wheelList}
         </>
     )
