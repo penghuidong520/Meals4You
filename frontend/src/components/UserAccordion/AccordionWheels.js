@@ -2,9 +2,10 @@ import './AccordionWheels.css';
 import { useState, useRef } from 'react';
 import React from 'react';
 
-const SpinWheel = () => {
-
-  const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+const SpinWheel = ({wheel}) => {
+  // console.log(wheel)
+  // const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+  const items = wheel.contents;
 
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
