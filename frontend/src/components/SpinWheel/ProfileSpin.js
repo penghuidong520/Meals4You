@@ -37,15 +37,18 @@ const ProfileSpin = ({wheel}) => {
   return (
     <div className='profile-spin-container'>
       <div className='result-container'>
+      {selectedItem !== null && (
+        <div className='reslt-and-img-container'>
         <div className='selete-result-text'> 
            <img className='result-icon-img' src={left} alt="" /> 
          </div>
-        {selectedItem !== null && (
         <div className='selete-result-text'> {items[selectedItem]} </div>
-        )}
           <div className='selete-result-text'>
             <img className='result-icon-img' src={right} alt="" />
           </div>
+        </div>
+        
+        )}
       </div> 
     <div className='profile-spinwheel-box'>
       <div className="wheel-container">
