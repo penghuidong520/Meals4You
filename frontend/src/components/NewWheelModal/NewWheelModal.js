@@ -24,12 +24,18 @@ const AddNewWheelModal = () => {
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
     const [contents, setContents] = useState([]);
-    const [title, setTitle] = useState([]);
+    const [title, setTitle] = useState('');
     
     const handleSaveWheel = (e) => {
         e.preventDefault();
+        if (!title) alert('Give your precious wheel a name');
+        console.log(title);
+        if (!contents) alert('Add some food in your wheel');
+        if (contents.length < 2) alert('You need at Least 2 items in wheel');
         dispatch(createWheel({title, contents}));
         dispatch(updateContents({title, contents}));
+        setTitle('');
+
     }
 
     return (
@@ -42,18 +48,20 @@ const AddNewWheelModal = () => {
             aria-describedby="modal-modal-description"
         >
             <div className="modal-container">
-                <div className="modal-title">
-                    Add a new wheel
+                <div className='new-wheel-title'>
+                    <div className="modal-title">
+                        Create Your Own Wheel
+                    </div>
+                    <div className="empty">
+                        <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
+                    </div>
+                    <div className="add-button-container">
+                        <button className="save-button" onClick={handleSaveWheel} >Save your new wheel</button>
+                    </div>
                 </div>
-                <div className="empty">
-                    <input type="text" placeholder='WHEEL NAME... >w<' value={title} onChange={e=>setTitle(e.target.value)} />
-                        </div>
                     < NewSpinWheel setContents={setContents} /> 
                         {/* <div className="empty"> <input type="text" /> </div> */}
                         {/* <div className="empty"> <input type="text" /> </div> */}
-                <div className="add-button-container">
-                    <button onClick={handleSaveWheel} >Save your new wheel</button>
-                </div>
             </div>
         </Modal>
         </>

@@ -15,7 +15,7 @@ const SavedWheels = () => {
 
     return (
         <>
-        <div className="saved-wheels-header">Delete</div>
+        <div className="saved-wheels-header"> </div>
             {wheelList}
         </>
     )
