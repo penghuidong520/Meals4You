@@ -12,11 +12,34 @@ const NewSpinWheel = ({setContents}) => {
   const [arr, setArr] = useState([]);
   const [value, setValue] = useState("");
 
+  const handleRemoveItem = (e) => {
+    e.preventDefault();
+    setArr(arr.filter(ele => {
+      return ele !== e.target.name;
+    }));
+  };
+
+  const itemList = arr.map(item => 
+    // console.log(item)
+    (
+      <div className='one-dish' key={item} >
+        <li className="new-dish-name">
+          {item}
+        </li>
+        < button className='delete-added-dish' value={item} name={item} onClick={handleRemoveItem}>
+          <img id='delete-added-dish-img' src={deleteIcon} value={item} name={item} onClick={handleRemoveItem} />
+        </button>
+      </div>
+    )
+  )
+
+  
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
+  // console.log(arr);
   const onClick = (e) => {
     e.preventDefault();
     const tmp = arr;
@@ -80,22 +103,23 @@ const NewSpinWheel = ({setContents}) => {
           <div className='submit-containor'>
             <p className="add-dish-text">Add Your New Dish:</p> 
             <div className='new-dish-index'>
-              <div className='one-dish'>
+              {itemList}
+              {/* <div className='one-dish'>
                 <li className="new-dish-name">
                   div className: new-dish-index<br />show the list of dishes added on the wheel
                 </li>
                 < button className='delete-added-dish'>
                   <img id='delete-added-dish-img' src={deleteIcon} alt="" />
                 </button>
-              </div>
-              <div className='one-dish'>
+              </div> */}
+              {/* <div className='one-dish'>
                 <li className="new-dish-name">
                   div className: new-dish-index<br />show the list of dishes added on the wheel
                 </li>
                 < button className='delete-added-dish'>
                   <img id='delete-added-dish-img' src={deleteIcon} alt="" />
                 </button>
-              </div>
+              </div> */}
             </div>
             <input id='newItem-input'
               placeholder='add a new item ... '
