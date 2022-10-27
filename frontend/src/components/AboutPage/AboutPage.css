@@ -35,11 +35,12 @@
 }
 
 .tab-content-detail{
+    /* border: 2px solid yellow; */
     position: absolute;
     margin-left: 20vw;
     margin-top: -30vh;
     background-color: #E0cdcf;
-    min-width: 78vw;
+    min-width: 60vw;
     height: 60vh;
     display: flex;
     align-items: center;

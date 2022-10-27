@@ -1,22 +1,21 @@
 .create-spin-container{
-    border: 2px solid red;
     width: 100%;
-    height: 80%;
+    height: 90%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     min-height: 600px;
     margin-top: 5%;
   }
   
   .create-spinwheel-box{
-    border: 2px solid black;
     width: 650px;
-    height: 650px;
-    min-height: 650px;
+    height: 700px;
+    min-height: 550px;
     min-width: 650px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
     
   }
@@ -159,13 +158,14 @@
   height: 70px;
   width: 650px;
   display: flex;
-  align-items: center;
-  margin-top: 64%;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 50%;
 }
 
 .create-reset-button{
-  height: 70px;
-  width: 200px;
+  height: 30px;
+  width: 150px;
   z-index: 10;
   overflow: hidden;
   border-radius: 40px;
@@ -174,55 +174,133 @@
 #create-reset-button{
   border: transparent;
   background-color: rgba(176, 168, 168, 0.351);
-  height: 70px;
+  height: 30px;
   width: 150px;
   cursor: pointer;
-  border-radius: 40px;
+  border-radius: 30px;
+  color: #444;
   }
   
   
   #create-text{
-    font-size: 35px;
+    font-size: 22px;
+    animation-name: resetMove;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
   }
+
+  @keyframes resetMove{
+    0% {transform: scale(100%)}
+    50% {transform: scale(130%) }
+    100% {transform: scale(100%) }
+    }
   
   .submit-containor{
-    border: 3px solid red;
-    height: 30px; 
-    width: 600px;
+    position: absolute;
+    height: 70%; 
+    width: 390px;
     display: flex;
-    /* flex-direction: column; */
-    /* margin-left: 70%; */
-    margin-top: 30px;
+    flex-direction: column;
+    margin-left: 60%;
+    margin-top: -60%;
+    align-items: center;
+  }
+
+  .add-dish-text{
+    height: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    padding: 1%;
+  }
+  
+  .new-dish-index{
+    height: 70%;
+    border-top: 1px solid rgba(128, 128, 128, 0.326);
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .one-dish{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.326);
+    padding: 2px;
+    width: 100%;
+    height: auto;
+    display: flex;
     justify-content: space-between;
+  }
+
+  .new-dish-name{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  .delete-added-dish{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  #delete-added-dish-img{
+    height: 30px;
+    width: 30px; 
+    cursor: pointer; 
+    border: 1px solid transparent;
+    background-color: transparent;
   }
   
   #newItem-input{
-    height: 20px;
+    height: 30px;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 20px;
     background-color: #E3F8FA;
   }
   .submit-clear-containor{
+    margin-top: 20px;
+    margin-left: 65%;
     display: flex;
+    justify-content: end;
   }
   .newItem-submit-button{
       color: #444;
       border: 1px solid #CCC ;
+      border-radius: 10px;
       background: #DDD;
       box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
       cursor: pointer;
       width: 100px;
-      height: 20px;
+      height: 30px;
+      display: flex;
       text-align: center;
+      align-items: center;
+      justify-content: center;
   }
   
   .submit-clear-button{
+    position: absolute;
+    margin-top: 35px;
+    height: 30px;
+    width: 150px;
     color: #444;
-      border: 1px solid #CCC ;
-      background: #DDD;
-      box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-      cursor: pointer;
-      width: 100px;
-      height: 20px;
-      text-align: center;
+    border: 1px solid #CCC ;
+    border-radius: 30px;
+    background: #DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
+
   
