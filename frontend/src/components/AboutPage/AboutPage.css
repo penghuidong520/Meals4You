@@ -1,11 +1,11 @@
+
 .about-container{
-    border: 5px solid red;
+    background-color: #E0cdcf;
     height: 90vh;
     display: flex;
 }
 
 .tab-container{
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -17,7 +17,7 @@
 }
 
 .tab-text{
-    border: 2px solid blue;
+    border-right: 1px solid rgba(128, 128, 128, 0.149);
     font-size: 25px;
     padding: 5%;
     display: flex;
@@ -31,18 +31,16 @@
 }
 
 .tab-content{
-    border: 2px solid orange;
     width: 100%;
 }
 
 .tab-content-detail{
     position: absolute;
     margin-left: 20vw;
-    margin-top: -38vh;
-    background-color: aqua;
-    width: 75vw;
-    height: 90vh;
-    min-width: 600px;
+    margin-top: -30vh;
+    background-color: #E0cdcf;
+    min-width: 78vw;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,179 +50,111 @@
 .tab-container>.tab-text:nth-child(2):hover~.tab-content>.tab-content-detail:nth-child(2),
 .tab-container>.tab-text:nth-child(3):hover~.tab-content>.tab-content-detail:nth-child(3),
 .tab-container>.tab-text:nth-child(4):hover~.tab-content>.tab-content-detail:nth-child(4),
+.tab-container>.tab-text:nth-child(5):hover~.tab-content>.tab-content-detail:nth-child(5),
 .tab-content-detail:hover{
-    z-index: 4;
+    z-index: 6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+#about-mealrs4u{
+    color: rgba(128, 128, 128, 0.302); 
+    font-size: 20px;
+    font-family: 'Sriracha', cursive;
+    display: flex;
+    justify-content: end;
 }
 
 .about-meals4u{
-    border: 2px solid red; 
+    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
+    padding: 50px;
+    background-color: #E0cdcf;
+    height: 60vh;
+    width: 60vw;
+    font-size: 50px;
+    font-family: 'Sriracha', cursive;
 }
-
-
 
 .about-developers {
     display: flex;
-    justify-content: space-evenly;
 }
 
 .about-developer {
-    height: 400px;
-    width: 300px;
-    border: 1px solid black;
+    height: 60vh;
+    width: 200px;
     border-radius: 5px;
-
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 .developer-img {
-    width: 280px;
-    height: 280px;
+    width: 100px;
+    height: 100px;
     margin: auto;
-    border: 1px solid aqua;
+    border: 1px solid black;
 }
 
 .developer-links {
     height: 99px;
-    width: 280px;
-    border: 1px solid pink;
+    width: 100px;
+    border: 1px solid black;
     margin: auto;
 } 
 
 
-#about-instruction-steps {
-    padding: 20px;
-    width: 400px;
-    margin-left: 20px;
-    border-radius: 5px;
-    line-height: 20px;
+.instruction-text-containoer{
+    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
+    padding: 50px;
+    background-color: #E0cdcf;
+    height: 60vh;
+    width: 60vw;
 }
 
 #about-instruction-title {
-    font-size: 20px;
-    font-weight: 550;
+    font-family: 'Sriracha', cursive;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .about-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: inside;
-    margin: 5px px;
+    margin: 5px;
+    height: 130px;
+    width: 60vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
 }
 
 .about-instruction-visualizer {
-    width: 30%;
-    min-width: 400px;
-    min-height: 200px;
-    height:max-content;
-    background-color: white;
+    width: 150px;
+    height: 150px;
+    height: max-content;
+}
+
+#about-instruction-visualizer {
+    width: 150px;
+    height: 150px;
+    height: max-content;
 }
 
 .about-incentives-container {
     margin: 50px 0;
 }
 
-/* .about-container {
-    background-image: linear-gradient(white, rgb(234, 223, 223));
-}
-
-.about-instruction {
-    margin: 10px 20px;
+.incentive-container{
+    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
+    padding: 50px;
+    background-color: #E0cdcf;
+    height: 60vh;
+    width: 60vw;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.about-title {
-    font-size: 28px;
-    font-weight: 700;
-    align-self: center;
-}
-
-.about-instruction-details {
-    margin: 0 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#about-description {
-    width: 400px;
-    font-size: 18px;
-    text-align: justify;
-    margin-right: 20px;
-    line-height: 20px;
-}
-
-#about-instruction-steps-container {
-
-}
-
-#about-instruction-steps {
-    padding: 20px;
-    width: 400px;
-    margin-left: 20px;
-    border-radius: 5px;
-    line-height: 20px;
-}
-
-#about-instruction-title {
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
-    font-weight: 550;
 }
-
-.about-list {
-    list-style: inside;
-    margin: 5px px;
-}
-
-.about-instruction-visualizer {
-    width: 30%;
-    min-width: 400px;
-    min-height: 200px;
-    height:max-content;
-    background-color: aqua;
-}
-
-.about-incentives-container {
-    margin: 50px 0;
-}
-
-.about-incentives {
-    margin: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.about-developers-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-developers {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.about-developer {
-    height: 400px;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 5px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.developer-img {
-    width: 280px;
-    height: 280px;
-    margin: auto;
-    border: 1px solid aqua;
-}
-
-.developer-links {
-    height: 99px;
-    width: 280px;
-    border: 1px solid pink;
-    margin: auto;
-} */
