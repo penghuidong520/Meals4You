@@ -1,0 +1,25 @@
+.animate-route-enter,
+.animate-route-exit {
+  transition: transform 1000ms ease-out;
+}
+
+.animate-route-enter {
+  transform: translateY(100%);
+}
+
+.animate-route-enter.animate-route-enter-active {
+  transform: translateY(0%);
+}
+
+.animate-route-exit {
+  position: absolute;
+  margin-top: 10vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0%);
+}
+
+.animate-route-exit-active {
+  transform: translateY(-100%);
+}

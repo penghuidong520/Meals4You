@@ -11,6 +11,7 @@ import SignUpPage from './components/SessionPage/SignUpPage';
 import WheelIndexPage from './components/WheelIndexPage/WheelIndexPage';
 import { fetchUserDishes } from './store/dishes';
 import { getCurrentUser } from './store/session';
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,14 +33,15 @@ function App() {
   return loaded && (
     <>
       { (!signup && !login) && <Header /> }
-      <Switch>
+      <AnimatedRoutes />
+      {/* <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route exact path="/about" component={AboutPage} />
         <Route path="/index" component={WheelIndexPage} />
-      </Switch>
+      </Switch> */}
     </>
   );
 }
