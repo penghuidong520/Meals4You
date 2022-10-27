@@ -1,7 +1,9 @@
 .modal-container {
     background-color: white;
-    width: 900px;
-    height: 900px;
+    width: 60%;
+    height: 90%;
+    min-width: 1050px;
+    min-height: 700px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9,4 +11,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.new-wheel-title{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding-right: 2px;
+}
+
+.modal-title{
+    margin-top: 25px;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.empty{
+    width: 40%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 1%;
+}
+
+#input-text{
+    width: 80%;
+    height: 99%;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.625);
+    border-radius: 5px;
+}
+
+.add-button-container{
+    position: absolute;
+    border: 1px solid transparent;
+    padding-right: 5px;
+    margin-top: 69%;
+    margin-left: 77%;
+}
+
+.save-button{
+    font-size: 19px;
+    width: 100%;
 }

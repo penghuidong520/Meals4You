@@ -2,6 +2,7 @@ import './NewSpinWheel.css';
 import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import { useSelector } from 'react-redux'
+import deleteIcon from "../../images/delete.png";
 
 
 const NewSpinWheel = ({setContents}) => {
@@ -10,6 +11,7 @@ const NewSpinWheel = ({setContents}) => {
   const wheelRef = useRef();
   const [arr, setArr] = useState([]);
   const [value, setValue] = useState("");
+
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -58,7 +60,7 @@ const NewSpinWheel = ({setContents}) => {
   return (
     <div className='create-spin-container'>
     <div className='create-spinwheel-box'>
-      <div className="wheel-container">
+      <div className="wheel-container11">
         <div
           className={`wheel ${spinning}`}
           style={wheelVars}
@@ -76,26 +78,38 @@ const NewSpinWheel = ({setContents}) => {
           ))}
         </div>
           <div className='submit-containor'>
-          <p>New Odds:</p>
-          <input id='newItem-input'
-            placeholder='add a new item ... '
-            type="text"
-            value={value}
-            onChange={handleChange}
-          />
-          <div className='submit-clear-containor'>
-          <div className='newItem-submit-button'
-            onClick={onClick}
-            value="Submit"
-          >
-            Submit
-          </div>
-          <div className='submit-clear-button'
-            onClick={handleClear}
-            value="Clear"
-          >
-            Clear Board
-          </div>
+            <p className="add-dish-text">Add Your New Dish:</p> 
+            <div className='new-dish-index'>
+              <div className='one-dish'>
+                <li className="new-dish-name">
+                  div className: new-dish-index<br />show the list of dishes added on the wheel
+                </li>
+                < button className='delete-added-dish'>
+                  <img id='delete-added-dish-img' src={deleteIcon} alt="" />
+                </button>
+              </div>
+              <div className='one-dish'>
+                <li className="new-dish-name">
+                  div className: new-dish-index<br />show the list of dishes added on the wheel
+                </li>
+                < button className='delete-added-dish'>
+                  <img id='delete-added-dish-img' src={deleteIcon} alt="" />
+                </button>
+              </div>
+            </div>
+            <input id='newItem-input'
+              placeholder='add a new item ... '
+              type="text"
+              value={value}
+              onChange={handleChange}
+            />
+            <div className='submit-clear-containor'>
+              <div className='newItem-submit-button'
+                onClick={onClick}
+                value="Submit"
+              >
+              Submit
+            </div>
           </div>
           </div>
       </div>
@@ -108,7 +122,13 @@ const NewSpinWheel = ({setContents}) => {
           </button>
         </div>
       )}
-      
+      <div className='submit-clear-button'
+            onClick={handleClear}
+            value="Clear"
+          >
+            Clear Board
+            
+      </div>
       </div>
     </div>
   );
