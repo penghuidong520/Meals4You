@@ -1,5 +1,5 @@
 .profile-spin-container{
-  border: 2px solid green;
+  /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,9 +208,35 @@
   animation-play-state: paused;
 }
 
-
 @keyframes textMove{
   0% {transform: scale(3000%)}
   50% {transform: scale(4000%) }
   100% {transform: scale(3000%) }
 }
+
+.result-container{
+  /* border: 1px solid black; */
+  position: absolute;
+  margin-left: -50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.selete-result-text{
+  animation-name: profileMove;
+  animation-timing-function: linear;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  }
+  @keyframes profileMove{
+  0% {transform: scale(0%)}
+  40% {transform: scale(0%)}
+  70% {transform: scale(150%)}
+  80% {transform: scale(120%)}
+  100% {transform: scale(100%) }
+  }

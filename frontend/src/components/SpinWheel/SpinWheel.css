@@ -128,12 +128,12 @@ animation-fill-mode: forwards;
   padding: 20px;
   font-size: 25px;
   border-radius: 13px;
-  /* animation-name: resultTextMove;
+  animation-name: resultTextMove;
   animation-timing-function: linear;
-  animation-duration: 8s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
   animation-direction: alternate;
-  animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
 }
 .create-your-own-wheel-button button:hover{
   background-color: #d4babe;

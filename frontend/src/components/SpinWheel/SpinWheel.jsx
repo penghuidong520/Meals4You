@@ -73,12 +73,13 @@ const SpinWheel = () => {
               </div>
             </div>)}
           </div>
+           {selectedItem !== null && (
               <div className='create-your-own-wheel-button-container'>
                 <Link className='create-your-own-wheel-button'to="/profile">
                   <button>
                   Create your own wheel</button>
                 </Link>
-              </div>
+              </div> )}
           </div>
     <div className='spinwheel-box1'>
       <div className="wheel-container">
