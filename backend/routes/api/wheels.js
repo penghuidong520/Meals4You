@@ -1,22 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const random = require('mongoose-simple-random');
 const User = mongoose.model('User');
-const Wheel = mongoose.model('Wheel');
 const { requireUser, restoreUser } = require('../../config/passport');
 const validateWheelInput = require('../../validations/wheels');
+const Wheel = mongoose.model('Wheel');
 
 // wheels index
 router.get('/', async (req, res) => {
     try {
-        const wheels = await Wheel.find()
-            .populate("owner", "_id, email")
-            .sort({ createdAt: -1 });
-            // .limit(5);
+        const wheels = await Wheel.aggregate([{$sample:{size:10}}]);
         return res.json(wheels);
     }
     catch(err) {
-        return res.json([]);
+        return res.json(err);
     }
 });
 
