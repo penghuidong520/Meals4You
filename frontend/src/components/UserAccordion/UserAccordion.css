@@ -1,3 +1,15 @@
 #panel1a-header {
     height: 70px;
 }
+
+.wheels-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.accordion-content {
+    margin-top: 10px;
+}

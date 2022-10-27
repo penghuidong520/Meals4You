@@ -2,22 +2,27 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AccordionWheels from './AccordionWheels';
 import './UserAccordion.css';
 
-const UserAccordion = () => {
+const UserAccordion = ({ user }) => {
+    console.log(user.wheels)
     return (
         <div className="accordion-content">
-            <Accordion>
+            <Accordion style={{background: "pink"}}>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 >
-                <div>User's Name</div>
+                <div>{user.firstName + " " + user.lastName + "'s wheels"}</div>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <div>
-                        Here are your wheels
+                    <div className="wheels-container">
+                        {user.wheels.length ? user.wheels.map(wheel => 
+                        <AccordionWheels key={wheel} wheel={wheel}/>) :
+                        <div className="no-wheel-text">This user has no saved wheels.</div>
+                        }
                     </div>
                 </AccordionDetails>
             </Accordion>
