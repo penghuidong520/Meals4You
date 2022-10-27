@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const random = require('mongoose-simple-random');
 
 const wheelSchema = Schema({
     owner: {
@@ -25,5 +26,7 @@ const wheelSchema = Schema({
 }, {
     timestamps: true
 });
+
+wheelSchema.plugin(random)
 
 module.exports = mongoose.model('Wheel', wheelSchema);
