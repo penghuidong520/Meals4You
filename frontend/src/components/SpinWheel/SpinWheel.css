@@ -1,31 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 .spin-container{
   /* border: 2px solid red; */
   width: 100vw;
   height: 90vh;
   display: flex;
-  
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   min-height: 600px;
 }
-
 .left-column{
-height: 650px;
-width: 400px;
-display: flex;
-flex-direction: column;
-align-items: center;
-font-size: larger;
+  height: 650px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 15%;
 }
-
 .welcome-mess{
 /* border: 2px solid red; */
-height: 60%;
 width: 100%;
 }
-
-.intro1{
-/* border: 2px solid green; */
+/* .intro1{
 font-size: 55px;
 margin-top: 10%;
 height: 40%;
@@ -35,71 +31,113 @@ animation-duration: 2s;
 animation-iteration-count: infinite;
 animation-direction: alternate;
 animation-fill-mode: forwards;
-}
+} */
 
 @keyframes introMove{
 0% {transform: scale(100%)}
 50% {transform: scale(104%) }
 100% {transform: scale(100%) }
 }
-
-.intro2{
-margin-top: 5%;
-font-size: 60px;
-height: 40%;
+.result-homepage{
+  display: flex;
+  text-align: center;
 }
-
+.intro2{
+  font-family: 'Sriracha', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 6px 0 #1a191980;
+  border: 1px solid #22222226;  
+  margin-top: 5%;
+  font-size: 35px;
+  height: 80%;
+  padding: 10px;
+  border-radius: 13px;
+}
+.intro2 ol{
+  font-size: 23px;
+}
+.intro2 ol li{
+  font-family: 'Sriracha', cursive;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.intro2 p{
+  font-family: 'Sriracha', cursive;
+  font-size: 23px;
+}
 .selected-result{
 width: auto;
 display: flex;
-margin-top: 6%;
+margin-top: 10%;
 }
-
 .result-img{
 width: 80px;
 }
-
 #result-img{
 width: 80px;
 height: 80px;
-animation-name: resultImgMove;
+animation-name: resultTextMove;
 animation-timing-function: linear;
-animation-duration: 2s;
-animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-iteration-count: 1;
 animation-direction: alternate;
 animation-fill-mode: forwards;
 }
-
 @keyframes resultImgMove{
 0% {transform: translateY(0%)}
 50% {transform: translateY(-20%) }
 100% {transform: translateY(20%) }
 }
-
 .result-text{
-max-width: 300px;
+/* max-width: 300px; */
 display: flex;
 align-items: center;
-justify-content: center;
-font-size: 60px;
+font-size: 30px;
 font-weight: bold;
 animation-name: resultTextMove;
 animation-timing-function: linear;
-animation-duration: 7s;
+animation-duration: 5s;
 animation-iteration-count: 1;
 animation-direction: alternate;
 animation-fill-mode: forwards;
 }
-
 @keyframes resultTextMove{
 0% {transform: scale(0%)}
 60% {transform: scale(0%)}
-70% {transform: scale(250%) }
+70% {transform: scale(150%) }
 80% {transform: scale(120%);}
 100% {transform: scale(100%) }
 }
-
-
+.create-your-own-wheel-button-container{
+  margin-top: 85%;
+  position: absolute;
+}
+.create-your-own-wheel-button{
+  all: unset;
+  cursor: pointer;
+  font-family: 'Sriracha', cursive;
+}
+.create-your-own-wheel-button button{
+  all:unset;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 1px 6px 0 #1a191980;
+  border: 1px solid #22222226;  
+  padding: 20px;
+  font-size: 25px;
+  border-radius: 13px;
+  /* animation-name: resultTextMove;
+  animation-timing-function: linear;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards; */
+}
+.create-your-own-wheel-button button:hover{
+  background-color: #d4babe;
+}
 .spinwheel-box1{
   margin-left: -10%;
   min-width: 650px;
@@ -110,7 +148,6 @@ animation-fill-mode: forwards;
   justify-content: center;
   align-items: center;
 }
-
 :root {
   --wheel-font: "Lato", "Quicksand", sans-serif;
   --wheel-size: 600px;
@@ -126,7 +163,6 @@ animation-fill-mode: forwards;
   --spinning-duration: 4s;
   --reset-duration: 0.25s;
 }
-
 .wheel-container {
   position: top;
   display: block;
@@ -141,7 +177,6 @@ animation-fill-mode: forwards;
   border-radius: 50%;
   user-select: none;
 }
-
 .wheel-container::before,
 .wheel-container::after {
   content: "";
@@ -163,7 +198,6 @@ animation-fill-mode: forwards;
   right: -5px;
   border-right-color: var(--neutral-color);
 }
-
 .wheel {
   display: block;
   position: relative;
