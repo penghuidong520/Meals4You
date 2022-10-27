@@ -1,0 +1,38 @@
+.wheel-item-container{
+    padding: 3px;
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.saved-wheel-icon{
+    width: 25px;
+    min-height: 25px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.wheel-item-title-container{
+    width: 70%;
+    padding-bottom: 5px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.249);
+    cursor: pointer;
+}
+
+.deleteButton{
+    border: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#deleteIcon{
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.wheel-item-title-container:hover{
+    animation: .5s 1 forwards scales;
+}

@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { deleteWheel } from "../../store/wheels";
+import "./SavedWheels.css"
+import savedWheelIcon from "../../images/tableware.png"
+import deleteIcon from "../../images/delete.png";
 
 const SavedWheelsItem = ({wheel}) => {
     const dispatch = useDispatch();
@@ -17,10 +20,15 @@ const SavedWheelsItem = ({wheel}) => {
 
     return (
         <div className="wheel-item-container" >
+            <div className="saved-wheel-icon">
+                <img src={savedWheelIcon} alt="" />
+            </div>
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
             </div>
-            <button onClick={handleDelete} >Delete</button>
+            <button className="deleteButton" onClick={handleDelete} >
+                <img id="deleteIcon" src={deleteIcon} alt=""/>
+            </button>
         </div>
     )
 }
