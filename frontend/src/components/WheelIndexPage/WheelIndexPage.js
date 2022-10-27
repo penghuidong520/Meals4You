@@ -4,17 +4,20 @@ import { fetchUsers, getUsers } from '../../store/users';
 import UserAccordion from '../UserAccordion/UserAccordion';
 import './WheelIndexPage.css';
 import ButtonContent from './ButtonContent';
+import { fetchRandomWheels } from '../../store/randWheels';
 
 
 const WheelIndexPage = () => {
     const dispatch = useDispatch();
     const users = useSelector(getUsers)
     const [loadedUsers, setLoadedUsers] = useState(false);
+    let randWheels = useSelector(state => state.randWheels);
 
 
     useEffect(() => {
-        dispatch(fetchUsers()).then(() => setLoadedUsers(true))
+        dispatch(fetchRandomWheels());
     },[dispatch])
+
 
     return loadedUsers && (
         <>
@@ -23,7 +26,9 @@ const WheelIndexPage = () => {
                     Check out our users's wheels.
                 </div>
                 <div className="index-buttons">
-                    <ButtonContent />
+                    {randWheels.map(randWheel => 
+                        (<ButtonContent key={randWheel._id} randWheel={randWheel}/>)
+                    )}
                 </div>
 
                 {/* <div className="index-container">

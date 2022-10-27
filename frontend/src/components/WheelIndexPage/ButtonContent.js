@@ -1,7 +1,7 @@
 import { Popover } from "@mui/material";
 import { useState } from "react";
 
-const ButtonContent = () => {
+const ButtonContent = (randWheel) => {
 
     const [anchorEl, setAnchorEl] = useState(null);
 

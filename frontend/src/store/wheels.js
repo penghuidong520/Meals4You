@@ -1,16 +1,11 @@
 import jwtFetch from "./jwt";
 
-const RECEIVE_WHEELS = "wheels/RECEIVE_WHEELS";
 const RECEIVE_USER_WHEELS = "wheels/RECEIVE_USER_WHEELS"
 const RECEIVE_WHEEL = "wheels/RECEIVE_WHEEL";
 const DELETE_WHEEL = "wheels/DELETE_WHEEL";
 const RECEIVE_WHEEL_ERRORS = "wheels/RECEIVE_WHEEL_ERRORS";
 const CLEAR_WHEEL_ERRORS = "wheels/CLEAR_WHEEL_ERRORS";
 
-const receiveWheels = wheels => ({
-    type: RECEIVE_WHEELS,
-    wheels
-});
 
 const receiveUserWheels = wheels => ({
     type: RECEIVE_USER_WHEELS,
@@ -40,13 +35,15 @@ export const clearWheelEorrors = errors => ({
 export const getWheels = ({wheels}) => ( wheels ? Object.values(wheels) : []);
 export const getWheel = (wheelId) => ({wheels}) => (wheels ? wheels[wheelId] : null);
 
-export const fetchWheels = () => async dispatch => {
-    const res = await jwtFetch('/api/wheels/');
-    if (res.ok) {
-        const data = await res.json();
-        dispatch(receiveWheels(data));
-    }
-}
+
+
+// export const fetchWheels = () => async dispatch => {
+//     const res = await jwtFetch('/api/wheels/');
+//     if (res.ok) {
+//         const data = await res.json();
+//         dispatch(receiveWheels(data));
+//     }
+// }
 
 export const fetchUserWheels = (userId) => async dispatch => {
     const res = await jwtFetch(`/api/wheels/user/${userId}`);

@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const random = require('mongoose-simple-random');
 const User = mongoose.model('User');
 const { requireUser, restoreUser } = require('../../config/passport');
 const validateWheelInput = require('../../validations/wheels');
