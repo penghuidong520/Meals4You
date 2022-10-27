@@ -5,7 +5,6 @@ import './WheelIndexPage.css';
 import { useDispatch } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { createWheel } from "../../store/wheels";
-import { useHistory } from "react-router-dom";
 
 
 

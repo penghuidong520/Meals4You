@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, getUsers } from '../../store/users';
-import UserAccordion from '../UserAccordion/UserAccordion';
 import './WheelIndexPage.css';
 import ButtonContent from './ButtonContent';
 import { fetchRandomWheels, getRandWheels } from '../../store/randWheels';
