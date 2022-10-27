@@ -78,10 +78,11 @@ const SpinWheel = () => {
       </div>
     <div className='reset-containor1'>
       {selectedItem !== null && (
-        <div className='reset-button1'>
-          <button id="reset-button1" onClick={handleReset}>
+        <div className='reset-button1'onClick={handleReset}>
+            <p>Reset</p>
+          {/* <button id="reset-button1" onClick={handleReset}>
             <p id="reset-text1">Reset</p>
-          </button>
+          </button> */}
         </div>
       )}
       </div>
