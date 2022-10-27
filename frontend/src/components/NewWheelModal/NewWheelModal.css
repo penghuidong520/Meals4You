@@ -1,4 +1,5 @@
 .modal-container {
+    /* border: 2px solid red ; */
     background-color: white;
     width: 60%;
     height: 90%;
@@ -34,11 +35,12 @@
 }
 
 .empty{
-    width: 40%;
+    /* border: 1px solid black; */
+    width: 60%;
     height: 35px;
     display: flex;
     align-items: center;
-    margin-left: 15%;
+    margin-left: 7%;
     margin-top: 1%;
 }
 
@@ -50,21 +52,19 @@
     align-items: center;
     border: 1px solid rgba(128, 128, 128, 0.625);
     border-radius: 5px;
+    margin-right: 2px;
 }
 
 .add-button-container{
-    /* position: absolute; */
-    border: 1px solid transparent;
     padding-right: 5px;
     display: flex;
     height: 80%;
-    width: 90%;
+    width: 50%;
     align-items: flex-end;
-    /* margin-top: 66%; */
-    /* margin-left: 70%; */
+    justify-content: flex-end;
 }
 
 .save-button{
     font-size: 19px;
-    width: 30%;
+    width: 90%;
 }
