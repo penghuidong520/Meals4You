@@ -52,7 +52,7 @@
 .index-buttons {
     overflow-y: scroll;
     width: 750px;
-    height: 620px;
+    height: 600px;
 }
 
 .refresh-button {
@@ -67,4 +67,19 @@
     cursor: pointer;
     border: none;
     background-color: transparent;
+}
+
+#save-button {
+    border-radius: 10px;
+    background-color: aqua;
+    border: none;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#save-button:hover {
+    background-color:cadetblue;
+    color: white;
 }

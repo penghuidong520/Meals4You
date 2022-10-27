@@ -36,8 +36,8 @@ const ButtonContent = ({ randWheel }) => {
                         variant="contained" 
                         onClick={handleClick}
                         id="google-button"
-                >
-                    {randWheel.title}
+            >
+                {randWheel.title}
             </Button>
             <Popover
                 id={id}
@@ -46,7 +46,7 @@ const ButtonContent = ({ randWheel }) => {
                 onClose={handleClose}
                 anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'center',
                 }}
             >
             <div className="pop-up">
@@ -56,7 +56,7 @@ const ButtonContent = ({ randWheel }) => {
                     )}
                 </div>
                 <div className="save-content-button">
-                    <button onClick={handleSaveWheel}>Save this wheel</button>
+                    <button onClick={handleSaveWheel} id='save-button'>Save this wheel</button>
                 </div>
             </div>
             </Popover>
