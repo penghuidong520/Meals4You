@@ -38,7 +38,7 @@ function App() {
         <Route exact path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route exact path="/about" component={AboutPage} />
-        <Route path="/index" component={WheelIndexPage} />
+        <Route exact path="/index" component={WheelIndexPage} />
       </Switch>
     </>
   );

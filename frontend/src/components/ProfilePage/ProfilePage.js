@@ -6,6 +6,8 @@ import DishIndex from '../DishIndex';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
 import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
+import { fetchUserWheels } from '../../store/wheels';
+import { Link } from 'react-router-dom';
 
 
 const ProfilePage = () => {
@@ -14,8 +16,10 @@ const ProfilePage = () => {
 	const wheel = useSelector(state => state.wheel);
 
 	useEffect(()=>{
-		dispatch(fetchUserDishes(sessionUser?._id))
+		dispatch(fetchUserDishes(sessionUser?._id));
+		dispatch(fetchUserWheels(sessionUser?._id));
 	}, [dispatch, sessionUser])
+
 
 	return (
 	<>
@@ -42,7 +46,9 @@ const ProfilePage = () => {
 							<NewWheelModal />
 						</div>
 						<div className="explore-wheels">
-							<button id="explore-wheels-button">No ideas? Explore more wheels.</button>
+							<Link id="explore-wheels-button" to='/index' >
+								<button id="explore-wheels-button" >No ideas? Explore more wheels.</button>
+							</Link>
 						</div>
 					</div>
 

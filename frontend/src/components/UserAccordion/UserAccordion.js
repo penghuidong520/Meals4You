@@ -4,11 +4,22 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionWheels from './AccordionWheels';
 import './UserAccordion.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserWheels } from "../../store/wheels";
 
 const UserAccordion = ({ user }) => {
-    console.log(user.wheels)
+    const dispatch = useDispatch();
+    console.log(user)
+    const wheels = useSelector(state => state.wheels);
+    
+    const handleUserWheels = e => {
+        e.preventDefault();
+        dispatch(fetchUserWheels(user._id));
+    }
+
     return (
-        <div className="accordion-content">
+        <div onClick={handleUserWheels} className="accordion-content">
             <Accordion style={{background: "pink"}}>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -19,7 +30,7 @@ const UserAccordion = ({ user }) => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <div className="wheels-container">
-                        {user.wheels.length ? user.wheels.map(wheel => 
+                        {wheels.length ? wheels.map(wheel => 
                         <AccordionWheels key={wheel} wheel={wheel}/>) :
                         <div className="no-wheel-text">This user has no saved wheels.</div>
                         }
