@@ -18,15 +18,16 @@ const DishIndex = () => {
 
     return (
         <div className="dishes-container" >
-            <span>
-                Saved Dishes
-            </span>
-            <hr />
-            <div className="dishes-list" >
-                {dishList}
+            <div className="saved-dish-top">
+                <span>
+                    Saved Dishes
+                </span>
+                <div className="dishes-list" >
+                    {dishList}
+                </div>
+                <hr />
+                <br />
             </div>
-            <hr />
-            <br />
             <div className="dish-edit-container">
                 <label>Name for the Dish
                     <input className="add-dishes" type="text" value={name} onChange={e => setName(e.target.value)} />
