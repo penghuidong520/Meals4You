@@ -6,7 +6,6 @@ import AccordionWheels from './AccordionWheels';
 import './UserAccordion.css';
 
 const UserAccordion = ({ user }) => {
-    console.log(user.wheels)
     return (
         <div className="accordion-content">
             <Accordion style={{background: "pink"}}>
