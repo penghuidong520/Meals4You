@@ -2,6 +2,8 @@ import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 import './NewWheelModal.css';
 import NewSpinWheel from '../SpinWheel/NewSpinWheel'
+import { useDispatch } from 'react-redux';
+import { createWheel } from '../../store/wheels';
 
 const style = {
     position: 'absolute',
@@ -16,9 +18,17 @@ const style = {
 };
 
 const AddNewWheelModal = () => {
+    const dispatch = useDispatch();
     const [openModal, setOpenModal] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
+    const [contents, setContents] = useState([]);
+    const [title, setTitle] = useState([]);
+    
+    const handleSaveWheel = (e) => {
+        e.preventDefault();
+        dispatch(createWheel({title, contents}));
+    }
 
     return (
         <>
@@ -34,13 +44,13 @@ const AddNewWheelModal = () => {
                     Add a new wheel
                 </div>
                 <div className="empty">
-                    <input type="text" placeholder='WHEEL NAME... >w<'/>
+                    <input type="text" placeholder='WHEEL NAME... >w<' value={title} onChange={e=>setTitle(e.target.value)} />
                         </div>
-                    < NewSpinWheel /> 
+                    < NewSpinWheel setContents={setContents} /> 
                         {/* <div className="empty"> <input type="text" /> </div> */}
                         {/* <div className="empty"> <input type="text" /> </div> */}
                 <div className="add-button-container">
-                    <button>Save your new wheel</button>
+                    <button onClick={handleSaveWheel} >Save your new wheel</button>
                 </div>
             </div>
         </Modal>

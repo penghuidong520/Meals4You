@@ -1,10 +1,10 @@
 import './NewSpinWheel.css'; 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import { useSelector } from 'react-redux'
 
 
-const NewSpinWheel = () => {
+const NewSpinWheel = ({setContents}) => {
 
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
@@ -16,14 +16,17 @@ const NewSpinWheel = () => {
   };
 
   const onClick = (e) => {
+    e.preventDefault();
     const tmp = arr;
     tmp.push(value);
     setArr(tmp);
+    setContents(tmp);
     setValue("");
   };
 
   const handleClear = (e) => {
-    setArr([])
+    setArr([]);
+    setContents([]);
   }
 
   
