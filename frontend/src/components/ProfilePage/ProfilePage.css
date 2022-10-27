@@ -11,20 +11,41 @@
 }
 .save-wheels-container {
     width: 25%;
-    height: 100vh;
     display: flex;
+    justify-content: center;
+}
+.save-wheels {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+.save-wheel-title {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: xx-large;
+    margin-top: 20px;
+}
 .center-wheel-container {
     width: 50%;
-    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 60px;
+}
+.center-wheel {
+    width: 90%;
+    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-
+.wheel-list {
+    width: 95%;
+    height: 85%;
+    border: 1px solid black;
+    overflow: auto;
+}
 .edit-wheel-container {
     width: 25%;
     height: 100vh;
@@ -32,37 +53,6 @@
     justify-content: center;
     align-items: center;
 }
-
-.save-wheels {
-    width: 95%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.save-wheel-title {
-    font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: xx-large;
-    margin-top: 20px;
-}
-
-.wheel-list {
-    width: 95%;
-    height: 85%;
-    border: 1px solid black;
-}
-
-.center-wheel {
-    width: 90%;
-    height: 90%;
-    border: 1px solid black;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
 .edit-wheel {
     width: 90%;
     height: 85%;
@@ -70,11 +60,9 @@
     flex-direction: column;
     align-items: center;
 }
-
 .save-dish-container {
     width: 95%;
 }
-
 #new-wheel-button,
 #explore-wheels-button {
     width: 200px;

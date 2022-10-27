@@ -1,25 +1,22 @@
 .profile-spin-container{
     border: 2px solid red;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 600px; */
-    height: 80%;
 }
-
 .profile-spinwheel-box{
     border: 2px solid green;
-    height: 570px;
-    width: 570px;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 :root {
     --wheel-font: "Lato", "Quicksand", sans-serif;
-    --wheel-size: 550px;
+    --wheel-size: 580px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #79adcbd6;
@@ -32,7 +29,6 @@
     --spinning-duration: 4s;
     --reset-duration: 0.25s;
   }
-
   .wheel-container {
     position: top;
     display: block;

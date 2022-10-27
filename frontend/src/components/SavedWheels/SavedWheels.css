@@ -5,7 +5,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.saved-wheels-header{
+    text-align: right;
+}
 .saved-wheel-icon{
     width: 25px;
     min-height: 25px;

@@ -36,6 +36,7 @@ const ProfileSpin = ({wheel}) => {
   
   return (
     <div className='profile-spin-container'>
+        <span>Congracts you chose {items[selectedItem]}</span>
     <div className='profile-spinwheel-box'>
       <div className="wheel-container">
         <div
