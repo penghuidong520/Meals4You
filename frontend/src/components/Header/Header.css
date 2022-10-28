@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
 .header{
-    background-color: #E0cdcf;
+    background-color: #d4babe;
     width: 100%;
     min-width: 850px;
     height: 10vh;
@@ -15,10 +14,10 @@
     width: 40%;
     min-width: 300px;
     height: 9vh;
-    /* display: flex; */
+    display: flex;
+    align-items: center;
     justify-content: left;
 }
-
 #header-logo{
     height: auto;
     width: 30%;
@@ -46,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Sriracha', cursive;
     font-size: x-large;
     text-decoration: none;
     color: black;

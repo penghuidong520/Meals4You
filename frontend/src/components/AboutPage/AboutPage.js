@@ -1,4 +1,8 @@
 import wheelGif from "../../images/intro-gif.gif";
+import girl from "../../images/girl-icon.png";
+import boy from "../../images/boy-icon.png";
+import linkedin from "../../images/linkedin.png";
+import github from "../../images/github.png";
 
 const AboutPage = () => {
     return (
@@ -42,23 +46,35 @@ const AboutPage = () => {
                     <div className="tab-content-detail">
                         <div className="about-developers">
                             <div className="about-developer" >
-                                <img className="developer-img" src="#" />
-                                <div className="developer-links" > </div>
+                                <img className="developer-img" src={girl} alt=""/>
+                                <div className="developer-links" > 
+                                <img className="developer-link-icon" src={linkedin} alt="" />
+                                <img className="developer-link-icon" src={github} alt="" />
+                                </div>
                             </div>
 
                             <div className="about-developer" >
-                                <img className="developer-img" src="#" />
-                                <div className="developer-links" > </div>
+                                <img className="developer-img" src={boy} alt="" />
+                                <div className="developer-links" > 
+                                <img className="developer-link-icon" src={linkedin} alt="" />
+                                <img className="developer-link-icon" src={github} alt="" />
+                                </div>
                             </div>
 
                             <div className="about-developer" >
-                                <img className="developer-img" src="#" />
-                                <div className="developer-links" > </div>
+                                <img className="developer-img" src={girl} alt="" />
+                                <div className="developer-links" >
+                                <img className="developer-link-icon" src={linkedin} alt="" />
+                                <img className="developer-link-icon" src={github} alt="" />
+                                </div>
                             </div>
 
                             <div className="about-developer" >
-                                <img className="developer-img" src="#" />
-                                <div className="developer-links" > </div>
+                                <img className="developer-img" src={boy} alt="" />
+                                <div className="developer-links" > 
+                                <img className="developer-link-icon" src={linkedin} alt="" />
+                                <img className="developer-link-icon" src={github} alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>

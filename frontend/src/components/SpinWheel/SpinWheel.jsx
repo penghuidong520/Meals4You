@@ -5,13 +5,15 @@ import { useSelector } from 'react-redux'
 import welcomeInfo from '../../images/welcome-info.png';
 // import introGif from '../../images/intro-gif.gif';
 import spoonFork from '../../images/spoon-and-fork.png';
+import { Link } from 'react-router-dom';
 
 const SpinWheel = () => {
-    const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+  const sessionUser = useSelector(state => state.session.user);
+  const defaultContents = useSelector(state => state.wheel);
 
+  // const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
+  const items = defaultContents.contents;
 
-  const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
 
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
@@ -34,7 +36,7 @@ const SpinWheel = () => {
 
   
   const wheelVars = {
-    "--nb-item": items.length,
+    "--nb-item": items?.length,
     "--selected-item": selectedItem
   };
 
@@ -44,19 +46,42 @@ const SpinWheel = () => {
     <div className='spin-container'>
         <div className='left-column'>
           <div className='welcome-mess'>
-            <div className='intro1'>Click SpinWheel <br/> </div>
-            <div className='intro2'>Choose <br /> Meals for You</div>
+            <div className='intro2'>
+              Don't know what to eat?
+              <br/>
+              We got you!
+              <ol>
+                <li>
+                1. Spin the wheel.
+                </li>
+                <li>
+                2. We choose the food for you!
+                </li>
+              </ol>
+              <p>know more about us <Link to="/about">here</Link></p>
+              </div>
           </div>
           <div className='selected-result'>
-            <div className='result-img'>
-              <img id='result-img' src={spoonFork} alt="" />
-            </div>
             {selectedItem !== null && (
-            <div className='result-text'>
+            <div className='result-homepage'>
+              <div className='result-img'>
+                <img id='result-img' src={spoonFork} alt="" />
+              </div>
+              <div className='result-text'>
+                Time to eat 
+                <br />
                 {items[selectedItem]}
+              </div>
             </div>)}
           </div>
-        </div>
+           {selectedItem !== null && (
+              <div className='create-your-own-wheel-button-container'>
+                <Link className='create-your-own-wheel-button'to="/profile">
+                  <button>
+                  Create your own wheel</button>
+                </Link>
+              </div> )}
+          </div>
     <div className='spinwheel-box1'>
       <div className="wheel-container">
         <div

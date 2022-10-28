@@ -3,7 +3,7 @@ import './LoginPage.css';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import { useEffect, useRef, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { login, clearSessionErrors } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -61,8 +61,9 @@ const LoginPage = () => {
     const [passwordError, setPasswordError] = useState(false);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const errors = useSelector(state => state.errors.session)
+    const errors = useSelector(state => state.errors.session);
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory();
 
     const isValidEmail = (email) => {
         return /\S+@\S+\.\S+/.test(email);
@@ -102,7 +103,9 @@ const LoginPage = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (isValidEmail(email) && isValidPassword(password)) {
-            dispatch(login({ email: email, password: password }));
+            dispatch(login({ email: email, password: password })).then(() => (
+            history.push("/profile")
+            ))
         } else {
             setEmailError(true)
             setPasswordError(true)
@@ -112,7 +115,9 @@ const LoginPage = () => {
 
     const handleLoginDemo = (e) => {
         e.preventDefault();
-        dispatch(login( { email: "demo@user.io", password: "password" } ))
+        dispatch(login( { email: "demo@user.io", password: "password" } )).then(() =>(
+            history.push("/profile")
+        ))
     }
 
     return (

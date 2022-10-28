@@ -64,6 +64,17 @@ export const createWheel = (wheel) => async dispatch => {
     }
 }
 
+export const updateWheel = (wheel) => async dispatch => {
+    const res = await jwtFetch(`/api/wheels/${wheel._id}`, {
+        method: "PATCH",
+        body: JSON.stringify(wheel)
+    })
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(receiveWheel(data));
+    }
+}
+
 export const deleteWheel = (wheelId) => async dispatch => {
     const res = await jwtFetch(`/api/wheels/${wheelId}`, {
         method: "DELETE"
@@ -79,10 +90,22 @@ const wheelsReducer = (state = {}, action) => {
     const nextState = {...state};
     switch(action.type) {
         case RECEIVE_WHEEL:
-            nextState[action.wheel.id] = action.wheel;
-            return nextState;
+            let notUpdate = Object.values(nextState).every((wheel, index) => {
+                if (wheel._id !== action.wheel._id) {
+                    return true
+                } else {
+                    nextState[index] = action.wheel;
+                    return false
+                }
+            });
+            if (!notUpdate) {
+                return nextState;
+            } else {
+                nextState[action.wheel._id] = action.wheel;
+                return nextState;
+            }
         case RECEIVE_USER_WHEELS:
-            return action.wheels;
+            return {...action.wheels};
         case DELETE_WHEEL:
             delete nextState[action.wheelId];
             const newState = Object.values(nextState);

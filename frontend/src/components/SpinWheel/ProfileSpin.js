@@ -1,7 +1,9 @@
 import './ProfileSpin.css'; 
 import { useState, useRef } from 'react';
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import left from "../../images/left.png";
+import right from "../../images/right.png";
 
 
 const ProfileSpin = ({wheel}) => {
@@ -34,7 +36,20 @@ const ProfileSpin = ({wheel}) => {
   
   return (
     <div className='profile-spin-container'>
-        <h1>Congracts you chose {items[selectedItem]}</h1>
+      <div className='result-container'>
+      {selectedItem !== null && (
+        <div className='reslt-and-img-container'>
+        <div className='selete-result-text'> 
+           <img className='result-icon-img' src={left} alt="" /> 
+         </div>
+        <div className='selete-result-text'> {items[selectedItem]} </div>
+          <div className='selete-result-text'>
+            <img className='result-icon-img' src={right} alt="" />
+          </div>
+        </div>
+        
+        )}
+      </div> 
     <div className='profile-spinwheel-box'>
       <div className="wheel-container">
         <div
@@ -58,9 +73,6 @@ const ProfileSpin = ({wheel}) => {
       {selectedItem !== null && (
         <div className='profile-reset-button' onClick={handleReset} >
             <p>Reset</p>
-          {/* <button id="profile-reset-button" onClick={handleReset}>
-            <p id="reset-text">Reset</p>
-          </button> */}
         </div>
       )}
       </div>

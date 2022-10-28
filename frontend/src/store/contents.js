@@ -8,7 +8,7 @@ export const updateContents = wheel => ({
 const defaultContents = {
     
         title: "Default Wheel",
-        contents: ["Payton", "Ronny", "Yanxi", "Ivy", "Peter", "Kin", "Ayce"]
+        contents: ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"]
     
 }
 
