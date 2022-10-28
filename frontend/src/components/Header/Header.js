@@ -4,7 +4,6 @@ import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout } from '../../store/session';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HeaderProfile from '../HeaderProfile/HeaderProfile';
 
 function Header() {
@@ -35,7 +34,7 @@ function Header() {
                     <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>About</NavLink>   
                 </div>
                 <div className="profile">
-                    <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Profile</NavLink>
+                    <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MyWheel</NavLink>
                 </div>
             </div>
             <div className='header-button-container'>

@@ -73,9 +73,6 @@ const ProfileSpin = ({wheel}) => {
       {selectedItem !== null && (
         <div className='profile-reset-button' onClick={handleReset} >
             <p>Reset</p>
-          {/* <button id="profile-reset-button" onClick={handleReset}>
-            <p id="reset-text">Reset</p>
-          </button> */}
         </div>
       )}
       </div>

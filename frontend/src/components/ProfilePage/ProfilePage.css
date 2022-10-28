@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 .profile-page {
     width: 100%;
@@ -36,7 +36,6 @@
     align-items: center;
 }
 .save-wheel-title {
-    font-family: 'Ubuntu Condensed', sans-serif;
     font-size: xx-large;
     margin-top: 20px;
 }
@@ -78,6 +77,9 @@
 }
 #new-wheel-button,
 #explore-wheels-button {
+    margin-top: 20px;
+    font-family: 'Sriracha', cursive;
+    font-size: 15px;
     width: 200px;
     height: 50px;
     box-shadow: 0 1px 6px 0 #22222226;

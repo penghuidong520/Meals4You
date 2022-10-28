@@ -1,10 +1,13 @@
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 import './NewWheelModal.css';
-import NewSpinWheel from '../SpinWheel/NewSpinWheel'
+// import '../NewWheelModal/NewWheelModal.css';
+import EditSpinWheel from '../SpinWheel/EditSpinWheel'
 import { useDispatch } from 'react-redux';
-import { createWheel } from '../../store/wheels';
+import { updateWheel } from '../../store/wheels';
 import { updateContents } from '../../store/contents';
+import editIcon from "../../images/edit.png";
+
 
 const style = {
     position: 'absolute',
@@ -18,29 +21,29 @@ const style = {
     p: 4,
 };
 
-const AddNewWheelModal = () => {
+const EditWheelModal = ({wheel}) => {
     const dispatch = useDispatch();
     const [openModal, setOpenModal] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
-    const [contents, setContents] = useState([]);
-    const [title, setTitle] = useState('');
-    
+    const [contents, setContents] = useState(wheel.contents);
+    const [title, setTitle] = useState(wheel.title);
+    // console.log(wheel.contents);
     const handleSaveWheel = (e) => {
         e.preventDefault();
         if (!title) alert('Give your precious wheel a name');
         // console.log(title);
         if (!contents) alert('Add some food in your wheel');
         if (contents.length < 2) alert('You need at Least 2 items in wheel');
-        dispatch(createWheel({title, contents}));
+        dispatch(updateWheel({...wheel, title, contents}));
         dispatch(updateContents({title, contents}));
-        setTitle('');
+        // setTitle('');
 
     }
 
     return (
         <>
-        <button id="new-wheel-button" onClick={handleOpen}>Create a new wheel</button>
+        <button className='editButton' onClick={handleOpen}><img id="editIcon" src={editIcon} alt="" /></button>
         <Modal
             open={openModal}
             onClose={handleClose}
@@ -55,11 +58,11 @@ const AddNewWheelModal = () => {
                     <div className="empty">
                         <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
                     <div className="add-button-container">
-                        <button className="save-button" onClick={handleSaveWheel} >Save new wheel</button>
+                        <button className="save-button" onClick={handleSaveWheel} >Save your new wheel</button>
                     </div>
                     </div>
                 </div>
-                    < NewSpinWheel setContents={setContents} /> 
+                    < EditSpinWheel setContents={setContents} contents={contents} /> 
                         {/* <div className="empty"> <input type="text" /> </div> */}
                         {/* <div className="empty"> <input type="text" /> </div> */}
             </div>
@@ -68,4 +71,4 @@ const AddNewWheelModal = () => {
     );
 }
  
-export default AddNewWheelModal;
+export default EditWheelModal;
