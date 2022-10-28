@@ -29,7 +29,7 @@ const AddNewWheelModal = () => {
     const handleSaveWheel = (e) => {
         e.preventDefault();
         if (!title) alert('Give your precious wheel a name');
-        console.log(title);
+        // console.log(title);
         if (!contents) alert('Add some food in your wheel');
         if (contents.length < 2) alert('You need at Least 2 items in wheel');
         dispatch(createWheel({title, contents}));
