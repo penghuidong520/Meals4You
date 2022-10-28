@@ -16,6 +16,7 @@ const HeaderProfile = ({sessionUser}) => {
     const handleClick = (e) => {
         setAnchorEl(e.currentTarget);
     };
+    
     const handleProfile = () => {
         setAnchorEl(null);
         history.push('/profile')

@@ -3,7 +3,7 @@ import logo  from '../../images/logo-meals4u.png';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import { useState, useEffect, useRef } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { signup, clearSessionErrors, login } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -143,6 +143,7 @@ const SignUpPage = () => {
     const confirmPwRef = useRef(null);
     const errors = useSelector(state => state.errors.session)
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory();
 
     
     const isValidName = (name) => {
@@ -216,7 +217,9 @@ const SignUpPage = () => {
       if (isValidName(firstName) && isValidName(lastName) &&
           isValidEmail(email) && isValidPassword(password)
       ) {
-        dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
+        dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } )).then(()=> (
+          history.push("/profile")
+        ))
       } else {
         if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
           setConfirmPwError(true);
@@ -243,7 +246,9 @@ const SignUpPage = () => {
 
     const handleDemo = (e) => {
       e.preventDefault();
-      dispatch(login( { email: "demo@user.io", password: "password" } ))
+      dispatch(login( { email: "demo@user.io", password: "password" } )).then(() => (
+        history.push("/profile")
+      ))
     }
 
     if (sessionUser) return <Redirect to='/'/>
