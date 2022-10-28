@@ -1,5 +1,5 @@
 # Meals 4 You Proposal
-### (Meals4You)[https://meals4yo.herokuapp.com/]
+(Meals4You)[https://meals4yo.herokuapp.com/]
 ## Background and Overview
 Meals 4 You is an app that have a spinning board and chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner etc.
 - Aside from having default values, users can also customize the board's selection to users choices in mind.
