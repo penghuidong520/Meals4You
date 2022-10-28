@@ -33,8 +33,6 @@ const NewSpinWheel = ({setContents}) => {
     )
   )
 
-  
-
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -125,7 +123,6 @@ const NewSpinWheel = ({setContents}) => {
                   value="Clear"
                 >
                   Clear Board
-                  
             </div>
             </div>
           </div>
@@ -133,10 +130,11 @@ const NewSpinWheel = ({setContents}) => {
     </div>
     <div className='create-reset-containor'>
       {selectedItem !== null && (
-        <div className='create-reset-button'>
-          <button id="create-reset-button" onClick={handleReset}>
+        <div className='create-reset-button' onClick={handleReset}>
+          <p>Reset</p>
+          {/* <button id="create-reset-button" onClick={handleReset}>
             <p id="create-text">Reset</p>
-          </button>
+          </button> */}
         </div>
       )}
       </div>

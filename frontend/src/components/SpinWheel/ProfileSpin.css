@@ -16,7 +16,7 @@
 }
 :root {
     --wheel-font: "Lato", "Quicksand", sans-serif;
-    --wheel-size: 580px;
+    --wheel-size: 550px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #79adcbd6;
@@ -109,7 +109,6 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
-
   .wheel-item {
     display: block;
     position: absolute;
