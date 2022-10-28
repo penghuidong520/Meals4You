@@ -130,7 +130,9 @@
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
-    font-size: 45px;
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    word-wrap: break-word;
   }
   
   .wheel-item:before {
