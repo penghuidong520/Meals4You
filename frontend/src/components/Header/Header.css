@@ -1,6 +1,6 @@
 
 .header{
-    background-color: #E0cdcf;
+    background-color: #d4babe;
     width: 100%;
     min-width: 850px;
     height: 10vh;
@@ -14,10 +14,10 @@
     width: 40%;
     min-width: 300px;
     height: 9vh;
-    /* display: flex; */
+    display: flex;
+    align-items: center;
     justify-content: left;
 }
-
 #header-logo{
     height: auto;
     width: 30%;
