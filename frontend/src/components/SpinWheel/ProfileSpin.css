@@ -26,7 +26,7 @@
     --item-nb: 0;
     --selected-item: 0;
     --nb-turn: 5;
-    --spinning-duration: 4s;
+    --spinning-duration: 3s;
     --reset-duration: 0.25s;
   }
   .wheel-container {
@@ -151,7 +151,6 @@
     }
     
 .profile-reset-containor{
-  position: relative;
   /* height: 100px;
   width: 650px; */
   display: flex;
@@ -167,7 +166,6 @@
   font-size: 20px;
   cursor: pointer;
   position: absolute;
-  content: "Click / Reset";
   background-color: var(--neutral-color);
   width: 100px;
   height: 100px;
@@ -176,9 +174,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  /* height: 100px;
-  min-width: 40px;
-  z-index: 10; */
   overflow: hidden;
 }
 

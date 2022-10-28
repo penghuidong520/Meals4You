@@ -131,10 +131,7 @@ const NewSpinWheel = ({setContents}) => {
     <div className='create-reset-containor'>
       {selectedItem !== null && (
         <div className='create-reset-button' onClick={handleReset}>
-          <p>Reset</p>
-          {/* <button id="create-reset-button" onClick={handleReset}>
-            <p id="create-text">Reset</p>
-          </button> */}
+            <p>Reset</p>
         </div>
       )}
       </div>
