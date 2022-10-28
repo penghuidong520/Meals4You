@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 .sign-up-page {
     width: 100%;
@@ -52,7 +52,6 @@
 
 .sign-up-title {
     font-size: 3rem;
-    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 #sign-up-fname,
@@ -64,6 +63,7 @@
 }
 
 #sign-up-button {
+    font-family: 'Sriracha', cursive;
     width: 300px;
     height: 50px;
     font-size: x-large;
@@ -71,7 +71,6 @@
     cursor: pointer;
     transition: 0.5s;
     border: none;
-    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 #sign-up-button:hover {
@@ -80,13 +79,11 @@
 }
 
 .have-account {
-    font-family: 'Ubuntu Condensed', sans-serif;
     font-size: x-large;
 }
 
 #log-in-link {
     text-decoration: none;
-    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 #log-in-link:hover {

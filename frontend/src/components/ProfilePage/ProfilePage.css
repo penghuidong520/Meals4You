@@ -13,7 +13,6 @@
     width: 100%;
     height: 80%;
 }
-
 .profile-page-button{
     width: 35%;
     display: flex;
@@ -53,7 +52,8 @@
 }
 .wheel-list {
     width: 95%;
-    height: 85%;
+    height: 90%;
+    border-radius: 13px;
     border: 1px solid rgba(0, 0, 0, 0.409);
     overflow: auto;
 }
@@ -87,9 +87,14 @@
     border-radius: 16px;
     cursor: pointer;
 }
+#new-wheel-button,
+#explore-wheels-button{
+    background-color: #e0cdcf;
+    line-height: 15px;
+}
 #new-wheel-button:hover,
 #explore-wheels-button:hover{
-    background-color: #e0cdcf;
+    background-color: #d4babe;
 }
 .save-dish-container{
     height: 65%;
