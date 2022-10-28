@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import logo  from '../../images/logo-meals4u.png';
 import './Header.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout } from '../../store/session';
 import HeaderProfile from '../HeaderProfile/HeaderProfile';
@@ -9,14 +9,17 @@ import HeaderProfile from '../HeaderProfile/HeaderProfile';
 function Header() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
+    const history = useHistory();
 
     useEffect(()=>{
 
     }, [sessionUser]);
 
     const handleDemo = (e) => {
-        e.preventDefault();
-        dispatch(login( { email: "demo@user.io", password: "password" } ))
+        // e.preventDefault();
+        dispatch(login( { email: "demo@user.io", password: "password" } )).then(() => (
+            history.push("/profile")
+        ))
     }
 
     return (

@@ -30,7 +30,7 @@ const WheelIndexPage = () => {
         setShowSaved(true)
         setTimeout(() => {
             setShowSaved(false)
-        }, 3000)
+        }, 3500)
     }
 
 
