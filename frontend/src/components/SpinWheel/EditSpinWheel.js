@@ -1,22 +1,27 @@
 import './NewSpinWheel.css'; 
 import { useState, useRef, useEffect } from 'react';
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import deleteIcon from "../../images/delete.png";
+import { updateContents } from '../../store/contents';
 
 
-const NewSpinWheel = ({setContents}) => {
-
+const EditSpinWheel = ({contents, setContents}) => {
+  const dispatch = useDispatch();
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
-  const [arr, setArr] = useState([]);
+  const [arr, setArr] = useState(contents);
   const [value, setValue] = useState("");
   
   const handleRemoveItem = (e) => {
     e.preventDefault();
-    setArr(arr.filter(ele => {
-      return ele !== e.target.name;
-    }));
+    let tmp = arr
+    tmp = arr.filter(ele => {
+        
+        return ele !== e.target.name;
+      })
+    setArr(tmp);
+    setContents(tmp);
   };
 
   const itemList = arr.map(item => 
@@ -144,4 +149,4 @@ const NewSpinWheel = ({setContents}) => {
   );
 }
 
-export default NewSpinWheel;
+export default EditSpinWheel;

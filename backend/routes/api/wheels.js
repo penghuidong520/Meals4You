@@ -79,11 +79,11 @@ router.patch('/:id', validateWheelInput,restoreUser, async (req, res, next) => {
             error.errors = { message: "Wheel cannot be removed by people other than owner" };
             return next(error);
         } else {
-            console.log(wheel)
             wheel = await Wheel.findByIdAndUpdate(
                 { _id: req.params.id },
                 { title: req.body.title, contents: req.body.contents });
         }
+        wheel = await Wheel.findById(req.params.id);
         return res.json(wheel);
 
     }
@@ -100,7 +100,6 @@ router.get('/:id', async (req, res, next) => {
     try {
         const wheel = await Wheel.findById(req.params.id)
             .populate('owner', '_id, email, firstName');
-        console.log(wheel);
         return res.json(wheel);
     }
     catch(err) {

@@ -4,7 +4,7 @@ import { deleteWheel } from "../../store/wheels";
 import "./SavedWheels.css"
 import savedWheelIcon from "../../images/tableware.png"
 import deleteIcon from "../../images/delete.png";
-import editIcon from "../../images/edit.png";
+import EditWheelModal from "../NewWheelModal/EditWheelModal";
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -29,10 +29,12 @@ const SavedWheelsItem = ({wheel}) => {
                 <h1>{wheel.title}</h1>
             </div>
             <button className="editButton" >
-                <img id="editIcon" src={editIcon} alt=""/>
+                
+                <EditWheelModal wheel={wheel} />
             </button>
             <button className="deleteButton" onClick={handleDelete} >
                 <img id="deleteIcon" src={deleteIcon} alt=""/>
+
             </button>
         </div>
     )
