@@ -92,7 +92,6 @@ const wheelsReducer = (state = {}, action) => {
         case RECEIVE_WHEEL:
             let notUpdate = Object.values(nextState).every((wheel, index) => {
                 if (wheel._id !== action.wheel._id) {
-                    debugger
                     return true
                 } else {
                     nextState[index] = action.wheel;
