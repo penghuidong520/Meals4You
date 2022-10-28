@@ -1,6 +1,6 @@
-# Meal 4 You Proposal
+# Meals 4 You Proposal
 ## Background and Overview
-Meal 4 You is an app that have a spinning board and chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner etc.
+Meals 4 You is an app that have a spinning board and chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner etc.
 - Aside from having default values, users can also customize the board's selection to users choices in mind.
 - Users can also save the board they created under user profile that other users can access and make reference of
 - Users can also add and save specific dishes from time to time and add the dish to an existing board.

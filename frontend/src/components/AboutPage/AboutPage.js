@@ -17,8 +17,8 @@ const AboutPage = () => {
                     <div className="empty-block"></div>
                     <div className="tab-content-detail">
                         <div className="about-meals4u" >
-                            <div id="about-mealrs4u">About Meals4U</div>
-                            Meal 4 You <br /><br /> is an app that chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner.
+                            <div id="about-meals4u">About Meals4U</div>
+                            Meals 4 You <br /><br /> is an app that chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner.
                             </div>
                     </div>
                     <div className="tab-content-detail"> 
