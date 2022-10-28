@@ -5,6 +5,7 @@ import NewSpinWheel from '../SpinWheel/NewSpinWheel'
 import { useDispatch } from 'react-redux';
 import { createWheel } from '../../store/wheels';
 import { updateContents } from '../../store/contents';
+import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
     position: 'absolute',
@@ -49,8 +50,13 @@ const AddNewWheelModal = () => {
         >
             <div className="modal-container">
                 <div className='new-wheel-title'>
-                    <div className="modal-title">
-                        Create Your Own Wheel
+                    <div className="add-close-button">
+                        <div className="modal-title">
+                            Create Your Own Wheel
+                        </div>
+                        <div className="close-button" style={{display: "flex", alignSelf: "flex-end"}}>
+                            <button onClick={handleClose} id="new-wheel-close-button"><CloseIcon/></button>
+                        </div>
                     </div>
                     <div className="empty">
                         <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
