@@ -130,7 +130,7 @@ animation-fill-mode: forwards;
   border-radius: 13px;
   animation-name: resultTextMove;
   animation-timing-function: linear;
-  animation-duration: 4s;
+  animation-duration: 6s;
   animation-iteration-count: 1;
   animation-direction: alternate;
   animation-fill-mode: forwards;
