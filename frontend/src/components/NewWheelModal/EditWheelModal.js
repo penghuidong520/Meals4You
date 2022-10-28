@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { updateWheel } from '../../store/wheels';
 import { updateContents } from '../../store/contents';
 import editIcon from "../../images/edit.png";
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const style = {
@@ -52,8 +53,13 @@ const EditWheelModal = ({wheel}) => {
         >
             <div className="modal-container">
                 <div className='new-wheel-title'>
-                    <div className="modal-title">
-                        Create Your Own Wheel
+                    <div className="add-close-button">
+                        <div className="modal-title">
+                            Create Your Own Wheel
+                        </div>
+                        <div className="close-button" style={{display: "flex", alignSelf: "flex-end"}}>
+                            <button onClick={handleClose} id="new-wheel-close-button"><CloseIcon/></button>
+                        </div>
                     </div>
                     <div className="empty">
                         <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
