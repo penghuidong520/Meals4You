@@ -217,9 +217,7 @@ const SignUpPage = () => {
       if (isValidName(firstName) && isValidName(lastName) &&
           isValidEmail(email) && isValidPassword(password)
       ) {
-        dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } )).then(()=> (
-          history.push("/profile")
-        ))
+        dispatch(signup( { firstName: firstName, lastName: lastName, email: email, password: password } ))
       } else {
         if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
           setConfirmPwError(true);

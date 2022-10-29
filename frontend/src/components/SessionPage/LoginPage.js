@@ -103,9 +103,7 @@ const LoginPage = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (isValidEmail(email) && isValidPassword(password)) {
-            dispatch(login({ email: email, password: password })).then(() => (
-            history.push("/profile")
-            ))
+            dispatch(login({ email: email, password: password }))
         } else {
             setEmailError(true)
             setPasswordError(true)
