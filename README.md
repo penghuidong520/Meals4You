@@ -13,22 +13,21 @@ Meals 4 You is an app that have a spinning board and chooses the meal off of def
     - able to customize the defaulted values on the board
     - picks 1 random result for users to consider
 
-* CRUD Favorite Board
-    - users can add to favorite of the current board they are using or have edited
-    - will be able to delete and re-edit the board
+* Wheel Interface
+    - users will be able to create a new wheel of their preference
+    - can edit the wheel and spin the wheel while trying to edit/create
 
-* CRUD Favorite Dish
-    - save specific dish to profile list
-    - used for users to repeated add this specific dish to the board instead of editing the board everytime just to add this single dish
+* CRUD Favorite Wheel
+    - save wheels in current user's favorite list
+    - CRUD functionality on saved wheels
 
-* User Profile
-    - users can view other users' profile, to see their favorited board and dishes
-    - able to use/reference other users' board
+* View Other Users' Wheel
+    - users are able to view other users' wheels
+    - able to add other users wheels to current user's favorite list
 
 ## Bonus Features
-### Comments/Likes
-* add comments to other users' board
-* able to like other users' board
+### AWS
+* add food pictures for a slice of the wheel
 
 ### Recommendations
 * use yelp API to have a recommended selection for users to choose after board picked a random dish
