@@ -4,6 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import left from "../../images/left.png";
 import right from "../../images/right.png";
+import YelpPage from '../YelpModal/YelpModal';
 
 
 const ProfileSpin = ({wheel}) => {
@@ -11,7 +12,8 @@ const ProfileSpin = ({wheel}) => {
   const items = wheel.contents;  
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
-  
+
+
   const selectItem = (e)=> {
     if (selectedItem === null) {
       setSelectedItem(Math.floor(Math.random() * items.length))
@@ -45,13 +47,13 @@ const ProfileSpin = ({wheel}) => {
               <div className='selete-result-text'> 
                 <img className='result-icon-img' src={left} alt="" /> 
               </div>
-              <div className='selete-result-text'> {items[selectedItem]} </div>
+              <div className='selete-result-text' style={{marginTop: "10px"}}> {items[selectedItem]} </div>
               <div className='selete-result-text'>
                 <img className='result-icon-img' src={right} alt="" />
               </div>
             </div>
             <div className="explore-restaurant-container">
-              <button>Explore nearby restaurant</button>
+              <YelpPage />
             </div>
           </div>
         </div>
