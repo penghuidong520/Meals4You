@@ -53,7 +53,7 @@ const ProfileSpin = ({wheel}) => {
               </div>
             </div>
             <div className="explore-restaurant-container">
-              <YelpPage />
+              <YelpPage item={items[selectedItem]}/>
             </div>
           </div>
         </div>
