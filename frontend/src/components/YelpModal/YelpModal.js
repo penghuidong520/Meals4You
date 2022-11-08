@@ -27,7 +27,17 @@ const YelpModal = () => {
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
                     <div className="yelp-modal-content">
-                        
+                        <div className="yelp-modal-title">
+                            "Food" nearby your location
+                        </div>
+                        <div className="yelp-box">
+                            <div className="yelp-list">
+
+                            </div>
+                            <div className="yelp-selected-business">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Modal>
