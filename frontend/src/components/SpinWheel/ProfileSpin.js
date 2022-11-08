@@ -38,15 +38,24 @@ const ProfileSpin = ({wheel}) => {
     <div className='profile-spin-container'>
       <div className='result-container'>
       {selectedItem !== null && (
-        <div className='reslt-and-img-container'>
-        <div className='selete-result-text'> 
-           <img className='result-icon-img' src={left} alt="" /> 
-         </div>
-        <div className='selete-result-text'> {items[selectedItem]} </div>
-          <div className='selete-result-text'>
-            <img className='result-icon-img' src={right} alt="" />
+
+        <div className='result-and-img-container'>
+          <div className="result-container">
+            <div className="pop-result">
+              <div className='selete-result-text'> 
+                <img className='result-icon-img' src={left} alt="" /> 
+              </div>
+              <div className='selete-result-text'> {items[selectedItem]} </div>
+              <div className='selete-result-text'>
+                <img className='result-icon-img' src={right} alt="" />
+              </div>
+            </div>
+            <div className="explore-restaurant-container">
+              <button>Explore nearby restaurant</button>
+            </div>
           </div>
         </div>
+
         
         )}
       </div> 
