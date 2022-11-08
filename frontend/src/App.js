@@ -9,6 +9,7 @@ import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoginPage from './components/SessionPage/LoginPage';
 import SignUpPage from './components/SessionPage/SignUpPage';
 import WheelIndexPage from './components/WheelIndexPage/WheelIndexPage';
+import YelpPage from './components/YelpModal/YelpModal';
 import { fetchUserDishes } from './store/dishes';
 import { getCurrentUser } from './store/session';
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profile" component={ProfilePage} />
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/index" component={WheelIndexPage} />
+        {/* <Route exact path="/:item" component={YelpPage} /> */}
       </Switch>
     </>
   );
