@@ -3,12 +3,13 @@ import Modal from '@mui/material/Modal';
 import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
 
-const YelpModal = () => {
+const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
-
+    const YELP = process.env.YELP_API;
+    
     useEffect(() => {
         
     },[])
@@ -28,14 +29,14 @@ const YelpModal = () => {
                     </div>
                     <div className="yelp-modal-content">
                         <div className="yelp-modal-title">
-                            "Food" nearby your location
+                            Find {item} nearby your location
                         </div>
                         <div className="yelp-box">
                             <div className="yelp-list">
 
                             </div>
                             <div className="yelp-selected-business">
-                                
+
                             </div>
                         </div>
                     </div>
