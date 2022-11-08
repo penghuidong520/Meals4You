@@ -14,19 +14,25 @@ const YelpModal = ({ item }) => {
     const YELP = process.env.YELP_API;
 
     useEffect(() => {
-        const res = fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`, {
-            mode: 'no-cors',
-            headers: {
-                'Access-Control-Allow-Origin': true,
-                'Content-Type': 'application/json',
-                'Authorization' : `Bearer ${YELP}`
-            }   
-        })
-        .then(res => res.json())
-        .then(setLoading(true))
+        const fetchRes = async () => {
+            try{
+                const res = await fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`, {
+                    mode: 'no-cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': true,
+                        'Content-Type': 'application/json',
+                        'Authorization' : `Bearer ${YELP}`
+                    }
+                })
+                const data = await res.json();
+                console.log(data)
+                setRestaurants(data.businesses)
+            } catch(errors) {
+                console.log(errors)
+            }
+        }
+        fetchRes();
     },[])
-
-    console.log(res)
 
     return (
         <div>
