@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { deleteWheel } from "../../store/wheels";
-import "./SavedWheels.css"
-import savedWheelIcon from "../../images/tableware.png"
+import "./FavoratedWheels.css"
+import favorate from "../../images/favorites.png"
 import deleteIcon from "../../images/delete.png";
 import EditWheelModal from "../NewWheelModal/EditWheelModal";
 
 
-const SavedWheelsItem = ({wheel}) => {
+const FavoratedWheelsItem = ({wheel}) => {
     const dispatch = useDispatch();
 
     const handleDelete = (e) => {
@@ -21,17 +21,16 @@ const SavedWheelsItem = ({wheel}) => {
     }
 
     return (
-        <div className="wheel-item-container" >
-            <div className="saved-wheel-icon">
-                <img src={savedWheelIcon} alt="" />
+        <div className="fav-wheel-item-container" >
+            <div className="fav-wheel-icon">
+                <img src={favorate} alt="" />
             </div>
-            <div className="wheel-item-title-container" onClick={handleClickTitle} >
+            <div className="fav-wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
             </div>
-            
-            <button className="editButton" >
-                <EditWheelModal wheel={wheel} />
-            </button>
+            {/* <button className="editButton" > */}
+                {/* <EditWheelModal wheel={wheel} /> */}
+            {/* </button> */}
             <button className="deleteButton" onClick={handleDelete} >
                 <img id="deleteIcon" src={deleteIcon} alt=""/>
 
@@ -40,4 +39,4 @@ const SavedWheelsItem = ({wheel}) => {
     )
 }
 
-export default SavedWheelsItem;
+export default FavoratedWheelsItem;

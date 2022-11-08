@@ -6,6 +6,7 @@ import DishIndex from '../DishIndex';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
 import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
+import FavoratedWheels from '../FavoratedWheels';
 import { fetchUserWheels } from '../../store/wheels';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -48,11 +49,21 @@ const ProfilePage = () => {
 			<div className='saved-wheel-and-wheel'>
 				<div className="save-wheels-container">
 					<div className="save-wheels">
-						<div className="save-wheel-title">
-							Saved Wheels
+						<div className='wheel-table'>
+							<button className="save-wheel-title">
+								Saved Wheels
+							</button>
+							<button className="favorate-wheel-title">
+								Favorated Wheels
+							</button>
 						</div>
-						<div className="wheel-list">
-							<SavedWheels />
+						<div className='wheelTableList'>
+							<div className="saved-wheel-list">
+								<SavedWheels />
+							</div>
+							<div className="favorate-wheel-list">
+								<FavoratedWheels />
+							</div>
 						</div>
 					</div>
 				</div>
