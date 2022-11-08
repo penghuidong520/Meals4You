@@ -11,30 +11,10 @@ const YelpModal = ({ item }) => {
     const [loading, setLoading] = useState(true);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
-    const url2 = `https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`;
-    // const url1 = 'https://cors-anywhere.herokuapp.com/';
-    const url = url2;
     
 
     useEffect(() => {
-        const fetchRes = async () => {
-            try{
-                const res = await fetch(url, {
-                    mode: 'no-cors',
-                    headers: {
-                        // 'Access-Control-Allow-Origin': true,
-                        'Content-Type': 'application/json',
-                        'Authorization' : 'Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx'
-                    }
-                })
-                const data = await res.json();
-                console.log(data)
-                setRestaurants(data.businesses)
-            } catch(errors) {
-                console.log(errors)
-            }
-        }
-        fetchRes();
+
     },[])
 
     return (
