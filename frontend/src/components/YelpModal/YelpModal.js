@@ -14,16 +14,19 @@ const YelpModal = ({ item }) => {
     const YELP = process.env.YELP_API;
 
     useEffect(() => {
-        fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`, {
+        const res = fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`, {
+            mode: 'no-cors',
             headers: {
+                'Access-Control-Allow-Origin': true,
                 'Content-Type': 'application/json',
                 'Authorization' : `Bearer ${YELP}`
-            }
+            }   
         })
         .then(res => res.json())
-        .then(json => console.log(json))
         .then(setLoading(true))
     },[])
+
+    console.log(res)
 
     return (
         <div>
