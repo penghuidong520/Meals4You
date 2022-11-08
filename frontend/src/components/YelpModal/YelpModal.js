@@ -7,15 +7,22 @@ import YelpList from "./YelpList";
 const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
+    const [restaurants, setRestaurants] = useState([])
     const [loading, setLoading] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
     const YELP = process.env.YELP_API;
 
     useEffect(() => {
-        fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`)
-            .then()
-            .then(setLoading(true))
+        fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization' : `Bearer ${YELP}`
+            }
+        })
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .then(setLoading(true))
     },[])
 
     return (
@@ -31,7 +38,7 @@ const YelpModal = ({ item }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    {loading ? <YelpList /> : 
+                    {loading ? <YelpList item={item}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
                         </div>

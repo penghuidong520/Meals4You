@@ -1,19 +1,17 @@
 import "./YelpModal.css";
 
-const YelpList = () => {
+const YelpList = ({ item }) => {
     return (
-        <div>
-            <div className="yelp-modal-content">
-                <div className="yelp-modal-title">
-                    Find {item} nearby your location
+        <div className="yelp-modal-content">
+            <div className="yelp-modal-title">
+                Find {item} nearby your location
+            </div>
+            <div className="yelp-box">
+                <div className="yelp-list">
+
                 </div>
-                <div className="yelp-box">
-                    <div className="yelp-list">
+                <div className="yelp-selected-business">
 
-                    </div>
-                    <div className="yelp-selected-business">
-
-                    </div>
                 </div>
             </div>
         </div>
