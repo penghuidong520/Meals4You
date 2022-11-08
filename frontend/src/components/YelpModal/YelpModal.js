@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 import Modal from '@mui/material/Modal';
 import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
+import YelpList from "./YelpList";
 
 const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
+    const [loading, setLoading] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
     const YELP = process.env.YELP_API;
-    
+
     useEffect(() => {
-        
+        fetch(`https://api.yelp.com/v3/businesses/search?term=${item}&location=nyc`)
+            .then()
+            .then(setLoading(true))
     },[])
 
     return (
@@ -27,19 +31,11 @@ const YelpModal = ({ item }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    <div className="yelp-modal-content">
-                        <div className="yelp-modal-title">
-                            Find {item} nearby your location
+                    {loading ? <YelpList /> : 
+                        <div className="yelp-loading">
+                            Please wait while we load the restaurant nearby...
                         </div>
-                        <div className="yelp-box">
-                            <div className="yelp-list">
-
-                            </div>
-                            <div className="yelp-selected-business">
-
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </Modal>
         </div>

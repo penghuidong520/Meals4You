@@ -66,3 +66,12 @@
     height: 60%;
     border: 1px solid black;
 }
+
+.yelp-loading {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
