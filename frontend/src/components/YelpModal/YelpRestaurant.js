@@ -11,7 +11,7 @@ const YelpRestaurant = ({ restaurant }) => {
             </div>
             <div className="restaurant-info">
                 <div className="restaurant-name">
-                    <a href={restaurant.url} target='_blank'>
+                    <a href={restaurant.url} target='_blank' className='rest-name'>
                         {restaurant.name}
                     </a>
                 </div>
