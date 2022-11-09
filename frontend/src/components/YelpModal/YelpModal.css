@@ -37,7 +37,6 @@
 .yelp-modal-content {
     width: 95%;
     height: 95%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +47,7 @@
 }
 
 .yelp-box {
-    height: 100%;
+    height: 95%;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -56,15 +55,12 @@
 }
 
 .yelp-list {
-    width: 60%;
+    width: 40%;
     height: 95%;
-    border: 1px solid black;
-}
-
-.yelp-selected-business {
-    width: 50%;
-    height: 60%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    overflow-y: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .yelp-loading {
