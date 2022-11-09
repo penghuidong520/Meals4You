@@ -10,15 +10,30 @@ const YelpModal = ({ item }) => {
     const [openModal, setOpenModal] = useState(false);
     const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
-    const handleOpen = () => setOpenModal(true);
+    const [lat, setLat] = useState("");
+    const [log, setLog] = useState("")
+
+    const handleOpen = () => {
+        
+        setOpenModal(true);
+    }
     const handleClose = () => setOpenModal(false);
+
+    
     
 
     useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                setLat(position.coords.latitude)
+                setLog(position.coords.longitude)
+            })
+        }
+
         const fetchRest = async () => {
             const data = await axios
             .get(
-                `${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=nyc`, {
+                `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${log}`, {
                     headers: {
                         Authorization: `Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx`,
                     },
