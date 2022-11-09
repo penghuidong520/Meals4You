@@ -3,20 +3,56 @@ import Modal from '@mui/material/Modal';
 import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
 import YelpList from "./YelpList";
+import axios from 'axios';
 
 const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [restaurants, setRestaurants] = useState([])
-    const [loading, setLoading] = useState(true);
-    const handleOpen = () => setOpenModal(true);
+    const [loaded, setLoaded] = useState(false);
+    const [lat, setLat] = useState("");
+    const [log, setLog] = useState("")
+
+    const handleOpen = () => {
+        
+        setOpenModal(true);
+    }
     const handleClose = () => setOpenModal(false);
+
     
     
 
     useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                setLat(position.coords.latitude)
+                setLog(position.coords.longitude)
+            })
+        }
 
-    },[])
+        const fetchRest = async () => {
+            const data = await axios
+            .get(
+                `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${log}`, {
+                    headers: {
+                        Authorization: `Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx`,
+                    },
+                    params: {
+                        term: `${item}`
+                    },
+                },
+            )
+            .then(json => {
+                setRestaurants(json.data.businesses);
+                setLoaded(true);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+        fetchRest();
+    },[openModal])
+
 
     return (
         <div>
@@ -31,7 +67,7 @@ const YelpModal = ({ item }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    {loading ? <YelpList item={item}/> : 
+                    {loaded ? <YelpList item={item} restaurants={restaurants}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
                         </div>
