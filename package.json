@@ -26,9 +26,14 @@
   },
   "homepage": "https://github.com/penghuidong520/Meals4You#readme",
   "dependencies": {
+<<<<<<< HEAD
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.13",
     "mongoose-simple-random": "^0.4.1"
+=======
+    "mongoose-simple-random": "^0.4.1",
+    "query-string": "^7.1.1"
+>>>>>>> ec9524b (try other fetch)
   }
 }
