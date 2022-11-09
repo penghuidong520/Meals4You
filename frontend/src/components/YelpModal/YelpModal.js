@@ -39,8 +39,8 @@ const YelpModal = ({ item }) => {
                     },
                     params: {
                         term: `${item}`
-                    },
-                },
+                    }
+                }
             )
             .then(json => {
                 setRestaurants(json.data.businesses);
