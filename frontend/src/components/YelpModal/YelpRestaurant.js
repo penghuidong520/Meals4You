@@ -27,13 +27,22 @@ const YelpRestaurant = ({ restaurant }) => {
                         {restaurant.review_count} reviews
                     </div>
                 </div>
+                <div className="price">
+                    Price: {restaurant.price ? restaurant.price : 'N/A'}
+                </div>
                 <div className="phone">
-                    Phone: {restaurant.phone}
+                    Phone: {restaurant.display_phone ? restaurant.display_phone : "N/A"}
                 </div>
                 <div className="transactions">
-                    {restaurant.transactions.map(trans => {
-                        <div key={trans}>{trans}</div>
-                    })}
+                    Available: {restaurant.transactions.length ? 
+                    restaurant.transactions.join(", ")
+                    : "N/A" }
+                </div>
+                <div className="is-close">
+                    {restaurant.is_close ? 
+                    <div className='rest-close'>This restaurant is closed</div> : 
+                    <div className='rest-open'>This restaurant is open</div> 
+                }
                 </div>
             </div>
         </div>

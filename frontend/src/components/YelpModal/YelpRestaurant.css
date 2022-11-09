@@ -26,8 +26,12 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     border: 1px solid black;
+}
+
+.restanrant-name {
+    
 }
 
 .rating-count {
@@ -37,4 +41,12 @@
 
 .transactions {
     display: flex;
+}
+
+.rest-close {
+    color: red;
+}
+
+.rest-open {
+    color: green;
 }
