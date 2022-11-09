@@ -6,6 +6,8 @@ import savedWheelIcon from "../../images/tableware.png"
 import deleteIcon from "../../images/delete.png";
 import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import React, {useState} from "react";
+import unfav from "../../images/fav.png";
+import fav from "../../images/unfav.png";
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -25,21 +27,18 @@ const SavedWheelsItem = ({wheel}) => {
         dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
 
-    // <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-    // const onClick=()=>{
-
-    // }
-    {/* $(function () {            
-            $(".like").click(function () {
-                $(this).toggleClass('cs');                
-            })
-        }) */}
+    const handleFavorate = (e) => {
+        e.preventDefault();
+        // style:{ "background-color":"red" }
+    }
+    
 
     return (
         <div className="wheel-item-container" >
-            <div className="saved-wheel-icon">
-                <img src={savedWheelIcon} alt="" />
-            </div>
+            <button className="saved-wheel-icon" onClick={handleFavorate}>
+                {/* ///////////////////////////////////// */}
+                <img className="favIcon" src={unfav} alt="" />
+            </button>
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
             </div>
@@ -50,8 +49,7 @@ const SavedWheelsItem = ({wheel}) => {
             <button className="deleteButton" onClick={handleDelete} >
                 <img id="deleteIcon" src={deleteIcon} alt=""/>
             </button>
-            
-            {/* <botton class="fav-bot">fav</botton> */}
+           
             
 
 

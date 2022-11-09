@@ -10,10 +10,20 @@
     padding-top: 1%;
 }
 .saved-wheel-icon{
+    background-color: transparent;
+    width: 10px;
+    border: transparent;
+    min-height: 20px;
+    /* padding-left: 5px; */
+    padding-right: 35px;
+    cursor: pointer;
+}
+.favIcon{
+    /* border: 2px solid red; */
+    background-color: rgba(165, 42, 42, 0.293);
+    border-radius: 50%;
     width: 25px;
-    min-height: 25px;
-    padding-left: 5px;
-    padding-right: 10px;
+    height: 25px;
 }
 
 .wheel-item-title-container{
