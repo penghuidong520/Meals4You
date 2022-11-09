@@ -110,52 +110,6 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-// favorite wheel
-router.post('/favorite/:id', restoreUser, async (req, res, next) => {
-    try {
-        console.log(1);
-        const favWheel = await Wheel.findById(req.params.id);
-        console.log(req.params.id);
-        console.log(favWheel);
-        const favorator = await User.findById(req.user._id);
-        console.log(!favorator.favoriteWheels.includes(favWheel));
-        if (!favorator.favoriteWheels.includes(favWheel)) {
-            favorator.favoriteWheels.push(favWheel);
-            favorator.save();
-        } else {
-            const error = new Error("Wheel already exists in User favorites");
-            error.statusCode = 400;
-            error.errors = { message: "User already have this wheel as favorite" };
-            return next(error);
-        }
-        return res.json(favWheel);
-    }
-    catch(err) {
-        const error = new Error('Wheel or User not found');
-        error.statusCode = 404;
-        error.errors = { message: "No wheel or user found with that id" };
-        return next(error);
-    }
-});
-
-// delete favorite
-router.delete('/favorite/:id', restoreUser, async (req, res, next) => {
-    try {
-        const user = await User.findById(req.user._id);
-        let favWheel;
-        user.favoriteWheels.forEach((wheel) => {
-            if (wheel._id === req.params.id) favWheel = wheel
-        })
-        const index = user.favoriteWheels.indexOf(favWheel)
-        user.favoriteWheels.splice(index, 1);
-        user.save();
-        return res.json(favWheel);
-    }
-    catch(err) {
-        return next(err)
-    }
-})
-
 // user wheels index
 router.get('/user/:userId', async (req, res, next) => {
     let user;

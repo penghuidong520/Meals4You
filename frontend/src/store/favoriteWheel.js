@@ -18,3 +18,4 @@ const removeFavorite = wheelId => ({
     type: DELETE_FAVORITE,
     wheelId
 });
+
