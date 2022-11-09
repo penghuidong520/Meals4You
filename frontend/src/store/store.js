@@ -7,6 +7,7 @@ import wheels from './wheels';
 import wheel from './contents';
 import users from './users';
 import randWheels from './randWheels';
+import restaurants from './yelp';
 
 const rootReducer = combineReducers({
     randWheels,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     session,
     dishes,
     wheels,
-    errors
+    errors,
+    restaurants
 });
 
 let enhancer;

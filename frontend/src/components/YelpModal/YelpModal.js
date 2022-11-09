@@ -4,6 +4,8 @@ import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
 import YelpList from "./YelpList";
 import axios from 'axios';
+import { useDispatch } from "react-redux";
+import { fetchRestaurants } from "../../store/yelp";
 
 const YelpModal = ({ item }) => {
 
@@ -12,6 +14,7 @@ const YelpModal = ({ item }) => {
     const [loaded, setLoaded] = useState(false);
     const [lat, setLat] = useState("");
     const [log, setLog] = useState("")
+    const dispatch = useDispatch();
 
     const handleOpen = () => {
         
@@ -23,34 +26,7 @@ const YelpModal = ({ item }) => {
     
 
     useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                setLat(position.coords.latitude)
-                setLog(position.coords.longitude)
-            })
-        }
-
-        const fetchRest = async () => {
-            const data = await axios
-            .get(
-                `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${log}`, {
-                    headers: {
-                        Authorization: `Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx`,
-                    },
-                    params: {
-                        term: `${item}`
-                    }
-                }
-            )
-            .then(json => {
-                setRestaurants(json.data.businesses);
-                setLoaded(true);
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }
-        fetchRest();
+        dispatch(fetchRestaurants(item))
     },[openModal])
 
 
