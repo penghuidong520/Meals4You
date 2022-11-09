@@ -20,10 +20,13 @@
 }
 .favIcon{
     /* border: 2px solid red; */
-    background-color: rgba(165, 42, 42, 0.293);
     border-radius: 50%;
     width: 25px;
     height: 25px;
+}
+
+.favIcon.favorated{
+    background-color: rgba(165, 42, 42, 0.293);
 }
 
 .wheel-item-title-container{
