@@ -14,47 +14,32 @@ const YelpModal = ({ item }) => {
     const handleClose = () => setOpenModal(false);
 
     
-    
-    // axios({
-    //     method: 'POST',
-    //     url: `${backend}api/search/`,
-    //     headers: {'Content-Type': 'application/json',
-    //             "Access-Control-Allow-Origin": "*",
-    //             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-    //     },
-    //     withCredentials: true,
-    //     data: item
-    // })
-    // .then(response => {
-    //     setRestaurants(response.data)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
-
-    let backend
-    if (document.location.hostname === 'localhost') {
-        backend = 'http://localhost:5000/'
-    } else {
-        backend = 'https://meals4yo.herokuapp.com/'
-    }
 
     useEffect(() => {
-        fetch(`${backend}api/search/`, {
-            method: 'post',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
-                
-            },
-            body: JSON.stringify({term: item})
-        })
-        .then(response => response.json())
-        .catch(err => {
-            console.log(err)
-        })
-    },[])
+        const fetchRest = async () => {
+            const data = await axios
+            .get(
+                `${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=nyc`, {
+                    headers: {
+                        Authorization: `Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx`,
+                    },
+                    params: {
+                        term: `${item}`
+                    },
+                },
+            )
+            .then(json => {
+                setRestaurants(json.data.businesses);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+        fetchRest();
+    },[openModal])
 
+    console.log(restaurants)
+    
     return (
         <div>
             <button onClick={handleOpen}>Explore nearby restaurant</button>
