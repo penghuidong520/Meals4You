@@ -60,3 +60,20 @@ export const deleteFavorite = (favoriteId) => async dispatch => {
         dispatch(removeFavorite(favoriteId));
     }
 }
+
+const favoritesReducer = (state = {}, action) => {
+    Object.freeze(state);
+    const nextState = {...state};
+    switch(action.type) {
+        case RECEIVE_USER_FAVORITES:
+            return {...action.favorites};
+        case DELETE_FAVORITE:
+            delete nextState[action.favoriteId];
+            const newState = Object.values(nextState);
+            return newState.filter(favorite => favorite._id !== action.favoriteId);
+        default:
+            return state;
+    }
+}
+
+export default favoritesReducer;

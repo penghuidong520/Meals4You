@@ -7,8 +7,10 @@ import wheels from './wheels';
 import wheel from './contents';
 import users from './users';
 import randWheels from './randWheels';
+import favorites from './favoriteWheel';
 
 const rootReducer = combineReducers({
+    favorites,
     randWheels,
     users,
     wheel,
