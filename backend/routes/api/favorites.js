@@ -56,10 +56,10 @@ router.post('/:id', restoreUser, async (req, res, next) => {
             owner: wheel.owner
         })
         let favWheel = await newFavorite.save();
-        const favorator = await User.findById(req.user._id);
-        if (!favorator.favoriteWheels.includes(favWheel)) {
-            favorator.favoriteWheels.push(favWheel);
-            favorator.save();
+        const favoritor = await User.findById(req.user._id);
+        if (!favoritor.favoriteWheels.includes(favWheel)) {
+            favoritor.favoriteWheels.push(favWheel);
+            favoritor.save();
         } else {
             const error = new Error("Wheel already exists in User favorites");
             error.statusCode = 400;
@@ -79,19 +79,45 @@ router.post('/:id', restoreUser, async (req, res, next) => {
 // delete favorite takes in favoriteId as Param
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
-        const user = await User.findById(req.user._id);
-        let favWheel;
-        user.favoriteWheels.forEach((favorite) => {
-            if (favorite._id === req.params.id) favWheel = favorite
-        })
-        const index = user.favoriteWheels.indexOf(favWheel)
-        user.favoriteWheels.splice(index, 1);
-        user.save();
-        return res.json(favWheel);
+        const favorite = await Favorite.findById(req.params.id);
+        if (!favorite.favoritor._id.equals(req.user._id)) {
+            const error = new Error("Owner doesn't match");
+            error.statusCode = 400;
+            error.errors = { message: "Favorite cannot be removed by people other than favoritor" };
+            return next(error);
+        } else {
+            favorite.delete(req.params.id);
+            User.updateOne({_id: req.user._id}, {$pull: { favorites: req.params.id}}, (err, favorite) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("success")
+                }
+            });
+        }
+
+        return res.json(favorite);
     }
     catch(err) {
-        return next(err)
+        const error = new Error('Favorite not found');
+        error.statusCode = 404;
+        error.errors = { message: "No favorite found with that id" };
+        return next(error);
     }
+    // try {
+    //     const user = await User.findById(req.user._id);
+    //     let favWheel;
+    //     user.favoriteWheels.forEach((favorite) => {
+    //         if (favorite._id === req.params.id) favWheel = favorite
+    //     })
+    //     const index = user.favoriteWheels.indexOf(favWheel)
+    //     user.favoriteWheels.splice(index, 1);
+    //     user.save();
+    //     return res.json(favWheel);
+    // }
+    // catch(err) {
+    //     return next(err)
+    // }
 });
 
 module.exports = router;

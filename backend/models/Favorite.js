@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const favoriteSchema = Schema({
-    favorator: {
+    favoritor: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
