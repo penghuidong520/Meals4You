@@ -1,6 +1,8 @@
 import "./YelpModal.css";
+import YelpRestaurant from "./YelpRestaurant";
 
-const YelpList = ({ item }) => {
+const YelpList = ({ item, restaurants}) => {
+    console.log(restaurants)
     return (
         <div className="yelp-modal-content">
             <div className="yelp-modal-title">
@@ -8,10 +10,7 @@ const YelpList = ({ item }) => {
             </div>
             <div className="yelp-box">
                 <div className="yelp-list">
-
-                </div>
-                <div className="yelp-selected-business">
-
+                    {restaurants.map(restaurant => <YelpRestaurant key={restaurant.id} restaurant={restaurant}/>)}
                 </div>
             </div>
         </div>

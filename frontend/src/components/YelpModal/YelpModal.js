@@ -9,7 +9,7 @@ const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [restaurants, setRestaurants] = useState([])
-    const [loaded, setLoaded] = useState(true);
+    const [loaded, setLoaded] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
     
@@ -52,7 +52,7 @@ const YelpModal = ({ item }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    {setLoaded ? <YelpList item={item}/> : 
+                    {loaded ? <YelpList item={item} restaurants={restaurants}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
                         </div>

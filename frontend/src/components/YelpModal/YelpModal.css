@@ -56,14 +56,8 @@
 }
 
 .yelp-list {
-    width: 40%;
+    width: 70%;
     height: 95%;
-    border: 1px solid black;
-}
-
-.yelp-selected-business {
-    width: 50%;
-    height: 60%;
     border: 1px solid black;
 }
 
