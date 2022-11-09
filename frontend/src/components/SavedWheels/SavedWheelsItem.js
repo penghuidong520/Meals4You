@@ -34,11 +34,11 @@ const SavedWheelsItem = ({wheel}) => {
         e.preventDefault();
         if (test){
             setTest(false);
-            console.log(test)
+            // console.log(test)
         }
         else{
             setTest(true);
-            console.log(test)
+            // console.log(test)
         }
     }
     // style:{ "background-color":"red" }
