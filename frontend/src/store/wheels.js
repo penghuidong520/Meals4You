@@ -1,6 +1,6 @@
 import jwtFetch from "./jwt";
 
-const RECEIVE_USER_WHEELS = "wheels/RECEIVE_USER_WHEELS"
+const RECEIVE_USER_WHEELS = "wheels/RECEIVE_USER_WHEELS";
 const RECEIVE_WHEEL = "wheels/RECEIVE_WHEEL";
 const DELETE_WHEEL = "wheels/DELETE_WHEEL";
 const RECEIVE_WHEEL_ERRORS = "wheels/RECEIVE_WHEEL_ERRORS";
