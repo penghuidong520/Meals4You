@@ -35,13 +35,12 @@
 }
 
 .tab-content-detail{
-    /* border: 2px solid yellow; */
     position: absolute;
     margin-left: 20vw;
     margin-top: -30vh;
     background-color: #E0cdcf;
-    min-width: 60vw;
-    height: 60vh;
+    min-width: 70vw;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +66,7 @@
 }
 
 .about-meals4u{
-    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
+    border: 2px solid rgba(128, 128, 128, 0.302);  
     padding: 50px;
     background-color: #E0cdcf;
     height: 60vh;
@@ -98,11 +97,15 @@
 }
 
 .developer-links {
-    height: 99px;
+    height: 200px;
     width: 100px;
-    /* border: 1px solid black; */
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: transparent;
+    justify-content: space-around;
+    font-size: 15px;
 } 
 
 .developer-link-icon{
@@ -110,12 +113,10 @@
     height: 45px;
     margin: auto;
     background-color: transparent;
-    /* border: 1px solid black; */
 }
 
 
 .instruction-text-containoer{
-    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
     padding: 50px;
     background-color: #E0cdcf;
     height: 60vh;
@@ -157,7 +158,6 @@
 }
 
 .incentive-container{
-    /* border: 2px solid rgba(128, 128, 128, 0.302);   */
     padding: 50px;
     background-color: #E0cdcf;
     height: 60vh;
