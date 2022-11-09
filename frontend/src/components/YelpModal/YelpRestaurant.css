@@ -1,0 +1,40 @@
+.restaurant-container {
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.restanrant-img {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restaurant-img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.restanrant-info {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.rating-count {
+    display: flex;
+    align-items: center;
+}
+
+.transactions {
+    display: flex;
+}
