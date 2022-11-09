@@ -9,7 +9,7 @@ const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [restaurants, setRestaurants] = useState([])
-    const [loading, setLoading] = useState(true);
+    const [loaded, setLoaded] = useState(false);
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
 
@@ -30,6 +30,7 @@ const YelpModal = ({ item }) => {
             )
             .then(json => {
                 setRestaurants(json.data.businesses);
+                setLoaded(true);
             })
             .catch(err => {
                 console.log(err)
@@ -38,7 +39,6 @@ const YelpModal = ({ item }) => {
         fetchRest();
     },[openModal])
 
-    console.log(restaurants)
     
     return (
         <div>
@@ -53,7 +53,7 @@ const YelpModal = ({ item }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    {loading ? <YelpList item={item}/> : 
+                    {loaded ? <YelpList item={item}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
                         </div>

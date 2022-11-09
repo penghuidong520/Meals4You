@@ -8,10 +8,7 @@ const YelpList = ({ item }) => {
             </div>
             <div className="yelp-box">
                 <div className="yelp-list">
-
-                </div>
-                <div className="yelp-selected-business">
-
+                    
                 </div>
             </div>
         </div>
