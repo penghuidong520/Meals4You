@@ -10,7 +10,7 @@
     padding-top: 1%;
 }
 .fav-wheel-icon{
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 20px;
     height: 30px;
     min-height: 25px;
@@ -21,7 +21,7 @@
 }
 
 .fav-wheel-item-title-container{
-    border: 3px solid white ;
+    /* border: 3px solid white ; */
     width: 70%;
     padding-bottom: 5px;
     margin-left: 2%;

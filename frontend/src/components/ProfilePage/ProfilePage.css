@@ -27,8 +27,7 @@
     justify-content: center;
 }
 .save-wheels {
-    border: 2px solid black ;
-    width: 95%;
+    width: 100%;
     height: 80%;
     min-height: 500px;
     min-width: 400px;
@@ -44,6 +43,7 @@
     z-index: 20;
 }
 .save-wheel-title {
+    /* position: absolute; */
     font-size: x-large;
     padding: 6px;
     margin-top: 18px;
@@ -96,7 +96,6 @@
     max-height: 85%;
 }
 .saved-wheel-list {
-    /* position: relative; */
     /* position: absolute; */
     /* margin-top: -30%; */
     /* width: 100%; */
@@ -107,8 +106,11 @@
     background-color: #e0cdcf;
     width: 100%;
     height: 100%;
+    /* display: none; */
     /* z-index: 20; */
 }
+
+
 .favorate-wheel-list{
     position: absolute;
     border-radius: 13px;
@@ -117,7 +119,8 @@
     background-color: #e0cdcf;
     margin-top: -100%;
     width: 100%;
-    z-index: -10;
+    /* display: none; */
+    /* z-index: -10; */
 }
 .edit-wheel-container {
     width: 100%;
