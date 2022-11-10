@@ -18,22 +18,23 @@ const AboutPage = () => {
                     <div className="tab-content-detail">
                         <div className="about-meals4u" >
                             <div id="about-meals4u">About Meals4U</div>
-                            Meals 4 You <br /><br /> is an app that chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner.
+                            Meals 4 You <br /><br /> is an app that randomly chooses a meal from a list of options on a wheel, so users doesn't have to struggle and choose what to eat. 
+                            Once a food is selected, a list of restaurants from Yelp with the food will be presented.
                             </div>
                     </div>
                     <div className="tab-content-detail"> 
                         <div className="instruction-text-containoer">
                             <h2 id="about-instruction-title" >How to Use</h2>
                             <div className="about-list">
-                                ● Landing Page has a default wheel for user to click play with
+                                ● The Landing Page has a default wheel for users to try out.
                                 <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
                             </div>
                             <div className="about-list"> 
-                                ● Profile has user options to choose a saved wheel or add additional item onto the wheel
+                                ● Click MyWheel to choose another wheel or update an existing wheel.
                                 <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
                             </div>
                             <div className="about-list">
-                                ● You could create a customized wheel and save it to your list !
+                                ● You can create a customized wheel in MyWheel and save it to your list!
                                 <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
                             </div>
                         </div>
