@@ -32,7 +32,7 @@ const YelpModal = ({ item, lat, log }) => {
 
     return (
         <div>
-            <button className="yelp-button-box" onClick={handleOpen}>🔍 Restaurant</button>
+            <button className="yelp-button-box" onClick={handleOpen}>Find Nearby Restaurants</button>
             <Modal
             open={openModal}
             onClose={handleClose}
