@@ -12,6 +12,7 @@ const axios = require('axios');
 require('./models/user');
 require('./models/Wheel');
 require('./models/Dish');
+require('./models/Favorite');
 
 require('./config/passport');
 
@@ -23,6 +24,7 @@ const yelpRouter = require('./routes/api/yelp')
 
 const wheelsRouter = require('./routes/api/wheels');
 const dishesRouter = require('./routes/api/dishes');
+const favoritesRouter = require('./routes/api/favorites');
 
 
 const app = express();
@@ -80,6 +82,7 @@ app.use('/api/csrf', csrfRouter);
 app.use('/api/wheels', wheelsRouter);
 app.use('/api/dishes', dishesRouter);
 app.use('/api/yelp', yelpRouter);
+app.use('/api/favorites', favoritesRouter);
 
 // Express custom middleware for catching all unmatched requests and formatting
 // a 404 error to be sent as the response.

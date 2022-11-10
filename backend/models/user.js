@@ -22,6 +22,10 @@ const userSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Wheel'
     }],
+    favoriteWheels: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Favorite'
+    }],
     dishes: [{
         type: Schema.Types.ObjectId,
         ref: 'Dish'

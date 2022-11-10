@@ -26,18 +26,29 @@ const SavedWheelsItem = ({wheel}) => {
         e.preventDefault();
         dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
+        
+    let [test, setTest] = useState(false); 
 
     const handleFavorate = (e) => {
+
         e.preventDefault();
-        // style:{ "background-color":"red" }
+        if (test){
+            setTest(false);
+            // console.log(test)
+        }
+        else{
+            setTest(true);
+            // console.log(test)
+        }
     }
+    // style:{ "background-color":"red" }
     
 
     return (
         <div className="wheel-item-container" >
             <button className="saved-wheel-icon" onClick={handleFavorate}>
-                {/* ///////////////////////////////////// */}
-                <img className="favIcon" src={unfav} alt="" />
+               {test && <img className="favIcon favorated" src={unfav} alt="" />}
+               {!test && <img className="favIcon" src={unfav} alt="" />}
             </button>
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
