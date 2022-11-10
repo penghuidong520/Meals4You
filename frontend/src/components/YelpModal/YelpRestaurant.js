@@ -39,6 +39,14 @@ const YelpRestaurant = ({ restaurant }) => {
                     restaurant.transactions.join(", ")
                     : "N/A" }
                 </div>
+                <div className="address">
+                    <div className="address-left">Address:</div>
+                    <div className="address-right">
+                        {restaurant.location.display_address[0]},
+                        <br />
+                        {restaurant.location.display_address[1]}
+                    </div>
+                </div>
                 <div className="is-close">
                     {restaurant.is_close ? 
                     <div className='rest-close'>This restaurant is closed</div> : 

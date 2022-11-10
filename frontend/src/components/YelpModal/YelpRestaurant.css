@@ -63,3 +63,11 @@
 .phone {
     font-size: large;
 }
+
+.address {
+    display: flex;
+}
+
+.address-right {
+    margin-left: 5px;
+}
