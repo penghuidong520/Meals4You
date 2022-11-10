@@ -8,13 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../store/yelp";
 import { getRestaurants } from "../../store/yelp";
 
-const YelpModal = ({ item }) => {
+const YelpModal = ({ item, lat, log }) => {
 
     const [openModal, setOpenModal] = useState(false);
     // const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
-    const [lat, setLat] = useState("");
-    const [log, setLog] = useState("")
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
 
@@ -26,7 +24,7 @@ const YelpModal = ({ item }) => {
 
 
     useEffect(() => {
-        dispatch(fetchRestaurants(item))
+        dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
         setLoaded(true)
     },[openModal])
 

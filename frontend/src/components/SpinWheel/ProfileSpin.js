@@ -1,5 +1,5 @@
 import './ProfileSpin.css'; 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import left from "../../images/left.png";
@@ -12,7 +12,15 @@ const ProfileSpin = ({wheel}) => {
   const items = wheel.contents;  
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
+  const [lat, setLat] = useState();
+  const [log, setLog] = useState();
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      setLat(pos.coords.latitude)
+      setLog(pos.coords.longitude)
+  })
+  })
 
   const selectItem = (e)=> {
     if (selectedItem === null) {
@@ -53,7 +61,7 @@ const ProfileSpin = ({wheel}) => {
               </div>
             </div>
             <div className="explore-restaurant-container">
-              <YelpModal item={items[selectedItem]}/>
+              <YelpModal item={items[selectedItem]} lat={lat} log={log}/>
             </div>
           </div>
         </div>
