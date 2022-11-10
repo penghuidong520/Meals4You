@@ -6,11 +6,13 @@ const debug = require('debug');
 const cors = require('cors');
 const csurf = require('csurf');
 const { isProduction } = require('./config/keys');
+const axios = require('axios');
 
 // model
 require('./models/user');
 require('./models/Wheel');
 require('./models/Dish');
+require('./models/Favorite');
 
 require('./config/passport');
 
@@ -18,9 +20,11 @@ require('./config/passport');
 const passport = require('passport');
 const usersRouter = require('./routes/api/users');
 const csrfRouter = require('./routes/api/csrf');
+const yelpRouter = require('./routes/api/yelp')
 
 const wheelsRouter = require('./routes/api/wheels');
 const dishesRouter = require('./routes/api/dishes');
+const favoritesRouter = require('./routes/api/favorites');
 
 
 const app = express();
@@ -77,6 +81,8 @@ app.use('/api/users', usersRouter);
 app.use('/api/csrf', csrfRouter);
 app.use('/api/wheels', wheelsRouter);
 app.use('/api/dishes', dishesRouter);
+app.use('/api/yelp', yelpRouter);
+app.use('/api/favorites', favoritesRouter);
 
 // Express custom middleware for catching all unmatched requests and formatting
 // a 404 error to be sent as the response.

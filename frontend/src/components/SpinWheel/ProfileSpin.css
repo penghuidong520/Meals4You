@@ -222,6 +222,7 @@
 }
 
 .selete-result-text{
+  height: 100%;
   animation-name: profileMove;
   animation-timing-function: linear;
   animation-duration: 7s;
@@ -237,8 +238,32 @@
   100% {transform: scale(100%) }
   }
 
-  .reslt-and-img-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.result-and-img-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-restaurant-container {
+  margin-top: 50px;
+  display: flex;
+  align-self: center;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-icon-img{
+  height: 50px;
+  width: 50px;
+}
+
+

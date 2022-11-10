@@ -15,13 +15,6 @@ const wheelSchema = Schema({
         required: true,
         minItems: 2
     }
-    // [
-    //     {
-    //     type: String,
-    //     required: true,
-    //     min: [2, 'At Least 2']
-    //     }
-    // ]
 }, {
     timestamps: true
 });
