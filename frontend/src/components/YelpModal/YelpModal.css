@@ -81,3 +81,37 @@
     justify-content: center;
     margin-top: 200px;
 }
+
+.yelp-button-box{
+    /* position: absolute; */
+    border: transparent;
+    padding: 25px;
+    border-radius: 15px;
+    height: 40px;
+    width: 170px;
+    background-color: transparent;
+    background-image: linear-gradient(to top, rgba(170, 170, 170, 0.643) , rgba(0, 0, 0, 0));
+    animation-name: yelpButton;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sriracha', cursive;
+    cursor: pointer;
+}
+
+  @keyframes yelpButton{
+    0% {transform: scale(0%)}
+    70% {transform: scale(0%) }
+    90% {transform: scale(120%)}
+    100% {transform: scale(100%) }
+  }
+
+  .yelp-button-box:hover{
+    background-color: rgba(128, 128, 128, 0.179);
+  }
