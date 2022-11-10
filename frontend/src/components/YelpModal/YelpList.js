@@ -10,12 +10,17 @@ const YelpList = ({ item, restaurants}) => {
             </div>
             <div className="yelp-box">
                 <div className="yelp-list">
-                    {restaurants.map(restaurant => (
+                    {restaurants.length ? restaurants.map(restaurant => (
                         <YelpRestaurant 
                             restaurant={restaurant} 
                             key={restaurant.id}
                         />
-                    ))}
+                    ))
+                    :
+                    <div className="no-restaurants">
+                        Sorry, there is nothing match your result nearby...
+                    </div>
+                    }
                 </div>
             </div>
         </div>
