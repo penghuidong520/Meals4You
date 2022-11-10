@@ -8,6 +8,8 @@ import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import React, {useState} from "react";
 import unfav from "../../images/fav.png";
 import fav from "../../images/unfav.png";
+import { createFavorite } from "../../store/favoriteWheel";
+import { RECEIVE_USER_LOGOUT } from "../../store/session";
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -32,6 +34,7 @@ const SavedWheelsItem = ({wheel}) => {
     const handleFavorate = (e) => {
 
         e.preventDefault();
+        dispatch(createFavorite(wheel));
         if (test){
             setTest(false);
             // console.log(test)

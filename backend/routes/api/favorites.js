@@ -11,8 +11,7 @@ const validateWheelInput = require('../../validations/wheels');
 // favorite index
 router.get('/', restoreUser, async (req, res) => {
     try {
-        const favorites = await Favorite.find()
-            .select({"favoritor": req.user._id})
+        const favorites = await Favorite.find({"favoritor": req.user_id});
         return res.json(favorites);
     }
     catch(err) {
@@ -53,20 +52,27 @@ router.post('/:id', restoreUser, async (req, res, next) => {
         const newFavorite = new Favorite({
             title: wheel.title,
             contents: wheel.contents,
-            owner: wheel.owner
+            owner: wheel.owner,
+            wheelId: wheel._id,
+            favoritor: req.user._id
         })
-        let favWheel = await newFavorite.save();
         const favoritor = await User.findById(req.user._id);
-        if (!favoritor.favoriteWheels.includes(favWheel)) {
+
+        // check if user already have this wheel as favorite
+        const exists = await Favorite.find({"favoritor": req.user._id, "wheelId": wheel._id});
+
+        // save favorite wheel and push to user's favorite list
+        if (exists.length === 0) {
+            const favWheel = await newFavorite.save();
             favoritor.favoriteWheels.push(favWheel);
-            favoritor.save();
+            await favoritor.save();
         } else {
             const error = new Error("Wheel already exists in User favorites");
             error.statusCode = 400;
             error.errors = { message: "User already have this wheel as favorite" };
             return next(error);
         }
-        return res.json(favWheel);
+        return res.json(newFavorite);
     }
     catch(err) {
         const error = new Error('Wheel or User not found');
@@ -79,15 +85,19 @@ router.post('/:id', restoreUser, async (req, res, next) => {
 // delete favorite takes in favoriteId as Param
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
+        console.log(0)
         const favorite = await Favorite.findById(req.params.id);
-        if (!favorite.favoritor._id.equals(req.user._id)) {
+        console.log(1)
+        if (!favorite.favoritor.equals(req.user._id)) {
+            console.log(2)
             const error = new Error("Owner doesn't match");
             error.statusCode = 400;
             error.errors = { message: "Favorite cannot be removed by people other than favoritor" };
             return next(error);
         } else {
+            console.log(3)
             favorite.delete(req.params.id);
-            User.updateOne({_id: req.user._id}, {$pull: { favorites: req.params.id}}, (err, favorite) => {
+            User.updateOne({_id: req.user._id}, {$pull: { favoriteWheels: req.params.id}}, (err, favorite) => {
                 if (err) {
                     console.log(err);
                 } else {
