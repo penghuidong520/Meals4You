@@ -36,6 +36,7 @@ const AddNewWheelModal = () => {
         dispatch(createWheel({title, contents}));
         dispatch(updateContents({title, contents}));
         setTitle('');
+        handleClose()
 
     }
 
