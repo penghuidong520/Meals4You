@@ -6,6 +6,7 @@ const debug = require('debug');
 const cors = require('cors');
 const csurf = require('csurf');
 const { isProduction } = require('./config/keys');
+const axios = require('axios');
 
 // model
 require('./models/user');
@@ -19,6 +20,7 @@ require('./config/passport');
 const passport = require('passport');
 const usersRouter = require('./routes/api/users');
 const csrfRouter = require('./routes/api/csrf');
+const yelpRouter = require('./routes/api/yelp')
 
 const wheelsRouter = require('./routes/api/wheels');
 const dishesRouter = require('./routes/api/dishes');
@@ -79,6 +81,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/csrf', csrfRouter);
 app.use('/api/wheels', wheelsRouter);
 app.use('/api/dishes', dishesRouter);
+app.use('/api/yelp', yelpRouter);
 app.use('/api/favorites', favoritesRouter);
 
 // Express custom middleware for catching all unmatched requests and formatting

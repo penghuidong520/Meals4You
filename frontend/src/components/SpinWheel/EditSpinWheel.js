@@ -46,7 +46,7 @@ const EditSpinWheel = ({contents, setContents}) => {
 
   // console.log(arr);
   const onClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const tmp = arr;
     tmp.push(value);
     setArr(tmp);
@@ -68,6 +68,15 @@ const EditSpinWheel = ({contents, setContents}) => {
     
     if (wheelRef.current) {
       wheelRef.current.removeEventListener('click', selectItem);
+    }
+  }
+
+  const handleKey = e => {
+    let code = e.keyCode || e.which
+    console.log(code)
+    console.log(e.target.value)
+    if (code === 13) {
+      onClick(e.target.value)
     }
   }
 
@@ -115,6 +124,7 @@ const EditSpinWheel = ({contents, setContents}) => {
               type="text"
               value={value}
               onChange={handleChange}
+              onKeyPress={handleKey}
             />
             <div className='submit-clear-box'>
             <div className='submit-clear-containor'>

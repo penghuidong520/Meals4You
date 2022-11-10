@@ -26,9 +26,7 @@
   },
   "homepage": "https://github.com/penghuidong520/Meals4You#readme",
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.13",
-    "mongoose-simple-random": "^0.4.1"
+    "mongoose-simple-random": "^0.4.1",
+    "yelpv3": "^1.2.1"
   }
 }

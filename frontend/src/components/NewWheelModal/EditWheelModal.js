@@ -39,6 +39,7 @@ const EditWheelModal = ({wheel}) => {
         dispatch(updateWheel({...wheel, title, contents}));
         dispatch(updateContents({title, contents}));
         // setTitle('');
+        handleClose();
 
     }
 
