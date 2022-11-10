@@ -65,8 +65,12 @@ const favoritesReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = {...state};
     switch(action.type) {
+        case RECEIVE_USER_FAVORITE:
+            nextState[action.favorite._id] = action.wheel;
+            return nextState;
         case RECEIVE_USER_FAVORITES:
-            return {...action.favorites};
+            action.favorites.forEach(favorite => nextState[favorite._id] = favorite)
+            return nextState;
         case DELETE_FAVORITE:
             delete nextState[action.favoriteId];
             const newState = Object.values(nextState);
