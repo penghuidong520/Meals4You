@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../store/yelp";
 import { getRestaurants } from "../../store/yelp";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const YelpModal = ({ item, lat, log }) => {
 
@@ -25,7 +26,7 @@ const YelpModal = ({ item, lat, log }) => {
 
     useEffect(() => {
         dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
-        setLoaded(true)
+        setLoaded(true);
     },[openModal])
 
 
@@ -45,6 +46,7 @@ const YelpModal = ({ item, lat, log }) => {
                     {loaded ? <YelpList item={item} restaurants={restaurants}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
+                            <CircularProgress style={{marginTop: "60px"}}/>
                         </div>
                     }
                 </div>
