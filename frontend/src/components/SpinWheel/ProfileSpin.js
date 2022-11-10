@@ -55,7 +55,7 @@ const ProfileSpin = ({wheel}) => {
               <div className='selete-result-text'> 
                 <img className='result-icon-img' src={left} alt="" /> 
               </div>
-              <div className='selete-result-text' style={{marginTop: "30px"}}> {items[selectedItem]} </div>
+              <div className='selete-result-text'> {items[selectedItem]} </div>
               <div className='selete-result-text'>
                 <img className='result-icon-img' src={right} alt="" />
               </div>

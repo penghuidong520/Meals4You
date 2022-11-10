@@ -222,6 +222,7 @@
 }
 
 .selete-result-text{
+  height: 100%;
   animation-name: profileMove;
   animation-timing-function: linear;
   animation-duration: 7s;
@@ -257,6 +258,12 @@
 
 .pop-result {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-icon-img{
+  height: 50px;
+  width: 50px;
 }
 
 
