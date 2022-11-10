@@ -10,10 +10,12 @@ const YelpList = ({ item, restaurants}) => {
             </div>
             <div className="yelp-box">
                 <div className="yelp-list">
-
-                </div>
-                <div className="yelp-selected-business">
-
+                    {restaurants.map(restaurant => (
+                        <YelpRestaurant 
+                            restaurant={restaurant} 
+                            key={restaurant.id}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

@@ -6,14 +6,15 @@ const receiveRestaurants = restaurants => ({
     restaurants
 })
 
+export const getRestaurants = ({ restaurants }) => (restaurants ? Object.values(restaurants) : []);
+
 export const fetchRestaurants = (item) => async dispatch => {
     const res = await jwtFetch(`/api/yelp/${item}`, {
         method: 'POST'
     });
     if (res.ok) {
-        debugger
         const data = await res.json();
-        dispatch(receiveRestaurants)
+        dispatch(receiveRestaurants(data))
     }
 }
 

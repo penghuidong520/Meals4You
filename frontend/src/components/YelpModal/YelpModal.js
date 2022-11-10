@@ -4,17 +4,19 @@ import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
 import YelpList from "./YelpList";
 import axios from 'axios';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../store/yelp";
+import { getRestaurants } from "../../store/yelp";
 
 const YelpModal = ({ item }) => {
 
     const [openModal, setOpenModal] = useState(false);
-    const [restaurants, setRestaurants] = useState([])
+    // const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
     const [lat, setLat] = useState("");
     const [log, setLog] = useState("")
     const dispatch = useDispatch();
+    const restaurants = useSelector(getRestaurants)
 
     const handleOpen = () => {
         
@@ -22,11 +24,10 @@ const YelpModal = ({ item }) => {
     }
     const handleClose = () => setOpenModal(false);
 
-    
-    
 
     useEffect(() => {
         dispatch(fetchRestaurants(item))
+        setLoaded(true)
     },[openModal])
 
 
