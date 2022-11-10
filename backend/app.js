@@ -45,31 +45,6 @@ app.use(
 	})
 );
 
-// app.post('/api/search', function(req, res) {
-// 	debugger
-// 	let request = axios.create({
-// 		headers: {
-// 			Authorization: `Bearer lwP3BHKGDyMyjAEaSTV7CVWpnJyQYLH0CAVGzRxdxrwgPbV0GK52UBmBIRbRTcletnrfIVukKlseH5ze2Xojp8wr8alq9GVOFXITEyLBh2h9RS3445nZmUW6t7JpY3Yx`,
-// 			"Access-Control-Allow-Origin": "*",
-//             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-// 		}
-// 	})
-// 	request 
-// 			.get('https://api.yelp.com/v3/businesses/search', {
-// 				params: {
-// 					term: req.body.term,
-// 					location: "nyc"
-// 				}
-// 			})
-// 			.then(response => {
-// 				console.log(response.data)
-// 				res.json(response.data.businesses)
-// 			})
-// 			.catch (err => {
-// 				console.log(err)
-// 			})
-// })
-
 // Security Middleware
 if (!isProduction) {
 	// Enable CORS only in development because React will be on the React

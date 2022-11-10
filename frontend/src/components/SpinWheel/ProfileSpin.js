@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import left from "../../images/left.png";
 import right from "../../images/right.png";
-import YelpPage from '../YelpModal/YelpModal';
+import YelpModal from '../YelpModal/YelpModal';
 
 
 const ProfileSpin = ({wheel}) => {
@@ -53,7 +53,7 @@ const ProfileSpin = ({wheel}) => {
               </div>
             </div>
             <div className="explore-restaurant-container">
-              <YelpPage item={items[selectedItem]}/>
+              <YelpModal item={items[selectedItem]}/>
             </div>
           </div>
         </div>
