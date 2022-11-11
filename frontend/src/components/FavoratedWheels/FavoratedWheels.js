@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserWheels, getWheels } from "../../store/wheels";
-import { getFavorites } from "../../store/favoriteWheel";
+import { fetchUserFavorites, getFavorites } from "../../store/favoriteWheel";
 import FavoratedWheelsItem from "./FavoratedWheelsItem";
 
 const FavoratedWheels = () => {
@@ -15,6 +15,9 @@ const FavoratedWheels = () => {
         }
     );
 
+    useEffect(() => {
+        dispatch(fetchUserFavorites());
+    }, [dispatch, sessionUser])
 
     return (
         <>

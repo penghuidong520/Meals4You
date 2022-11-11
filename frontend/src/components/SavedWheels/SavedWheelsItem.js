@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { deleteWheel } from "../../store/wheels";
 import "./SavedWheels.css"
@@ -10,6 +10,8 @@ import unfav from "../../images/fav.png";
 import fav from "../../images/unfav.png";
 import { createFavorite } from "../../store/favoriteWheel";
 import { RECEIVE_USER_LOGOUT } from "../../store/session";
+import { getFavorites } from "../../store/favoriteWheel";
+import { useEffect } from "react";
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -18,6 +20,16 @@ const SavedWheelsItem = ({wheel}) => {
     // const iconFavorate = (e, props) => {
     //     setIconStatus(!icoStatus)
     // }
+    let [test, setTest] = useState(false); 
+
+    const favorites = useSelector(getFavorites);
+    // favorites.forEach(favorite => {
+    //     if (favorite.wheelId === wheel._id) {
+    //         test= true;
+    //     } else {
+    //         test = false;
+    //     }
+    // })
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -29,7 +41,15 @@ const SavedWheelsItem = ({wheel}) => {
         dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
         
-    let [test, setTest] = useState(false); 
+    useEffect(()=>{
+        favorites.forEach(favorite => {
+            if (favorite.wheelId === wheel._id) {
+                setTest(true);
+            } else {
+                setTest(false);
+            }
+        })
+    }, [])
 
     const handleFavorate = (e) => {
 
@@ -37,14 +57,11 @@ const SavedWheelsItem = ({wheel}) => {
         dispatch(createFavorite(wheel));
         if (test){
             setTest(false);
-            // console.log(test)
         }
         else{
             setTest(true);
-            // console.log(test)
         }
     }
-    // style:{ "background-color":"red" }
     
 
     return (

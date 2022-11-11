@@ -14,9 +14,9 @@ const receiveUserFavorite = favorite => ({
     favorite
 });
 
-const removeFavorite = wheelId => ({
+const removeFavorite = favoriteId => ({
     type: DELETE_FAVORITE,
-    wheelId
+    favoriteId
 });
 
 export const getFavorites = ({favorites}) => {
@@ -28,6 +28,7 @@ export const fetchUserFavorites = () => async dispatch => {
     const res = await jwtFetch('/api/favorites/');
     if (res.ok) {
         const data = await res.json();
+        // debugger
         dispatch(receiveUserFavorites(data));
     }
 }
@@ -76,8 +77,9 @@ const favoritesReducer = (state = {}, action) => {
             return nextState;
         case DELETE_FAVORITE:
             delete nextState[action.favoriteId];
-            const newState = Object.values(nextState);
-            return newState.filter(favorite => favorite._id !== action.favoriteId);
+            return nextState;
+            // const newState = Object.values(nextState);
+            // return newState.filter(favorite => favorite._id !== action.favoriteId);
         default:
             return state;
     }

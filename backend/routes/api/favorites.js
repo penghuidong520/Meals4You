@@ -11,7 +11,7 @@ const validateWheelInput = require('../../validations/wheels');
 // favorite index
 router.get('/', restoreUser, async (req, res) => {
     try {
-        const favorites = await Favorite.find({"favoritor": req.user_id});
+        const favorites = await Favorite.find({"favoritor": req.user._id});
         return res.json(favorites);
     }
     catch(err) {
