@@ -15,9 +15,9 @@ const FavoratedWheels = () => {
         }
     );
 
-    useEffect(() => {
-        dispatch(fetchUserFavorites());
-    }, [dispatch, sessionUser])
+    // useEffect(() => {
+    //     dispatch(fetchUserFavorites());
+    // }, [dispatch, sessionUser])
 
     return (
         <>

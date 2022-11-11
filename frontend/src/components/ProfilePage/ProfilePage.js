@@ -26,7 +26,7 @@ const ProfilePage = () => {
 	const [selectedItem, setSelectedItem] = useState(null);
 	
 	if (!sessionUser) {history.push("/login")}
-
+	
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id));
 		dispatch(fetchUserWheels(sessionUser?._id));
