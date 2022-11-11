@@ -26,15 +26,16 @@ const AboutPage = () => {
                     <div className="tab-content-detail">
                         <div className="about-meals4u" >
                             <div id="about-meals4u">About Meals4U</div>
-                            Meals 4 You <br /><br /> is an app that randomly chooses a meal from a list of options on a wheel.
-                            Once a food is selected, a list of restaurants from Yelp with the food will be presented.
+                            Meals 4 You <br /><br />  is an app that simulates a spinning wheel to help its users decide what to eat. 
+                            Once an option has been chosen, 
+                            the site will use Yelp to find nearby restaurants 
                             </div>
                     </div>
                     <div className="tab-content-detail"> 
                         <div className="instruction-text-containoer">
                             <h2 id="about-instruction-title" >How to Use</h2>
                             <div className="about-list">
-                                ● The Landing Page has a default wheel for user to try out.
+                                ● The Landing Page has a default wheel for users to try out.
                                 <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
                             </div>
                             <div className="about-list"> 
