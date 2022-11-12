@@ -33,7 +33,6 @@ const renderApplication = () => {
 
 if (localStorage.jwtToken) {
   store.dispatch(getCurrentUser()).then(renderApplication());
-  // debugger
 } else {
   renderApplication();
 }

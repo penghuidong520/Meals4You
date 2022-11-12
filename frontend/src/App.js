@@ -22,7 +22,6 @@ function App() {
   // const dishes = useSelector(state => state.dishes);
 
   useEffect(()=>{
-    // debugger
     if (currentUser) dispatch(fetchUserDishes(currentUser?._id));
   }, [dispatch, currentUser])
 

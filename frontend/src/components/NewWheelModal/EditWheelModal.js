@@ -29,11 +29,9 @@ const EditWheelModal = ({wheel}) => {
     const handleClose = () => setOpenModal(false);
     const [contents, setContents] = useState(wheel.contents);
     const [title, setTitle] = useState(wheel.title);
-    // console.log(wheel.contents);
     const handleSaveWheel = (e) => {
         e.preventDefault();
         if (!title) alert('Give your precious wheel a name');
-        // console.log(title);
         if (!contents) alert('Add some food in your wheel');
         if (contents.length < 2) alert('You need at Least 2 items in wheel');
         dispatch(updateWheel({...wheel, title, contents}));

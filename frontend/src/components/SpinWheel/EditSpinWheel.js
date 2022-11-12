@@ -25,7 +25,6 @@ const EditSpinWheel = ({contents, setContents}) => {
   };
 
   const itemList = arr.map(item => 
-    // console.log(item)
     (
       <div className='one-dish' key={item} >
         <li className="new-dish-name">
@@ -44,7 +43,6 @@ const EditSpinWheel = ({contents, setContents}) => {
     setValue(e.target.value);
   };
 
-  // console.log(arr);
   const onClick = (e) => {
     // e.preventDefault();
     const tmp = arr;
@@ -73,8 +71,8 @@ const EditSpinWheel = ({contents, setContents}) => {
 
   const handleKey = e => {
     let code = e.keyCode || e.which
-    console.log(code)
-    console.log(e.target.value)
+    // console.log(code)
+    // console.log(e.target.value)
     if (code === 13) {
       onClick(e.target.value)
     }

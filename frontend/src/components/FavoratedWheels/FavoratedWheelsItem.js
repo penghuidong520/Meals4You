@@ -5,6 +5,7 @@ import "./FavoratedWheels.css"
 import favorate from "../../images/favorites.png"
 import deleteIcon from "../../images/delete.png";
 import EditWheelModal from "../NewWheelModal/EditWheelModal";
+import { deleteFavorite } from "../../store/favoriteWheel";
 
 
 const FavoratedWheelsItem = ({wheel}) => {
@@ -12,7 +13,7 @@ const FavoratedWheelsItem = ({wheel}) => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        dispatch(deleteWheel(wheel._id))
+        dispatch(deleteFavorite(wheel._id))
     }
 
     const handleClickTitle = (e) => {

@@ -20,7 +20,6 @@ const NewSpinWheel = ({setContents}) => {
   };
 
   const itemList = arr.map(item => 
-    // console.log(item)
     (
       <div className='one-dish' key={item} >
         <li className="new-dish-name">
@@ -37,7 +36,6 @@ const NewSpinWheel = ({setContents}) => {
     setValue(e.target.value);
   };
 
-  // console.log(arr);
   const onClick = (e) => {
     // e.preventDefault();
     const tmp = arr;

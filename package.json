@@ -28,5 +28,8 @@
   "dependencies": {
     "mongoose-simple-random": "^0.4.1",
     "yelpv3": "^1.2.1"
+  },
+  "devDependencies": {
+    "graceful-fs": "^4.2.10"
   }
 }

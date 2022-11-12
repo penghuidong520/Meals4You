@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { deleteWheel } from "../../store/wheels";
 import "./SavedWheels.css"
@@ -8,6 +8,10 @@ import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import React, {useState} from "react";
 import unfav from "../../images/fav.png";
 import fav from "../../images/unfav.png";
+import { createFavorite, deleteFavorite } from "../../store/favoriteWheel";
+import { RECEIVE_USER_LOGOUT } from "../../store/session";
+import { getFavorites } from "../../store/favoriteWheel";
+import { useEffect } from "react";
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -16,6 +20,15 @@ const SavedWheelsItem = ({wheel}) => {
     // const iconFavorate = (e, props) => {
     //     setIconStatus(!icoStatus)
     // }
+    // const [faved, setFaved] = useState(false);
+    let fav = false;
+    const favorites = useSelector(getFavorites);
+    favorites.forEach(favorite => {
+        if (favorite.wheelId === wheel._id) {
+            // setFaved(true);
+            fav = true;
+        }
+    })
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -27,28 +40,32 @@ const SavedWheelsItem = ({wheel}) => {
         dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
         
-    let [test, setTest] = useState(false); 
+    
 
     const handleFavorate = (e) => {
 
         e.preventDefault();
-        if (test){
-            setTest(false);
-            // console.log(test)
+        const favId = favorites.filter(favorite => 
+            (
+                favorite.wheelId === wheel._id
+            )
+        )
+        if (fav){
+            dispatch(deleteFavorite(favId[0]._id));
+        } else {
+            dispatch(createFavorite(wheel));
         }
-        else{
-            setTest(true);
-            // console.log(test)
-        }
+        // else{
+        //     setFaved(true);
+        // }
     }
-    // style:{ "background-color":"red" }
     
 
     return (
         <div className="wheel-item-container" >
             <button className="saved-wheel-icon" onClick={handleFavorate}>
-               {test && <img className="favIcon favorated" src={unfav} alt="" />}
-               {!test && <img className="favIcon" src={unfav} alt="" />}
+               {fav && <img className="favIcon favorated" src={unfav} alt="" />}
+               {!fav && <img className="favIcon" src={unfav} alt="" />}
             </button>
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>

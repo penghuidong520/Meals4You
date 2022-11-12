@@ -8,6 +8,7 @@ import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
 import FavoratedWheels from '../FavoratedWheels';
 import { fetchUserWheels } from '../../store/wheels';
+import { fetchUserFavorites } from '../../store/favoriteWheel';
 import { Link, useHistory } from 'react-router-dom';
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -25,10 +26,11 @@ const ProfilePage = () => {
 	const [selectedItem, setSelectedItem] = useState(null);
 	
 	if (!sessionUser) {history.push("/login")}
-
+	
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id));
 		dispatch(fetchUserWheels(sessionUser?._id));
+		dispatch(fetchUserFavorites());
 	}, [dispatch, sessionUser])
 
 	const TabPanel=(props)=>{

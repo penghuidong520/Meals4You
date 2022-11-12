@@ -10,6 +10,10 @@ const favoriteSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    wheelId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Wheel'
+    },
     title: {
         type: String,
         required: true
