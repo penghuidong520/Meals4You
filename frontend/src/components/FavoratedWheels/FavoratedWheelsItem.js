@@ -23,7 +23,7 @@ const FavoratedWheelsItem = ({wheel}) => {
     return (
         <div className="fav-wheel-item-container" >
             <div className="fav-wheel-icon">
-                <img src={favorate} alt="" />
+                <img src={favorate} alt="" /> 
             </div>
             <div className="fav-wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
