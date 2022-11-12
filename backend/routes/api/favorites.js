@@ -85,17 +85,13 @@ router.post('/:id', restoreUser, async (req, res, next) => {
 // delete favorite takes in favoriteId as Param
 router.delete('/:id', restoreUser, async (req, res, next) => {
     try {
-        console.log(0)
         const favorite = await Favorite.findById(req.params.id);
-        console.log(1)
         if (!favorite.favoritor.equals(req.user._id)) {
-            console.log(2)
             const error = new Error("Owner doesn't match");
             error.statusCode = 400;
             error.errors = { message: "Favorite cannot be removed by people other than favoritor" };
             return next(error);
         } else {
-            console.log(3)
             favorite.delete(req.params.id);
             User.updateOne({_id: req.user._id}, {$pull: { favoriteWheels: req.params.id}}, (err, favorite) => {
                 if (err) {

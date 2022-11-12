@@ -28,7 +28,6 @@ export const fetchUserFavorites = () => async dispatch => {
     const res = await jwtFetch('/api/favorites/');
     if (res.ok) {
         const data = await res.json();
-        // debugger
         dispatch(receiveUserFavorites(data));
     }
 }
@@ -69,7 +68,6 @@ const favoritesReducer = (state = {}, action) => {
     const nextState = {...state};
     switch(action.type) {
         case RECEIVE_USER_FAVORITE:
-            // debugger
             nextState[action.favorite._id] = action.favorite;
             return nextState;
         case RECEIVE_USER_FAVORITES:
