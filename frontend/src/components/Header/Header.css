@@ -50,6 +50,12 @@
     text-decoration: none;
     color: black;
     cursor: pointer;
+    transition: 0.4s;
+}
+
+.header-button:hover {
+    background-color: rgba(40, 40, 40, 0.5);
+    color: white;
 }
 
 .center-nav {

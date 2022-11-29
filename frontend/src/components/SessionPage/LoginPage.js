@@ -163,7 +163,7 @@ const LoginPage = () => {
                             <button id="log-in-button" type="submit" onClick={handleLogin}>Log In</button>
                         </div>
                         <div className="log-in-button">
-                            <button id="log-in-button" type="submit" onClick={handleLoginDemo}>Demo User</button>
+                            <button id="log-in-button" type="submit" onClick={handleLoginDemo}>Demo Login</button>
                         </div>
                         <div className="create-acc">
                             Don't have an account? <Link id="sign-in-link" to="/signup">Sign Up</Link>!

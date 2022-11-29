@@ -48,7 +48,7 @@ function Header() {
                 {!sessionUser && <Link className='header-button' to='/signup'>
                     Sign Up
                 </Link>}
-                {!sessionUser && <button className='header-button' onClick={handleDemo} > Demo User
+                {!sessionUser && <button className='header-button' style={{border: "0px"}}onClick={handleDemo} > Demo Login
                 </button>}
             </div>
         </div>
