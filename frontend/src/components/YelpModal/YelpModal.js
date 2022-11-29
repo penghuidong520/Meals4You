@@ -18,6 +18,9 @@ const YelpModal = ({ item, lat, log }) => {
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
+    //         .sort((a, b) => (
+    //     a.distance - b.distance
+    // ))
     const [zipcode, setZipcode] = useState("")
 
     const handleCurrentOpen = () => {  
@@ -41,9 +44,13 @@ const YelpModal = ({ item, lat, log }) => {
     }
 
     const handleOpen = () => {
-        dispatch(fetchRestaurants({item: item, zipcode: zipcode}))
-        setLoaded(true)
-        setOpenModal2(true);
+        if (zipcode.length !== 5) {
+            alert("Please type in a valid zip code")
+        } else {
+            dispatch(fetchRestaurants({item: item, zipcode: zipcode}))
+            setLoaded(true)
+            setOpenModal2(true);
+        }
     }
 
 
@@ -56,9 +63,9 @@ const YelpModal = ({ item, lat, log }) => {
                 onChange={handleZipcode}
              />
              <div className="current-box">
-                <button id="current-location-button" onClick={handleCurrentOpen}>Use my current location</button>
+                <button id="current-location-button" onClick={handleCurrentOpen}>Search nearby my location</button>
              </div>
-            <button className="yelp-button-box" onClick={handleOpen}>Update Location</button>
+            <button className="yelp-button-box" onClick={handleOpen}>Search by Location</button>
             <Modal
             open={openModal}
             onClose={handleClose}

@@ -11,7 +11,7 @@ router.post('/:item', async (req, res) => {
             term: req.body.item,
             latitude: req.body?.lat,
             longitude: req.body?.log,
-            radius: "2400", // ~ 1.5 mile
+            radius: "1600", // ~ 1 mile
             location: req.body?.zipcode
         }
     })
