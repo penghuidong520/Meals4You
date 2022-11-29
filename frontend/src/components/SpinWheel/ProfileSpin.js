@@ -20,7 +20,7 @@ const ProfileSpin = ({wheel}) => {
       setLat(pos.coords.latitude)
       setLog(pos.coords.longitude)
   })
-  })
+  }, [])
 
   const selectItem = (e)=> {
     if (selectedItem === null) {

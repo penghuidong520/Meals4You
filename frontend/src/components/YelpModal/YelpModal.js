@@ -18,20 +18,25 @@ const YelpModal = ({ item, lat, log }) => {
     const restaurants = useSelector(getRestaurants)
     const [zipcode, setZipcode] = useState("")
 
-    const handleOpen = () => {
-        
+    const handleCurrentOpen = () => {    
         setOpenModal(true);
     }
     const handleClose = () => setOpenModal(false);
 
 
     useEffect(() => {
-        dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
-        setLoaded(true);
+        if (lat) {
+            dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
+            setLoaded(true);
+        }
     },[openModal])
 
     const handleZipcode = e => {
         setZipcode(e.target.value)
+    }
+
+    const handleOpen = () => {
+        
     }
 
 
@@ -44,7 +49,7 @@ const YelpModal = ({ item, lat, log }) => {
                 onChange={handleZipcode}
              />
              <div className="current-box">
-                <button id="current-location-button">Use my current location</button>
+                <button id="current-location-button" onClick={handleCurrentOpen}>Use my current location</button>
              </div>
             <button className="yelp-button-box" onClick={handleOpen}>Find Nearby Restaurants</button>
             <Modal
