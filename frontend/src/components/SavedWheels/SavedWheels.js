@@ -7,12 +7,13 @@ import SavedWheelsItem from "./SavedWheelsItem";
 const SavedWheels = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const wheels = useSelector(getWheels);
+    const wheels = useSelector(getWheels).sort((a, b) => (new Date(b.updatedAt) - new Date(a.updatedAt)));
     const wheelList = wheels.map((wheel, index) => <SavedWheelsItem key={index} wheel={wheel} />);
 
     // useEffect(() => {
     //     dispatch(fetchUserWheels(sessionUser?._id));
     // }, [dispatch, sessionUser])
+    console.log(wheels)
 
     return (
         <>
