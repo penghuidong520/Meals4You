@@ -94,30 +94,11 @@ const [value, setValue] = React.useState(0);
 			</div>
 			<div className='saved-wheel-and-wheel'>
 				<div className="save-wheels-container">
-					{/* <div className="save-wheels">
-						<div className='wheel-table'>
-							<a className="save-wheel-title">
-								Saved Wheels
-							</a>
-							<a className="favorate-wheel-title">
-								Favorated Wheels
-							</a>
-						</div>
-						<div className='wheelTableList'>
-							<div className="saved-wheel-list">
-								<SavedWheels />
-							</div>
-							<div className="favorate-wheel-list">
-								<FavoratedWheels />
-							</div>
-						</div>
-					</div> */}
-				
 				<Box className="save-wheels" sx={{ width: '100%' }}>
 					<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 						<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
 							<Tab label="Saved Wheels" {...a11yProps(0)} />
-							<Tab label="Favorated Wheels" {...a11yProps(1)} />
+							<Tab label="Favorited Wheels" {...a11yProps(1)} />
 						</Tabs>
 					</Box>
 					<TabPanel value={value} index={0}>
