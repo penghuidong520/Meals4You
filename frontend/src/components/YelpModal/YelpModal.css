@@ -120,3 +120,50 @@
     background-color: rgba(40, 40, 40, 0.5);
     color: white;
   }
+
+  #zipcode-input {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    height: 2px;
+    width: 220px;
+    background-color: transparent;
+    animation-name: yelpButton;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sriracha', cursive;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .current-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #current-location-button {
+    animation-name: yelpButton;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  #current-location-button:hover {
+    color: blue;
+  }

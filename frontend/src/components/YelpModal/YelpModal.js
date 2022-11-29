@@ -16,6 +16,7 @@ const YelpModal = ({ item, lat, log }) => {
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
+    const [zipcode, setZipcode] = useState("")
 
     const handleOpen = () => {
         
@@ -29,9 +30,22 @@ const YelpModal = ({ item, lat, log }) => {
         setLoaded(true);
     },[openModal])
 
+    const handleZipcode = e => {
+        setZipcode(e.target.value)
+    }
+
 
     return (
-        <div>
+        <div className="yelp-modal-container">
+            <input type="text" 
+                id="zipcode-input"
+                value={zipcode} 
+                placeholder=" Search by ZIP, City or State"
+                onChange={handleZipcode}
+             />
+             <div className="current-box">
+                <button id="current-location-button">Use my current location</button>
+             </div>
             <button className="yelp-button-box" onClick={handleOpen}>Find Nearby Restaurants</button>
             <Modal
             open={openModal}
