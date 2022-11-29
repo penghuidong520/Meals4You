@@ -8,6 +8,8 @@ import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import React, {useState} from "react";
 import unfav from "../../images/fav.png";
 import fav from "../../images/unfav.png";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { createFavorite, deleteFavorite } from "../../store/favoriteWheel";
 import { RECEIVE_USER_LOGOUT } from "../../store/session";
 import { getFavorites } from "../../store/favoriteWheel";
@@ -64,8 +66,8 @@ const SavedWheelsItem = ({wheel}) => {
     return (
         <div className="wheel-item-container" >
             <button className="saved-wheel-icon" onClick={handleFavorate}>
-               {fav && <img className="favIcon favorated" src={unfav} alt="" />}
-               {!fav && <img className="favIcon" src={unfav} alt="" />}
+               {fav && <FavoriteIcon style={{color: "red"}}/>}
+               {!fav && <FavoriteBorderIcon />}
             </button>
             <div className="wheel-item-title-container" onClick={handleClickTitle} >
                 <h1>{wheel.title}</h1>
