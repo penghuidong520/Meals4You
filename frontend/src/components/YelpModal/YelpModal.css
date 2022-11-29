@@ -44,6 +44,7 @@
 
 .yelp-modal-title {
     font-size: xx-large;
+    padding-bottom: 20px;
 }
 
 .yelp-box {
@@ -90,7 +91,8 @@
     height: 40px;
     width: 250px;
     background-color: transparent;
-    background-image: linear-gradient(to top, rgba(170, 170, 170, 0.643) , rgba(0, 0, 0, 0));
+    /* background-image: linear-gradient(to top, rgba(170, 170, 170, 0.643) , rgba(0, 0, 0, 0)); */
+    background-color: rgba(170, 170, 170, 0.643);
     animation-name: yelpButton;
     animation-timing-function: linear;
     animation-duration: 7s;
@@ -103,6 +105,7 @@
     align-items: center;
     font-family: 'Sriracha', cursive;
     cursor: pointer;
+    transition: 0.4s;
 }
 
   @keyframes yelpButton{
@@ -113,5 +116,7 @@
   }
 
   .yelp-button-box:hover{
-    background-color: rgba(128, 128, 128, 0.179);
+    /* background-color: rgba(128, 128, 128, 0.179); */
+    background-color: rgba(40, 40, 40, 0.5);
+    color: white;
   }

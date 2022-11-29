@@ -57,6 +57,9 @@ const SpinWheel = () => {
                 <li>
                 2. We choose the food for you!
                 </li>
+                <li>
+                3. Explore nearby restaurants by sharing your loaction with us!
+                </li>
               </ol>
               <p>know more about us <Link to="/about">here</Link></p>
               </div>

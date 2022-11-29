@@ -2,7 +2,7 @@ import './YelpRestaurant.css';
 import Rating from '@mui/material/Rating';
 
 const YelpRestaurant = ({ restaurant }) => {
-    
+    console.log(restaurant)
     return (
         <div className="restaurant-container">
             <div className="restaurant-img">
@@ -42,17 +42,17 @@ const YelpRestaurant = ({ restaurant }) => {
                 <div className="address">
                     <div className="address-left">Address:</div>
                     <div className="address-right">
-                        {restaurant.location.display_address[0]},
-                        <br />
+                        {restaurant.location.display_address[0]}
+                        <span>, </span>
                         {restaurant.location.display_address[1]}
                     </div>
                 </div>
-                <div className="is-close">
+                {/* <div className="is-close">
                     {restaurant.is_close ? 
                     <div className='rest-close'>This restaurant is closed</div> : 
                     <div className='rest-open'>This restaurant is open</div> 
                 }
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -59,15 +59,18 @@ const AddNewWheelModal = () => {
                         </div>
                     </div>
                     <div className="empty">
-                        <input id="input-text" type="text" placeholder='what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
+                        <input id="input-text" type="text" placeholder=' what is your wheel name?' value={title} onChange={e=>setTitle(e.target.value)} />
                     <div className="add-button-container">
-                        <button className="save-button" onClick={handleSaveWheel} >Save new wheel</button>
+                        {/* <button className="save-button" onClick={handleSaveWheel} >Save new wheel</button> */}
                     </div>
                     </div>
                 </div>
                     < NewSpinWheel setContents={setContents} /> 
                         {/* <div className="empty"> <input type="text" /> </div> */}
                         {/* <div className="empty"> <input type="text" /> </div> */}
+                    <div className="modal-bottom">
+                        <button className="save-button" onClick={handleSaveWheel} >Save new wheel</button> 
+                    </div>
             </div>
         </Modal>
         </>
