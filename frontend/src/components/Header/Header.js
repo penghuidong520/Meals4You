@@ -37,7 +37,7 @@ function Header() {
                     <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>About</NavLink>   
                 </div>
                 <div className="profile">
-                    <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MyWheel</NavLink>
+                    <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>My Wheel</NavLink>
                 </div>
             </div>
             <div className='header-button-container'>

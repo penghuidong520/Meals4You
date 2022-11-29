@@ -144,22 +144,26 @@
 #explore-wheels-button {
     margin-top: 20px;
     font-family: 'Sriracha', cursive;
-    font-size: 15px;
-    width: 200px;
+    font-size: 23px;
+    width: 250px;
     height: 50px;
     box-shadow: 0 1px 6px 0 #22222226;
     border: 1px solid #22222226;
     border-radius: 16px;
     cursor: pointer;
+    transition: 0.4s;
 }
 #new-wheel-button,
 #explore-wheels-button{
     background-color: #e0cdcf;
     line-height: 15px;
 }
+
 #new-wheel-button:hover,
 #explore-wheels-button:hover{
-    background-color: #d4babe;
+    /* background-color: #d4babe; */
+    background-color: rgba(40, 40, 40, 0.5);
+    color: white;
 }
 .save-dish-container{
     height: 65%;

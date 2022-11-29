@@ -82,8 +82,8 @@ const [value, setValue] = React.useState(0);
 							<NewWheelModal />
 						</div>
 						<div className="explore-wheels">
-							<Link id="explore-wheels-button" to='/index' >
-								<button id="explore-wheels-button" >No ideas? Explore more wheels.</button>
+							<Link  to='/index' >
+								<button id="explore-wheels-button" >Explore Other Wheels</button>
 							</Link>
 						</div>
 					</div>

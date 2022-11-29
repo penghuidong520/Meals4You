@@ -265,7 +265,9 @@
     border-radius: 10px;
     margin-top: 20px;
     background-color: #E3F8FA;
+    border: 1px solid lightgrey;
   }
+
   .submit-clear-containor{
     margin-top: 20px;
     /* margin-left: 65%; */
@@ -276,7 +278,7 @@
     /* position: absolute; */
       color: #444;
       border: 1px solid #CCC ;
-      border-radius: 10px;
+      border-radius: 30px;
       background: #DDD;
       box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
       cursor: pointer;
@@ -286,6 +288,7 @@
       text-align: center;
       align-items: center;
       justify-content: center;
+      transition: 0.4s;
   }
   .submit-clear-button{
     /* position: absolute; */
@@ -303,16 +306,18 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.4s;
   }
   .newItem-submit-button:hover,
   .submit-clear-button:hover{
     background-color: white;
   } 
 .submit-clear-box{
-  margin-left: -50%;
+  /* margin-left: -50%; */
+  width: 400px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content:space-around;
-  align-items: center;
+  /* align-items: center; */
 }
   

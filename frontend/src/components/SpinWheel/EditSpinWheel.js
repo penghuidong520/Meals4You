@@ -118,7 +118,7 @@ const EditSpinWheel = ({contents, setContents}) => {
               {itemList}
             </div>
             <input id='newItem-input'
-              placeholder='add a new item ... '
+              placeholder=' add a new item ... '
               type="text"
               value={value}
               onChange={handleChange}

@@ -110,27 +110,27 @@ const NewSpinWheel = ({setContents}) => {
               {itemList}
             </div>
             <input id='newItem-input'
-              placeholder='add a new item ... '
+              placeholder=' add a new item ... '
               type="text"
               value={value}
               onChange={handleChange}
               onKeyPress={handleKey}
             />
             <div className='submit-clear-box'>
-            <div className='submit-clear-containor'>
-              <div className='newItem-submit-button'
-                onClick={onClick}
-                value="Submit"
-              >
-              Add Dish
-            </div>
-            </div>
-            <div className='submit-clear-button'
-                  onClick={handleClear}
-                  value="Clear"
+              <div className='submit-clear-containor'>
+                <div className='newItem-submit-button'
+                  onClick={onClick}
+                  value="Submit"
                 >
-                  Clear Board
-            </div>
+                Add Dish
+              </div>
+              </div>
+              <div className='submit-clear-button'
+                    onClick={handleClear}
+                    value="Clear"
+                  >
+                    Clear Board
+              </div>
             </div>
           </div>
       </div>
