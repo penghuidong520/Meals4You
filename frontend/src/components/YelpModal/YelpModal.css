@@ -143,6 +143,10 @@
     margin-bottom: 5px;
   }
 
+  input:focus {
+    outline: none;
+  }
+
   .current-box {
     width: 100%;
     height: auto;
