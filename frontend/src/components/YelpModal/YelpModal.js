@@ -8,35 +8,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../store/yelp";
 import { getRestaurants } from "../../store/yelp";
 import CircularProgress from '@mui/material/CircularProgress';
+import YelpZipList from "./YelpZipList";
 
 const YelpModal = ({ item, lat, log }) => {
 
     const [openModal, setOpenModal] = useState(false);
+    const [openModal2, setOpenModal2] = useState(false);
     // const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
     const [zipcode, setZipcode] = useState("")
 
-    const handleCurrentOpen = () => {    
+    const handleCurrentOpen = () => {  
+        dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
+        setLoaded(true);  
         setOpenModal(true);
     }
     const handleClose = () => setOpenModal(false);
+    const handleClose2 = () => setOpenModal2(false);
 
 
-    useEffect(() => {
-        if (lat) {
-            dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
-            setLoaded(true);
-        }
-    },[openModal])
+    // useEffect(() => {
+    //     if (lat) {
+    //         dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
+    //         setLoaded(true);
+    //     }
+    // },[openModal])
 
     const handleZipcode = e => {
         setZipcode(e.target.value)
     }
 
     const handleOpen = () => {
-        
+        dispatch(fetchRestaurants({item: item, zipcode: zipcode}))
+        setLoaded(true)
+        setOpenModal2(true);
     }
 
 
@@ -51,7 +58,7 @@ const YelpModal = ({ item, lat, log }) => {
              <div className="current-box">
                 <button id="current-location-button" onClick={handleCurrentOpen}>Use my current location</button>
              </div>
-            <button className="yelp-button-box" onClick={handleOpen}>Find Nearby Restaurants</button>
+            <button className="yelp-button-box" onClick={handleOpen}>Update Location</button>
             <Modal
             open={openModal}
             onClose={handleClose}
@@ -63,6 +70,24 @@ const YelpModal = ({ item, lat, log }) => {
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
                     {loaded ? <YelpList item={item} restaurants={restaurants}/> : 
+                        <div className="yelp-loading">
+                            Please wait while we load the restaurant nearby...
+                            <CircularProgress style={{marginTop: "60px"}}/>
+                        </div>
+                    }
+                </div>
+            </Modal>
+            <Modal
+            open={openModal2}
+            onClose={handleClose2}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            >
+                <div className="yelp-modal">
+                    <div className="close-button-container">
+                        <button onClick={handleClose2} id="yelp-close-button"><CloseIcon/></button>
+                    </div>
+                    {loaded ? <YelpZipList item={item} zipcode={zipcode} restaurants={restaurants}/> : 
                         <div className="yelp-loading">
                             Please wait while we load the restaurant nearby...
                             <CircularProgress style={{marginTop: "60px"}}/>

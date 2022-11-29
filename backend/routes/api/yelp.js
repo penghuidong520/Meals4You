@@ -9,9 +9,10 @@ router.post('/:item', async (req, res) => {
         },
         params: {
             term: req.body.item,
-            latitude: req.body.lat,
-            longitude: req.body.log,
-            radius: "2400" // ~ 1.5 mile
+            latitude: req.body?.lat,
+            longitude: req.body?.log,
+            radius: "2400", // ~ 1.5 mile
+            location: req.body?.zipcode
         }
     })
         .then(response => {

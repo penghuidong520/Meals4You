@@ -13,7 +13,6 @@ const SavedWheels = () => {
     // useEffect(() => {
     //     dispatch(fetchUserWheels(sessionUser?._id));
     // }, [dispatch, sessionUser])
-    console.log(wheels)
 
     return (
         <>
