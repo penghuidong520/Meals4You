@@ -9,63 +9,64 @@ import { fetchRestaurants } from "../../store/yelp";
 import { getRestaurants } from "../../store/yelp";
 import CircularProgress from '@mui/material/CircularProgress';
 import YelpZipList from "./YelpZipList";
+import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 
 const YelpModal = ({ item, lat, log }) => {
 
     const [openModal, setOpenModal] = useState(false);
-    const [openModal2, setOpenModal2] = useState(false);
+    const [zipcode, setZipcode] = useState("");
+    const [placeholderText, setPlaceHolder] = useState(" Search by Zip, City, or State")
+    const [location, setLocation] = useState("your current location")
     // const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
-    //         .sort((a, b) => (
-    //     a.distance - b.distance
-    // ))
-    const [zipcode, setZipcode] = useState("")
+    const [searchByGPS, setSearchByGPS] = useState(false)
 
-    const handleCurrentOpen = () => {  
-        dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
+    const handleCurrentOpen = () => {
         setLoaded(true);  
         setOpenModal(true);
     }
     const handleClose = () => setOpenModal(false);
-    const handleClose2 = () => setOpenModal2(false);
 
 
-    // useEffect(() => {
-    //     if (lat) {
-    //         dispatch(fetchRestaurants({item: item, lat: lat, log: log}))
-    //         setLoaded(true);
-    //     }
-    // },[openModal])
-
-    const handleZipcode = e => {
+    const handleZipcode = (e) => {
         setZipcode(e.target.value)
     }
 
-    const handleOpen = () => {
-        if (zipcode.length !== 5) {
-            alert("Please type in a valid zip code")
-        } else {
-            dispatch(fetchRestaurants({item: item, zipcode: zipcode}))
-            setLoaded(true)
-            setOpenModal2(true);
-        }
+    const handleUpdate = () => {
+        dispatch(fetchRestaurants({ item: item, zipcode: zipcode }))
+        setLocation(zipcode)
+        setSearchByGPS(false)
     }
 
+    const handleGPS = () => {
+        if (lat && log) {
+            dispatch(fetchRestaurants({ item: item, lat: lat, log: log }))
+        } else {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                dispatch(fetchRestaurants({ item: item, lat: pos.coords.latitude, log: pos.coords.longitude }))
+            })
+        }
+        setPlaceHolder("Current Location")
+        setSearchByGPS(true)
+    }
+
+    useEffect(() => {
+        if (lat && log) {
+            dispatch(fetchRestaurants({ item: item, lat: lat, log: log }))
+        } else {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                dispatch(fetchRestaurants({ item: item, lat: pos.coords.latitude, log: pos.coords.longitude }))
+            })
+        }
+    },[])
 
     return (
         <div className="yelp-modal-container">
-            <input type="text" 
-                id="zipcode-input"
-                value={zipcode} 
-                placeholder=" Search by ZIP, City or State"
-                onChange={handleZipcode}
-             />
              <div className="current-box">
-                <button id="current-location-button" onClick={handleCurrentOpen}>Search nearby my location</button>
+                <button className="yelp-button-box" onClick={handleCurrentOpen}>Find Restaurants</button>
              </div>
-            <button className="yelp-button-box" onClick={handleOpen}>Search by Location</button>
             <Modal
             open={openModal}
             onClose={handleClose}
@@ -76,30 +77,22 @@ const YelpModal = ({ item, lat, log }) => {
                     <div className="close-button-container">
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
-                    {loaded ? <YelpList item={item} restaurants={restaurants}/> : 
-                        <div className="yelp-loading">
-                            Please wait while we load the restaurant nearby...
-                            <CircularProgress style={{marginTop: "60px"}}/>
-                        </div>
-                    }
-                </div>
-            </Modal>
-            <Modal
-            open={openModal2}
-            onClose={handleClose2}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            >
-                <div className="yelp-modal">
-                    <div className="close-button-container">
-                        <button onClick={handleClose2} id="yelp-close-button"><CloseIcon/></button>
+                    <div className="yelp-modal-title">
+                        {item} near {location}
                     </div>
-                    {loaded ? <YelpZipList item={item} zipcode={zipcode} restaurants={restaurants}/> : 
-                        <div className="yelp-loading">
-                            Please wait while we load the restaurant nearby...
-                            <CircularProgress style={{marginTop: "60px"}}/>
+                    <div className="update-location">
+                        <div className="location-search">
+                            <input type="text" 
+                            onChange={handleZipcode} 
+                            value={zipcode} 
+                            placeholder={placeholderText}
+                            id="location-search"
+                            />
+                            <button onClick={handleGPS} id="gps-button"><GpsFixedIcon /></button>
                         </div>
-                    }
+                        <button onClick={handleUpdate} id="update-button">Update Location</button>
+                    </div>
+                    <YelpList restaurants={restaurants}/>
                 </div>
             </Modal>
         </div>

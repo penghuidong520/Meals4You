@@ -171,3 +171,53 @@
   #current-location-button:hover {
     color: blue;
   }
+
+  .update-location {
+    width: 40%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .location-search {
+    display: flex;
+  }
+
+  #location-search {
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+
+  #gps-button {
+    /* border: 1px solid #767676; */
+    background-color: transparent;
+    margin-left: -37px;
+    border-left: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  #update-button{
+    all:unset;
+    font-size: 19px;
+    border: 1px solid #CCC ;
+    border-radius: 10px;
+    background: #DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: 0.4s;
+}
+#update-button:hover{
+    background-color: rgba(40, 40, 40, 0.5);
+    color: white;
+}
