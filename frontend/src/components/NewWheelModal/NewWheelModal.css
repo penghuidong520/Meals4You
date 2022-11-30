@@ -82,6 +82,7 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
+
 .save-button{
     all:unset;
     font-size: 19px;

@@ -15,7 +15,8 @@ const YelpModal = ({ item, lat, log }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [zipcode, setZipcode] = useState("");
-    const [placeholderText, setPlaceHolder] = useState("Search by Zip, City, or State")
+    const [placeholderText, setPlaceHolder] = useState(" Search by Zip, City, or State")
+    const [location, setLocation] = useState("your current location")
     // const [restaurants, setRestaurants] = useState([])
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const YelpModal = ({ item, lat, log }) => {
 
     const handleUpdate = () => {
         dispatch(fetchRestaurants({ item: item, zipcode: zipcode }))
+        setLocation(zipcode)
     }
 
     const handleGPS = () => {
@@ -63,7 +65,7 @@ const YelpModal = ({ item, lat, log }) => {
                         <button onClick={handleClose} id="yelp-close-button"><CloseIcon/></button>
                     </div>
                     <div className="yelp-modal-title">
-                        {item} near your location
+                        {item} near {location}
                     </div>
                     <div className="update-location">
                         <div className="location-search">
