@@ -15,12 +15,12 @@ const ProfileSpin = ({wheel}) => {
   const [lat, setLat] = useState();
   const [log, setLog] = useState();
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function(pos) {
-      setLat(pos.coords.latitude)
-      setLog(pos.coords.longitude)
-  })
-  }, [])
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(function(pos) {
+  //     setLat(pos.coords.latitude)
+  //     setLog(pos.coords.longitude)
+  // })
+  // }, [])
 
   const selectItem = (e)=> {
     if (selectedItem === null) {

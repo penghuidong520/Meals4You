@@ -167,3 +167,34 @@
   #current-location-button:hover {
     color: blue;
   }
+
+  .update-location {
+    width: 40%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .location-search {
+    display: flex;
+  }
+
+  #location-search {
+    width: 200px;
+    height: 30px;
+  }
+
+  #gps-button {
+    /* border: 1px solid #767676; */
+    background-color: transparent;
+    margin-left: -37px;
+    border-left: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  #update-button {
+    width: 120px;
+    height: 25px;
+  }
