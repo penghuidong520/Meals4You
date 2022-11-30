@@ -21,8 +21,9 @@ const YelpModal = ({ item, lat, log }) => {
     const [loaded, setLoaded] = useState(false);
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
+    const [searchByGPS, setSearchByGPS] = useState(false)
 
-    const handleCurrentOpen = () => {  
+    const handleCurrentOpen = () => {
         setLoaded(true);  
         setOpenModal(true);
     }
@@ -36,6 +37,7 @@ const YelpModal = ({ item, lat, log }) => {
     const handleUpdate = () => {
         dispatch(fetchRestaurants({ item: item, zipcode: zipcode }))
         setLocation(zipcode)
+        setSearchByGPS(false)
     }
 
     const handleGPS = () => {
@@ -47,7 +49,18 @@ const YelpModal = ({ item, lat, log }) => {
             })
         }
         setPlaceHolder("Current Location")
+        setSearchByGPS(true)
     }
+
+    useEffect(() => {
+        if (lat && log) {
+            dispatch(fetchRestaurants({ item: item, lat: lat, log: log }))
+        } else {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                dispatch(fetchRestaurants({ item: item, lat: pos.coords.latitude, log: pos.coords.longitude }))
+            })
+        }
+    },[])
 
     return (
         <div className="yelp-modal-container">
