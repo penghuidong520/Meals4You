@@ -73,7 +73,7 @@ animation-fill-mode: forwards;
 .selected-result{
 width: auto;
 display: flex;
-margin-top: 10%;
+margin-top: 25%;
 }
 .result-img{
 width: 80px;
