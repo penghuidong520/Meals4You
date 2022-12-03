@@ -1,20 +1,22 @@
 # Meals 4 You Proposal
-### [Meals4You](https://meals4u.onrender.com/)
+### Live link: [Meals4You](https://meals4u.onrender.com/)
 ## Background and Overview
-Meals 4 You is an app that have a spinning board and chooses the meal off of default selections and randomly choose a meal for the users, so users doesn't have to struggle and choose what to eat for lunch/dinner etc.
-- Aside from having default values, users can also customize the board's selection to users choices in mind.
-- Users can also save the board they created under user profile that other users can access and make reference of
+Meals 4 You is an app that simulates a spinning wheel to help its users decide what to eat. Once an option has been chosen, the site will use Yelp to find nearby restaurants.
+- Aside from having default values on the spinning wheel, users can also customize the wheel's selection to the user's choices in mind.
+- Users can also save the wheel they created under the user profile
 - Users can also look at other users' wheels to take in consideration
+- Users able to see nearby restaurants related to the result from spinning wheel
+- Users able to see restaurants related to result based on zipcode, city, or state.
 
 ## Functionality & MVP
 
-* Spinning Board
-    - a default spnning board with around 6 values randomized from a collection of foods
-    - able to customize the defaulted values on the board
-    - picks 1 random result for users to consider
+* Spinning Wheel
+    - a default spnning board with between 2-8 values randomized from a collection of foods
+    - able to customize the values on the wheel
+    - picks random wheel from other users
 
 * Wheel Interface
-    - users will be able to create a new wheel of their preference
+    - users will be able to create a new wheel for their preference
     - can edit the wheel and spin the wheel while trying to edit/create
 
 * CRUD Favorite Wheel
@@ -23,14 +25,12 @@ Meals 4 You is an app that have a spinning board and chooses the meal off of def
 
 * View Other Users' Wheel
     - users are able to view other users' wheels
-    - able to add other users wheels to current user's favorite list
+    - able to add other users wheels to current user's list
 
 ## Bonus Features
-### AWS
-* add food pictures for a slice of the wheel
 
 ### Recommendations
-* use yelp API to have a recommended selection for users to choose after board picked a random dish
+* use yelp API to gerenate a list of restaurants related to the result from the wheel nearby or based on user provided loaction
 
 ## Group Members and Roles
 - Payton Dong (Project Lead)
