@@ -51,8 +51,9 @@ animation-fill-mode: forwards;
   border: 1px solid #22222226;  
   margin-top: 5%;
   font-size: 35px;
+  width: 400px;
   height: 80%;
-  padding: 10px;
+  padding: 20px;
   border-radius: 13px;
 }
 .intro2 ol{
@@ -66,6 +67,8 @@ animation-fill-mode: forwards;
 .intro2 p{
   font-family: 'Sriracha', cursive;
   font-size: 23px;
+  text-align: center;
+  margin-top: 30px;
 }
 .selected-result{
 width: auto;
