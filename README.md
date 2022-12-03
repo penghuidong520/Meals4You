@@ -1,5 +1,6 @@
 # Meals 4 You Proposal
-### Live link: [Meals4You](https://meals4u.onrender.com/)
+### Do you know what to eat and where to eat for your next meal? [Meals4You](https://meals4u.onrender.com/) can help you with that!!
+
 ## Background and Overview
 Meals 4 You is an app that simulates a spinning wheel to help its users decide what to eat. Once an option has been chosen, the site will use Yelp to find nearby restaurants.
 - Aside from having default values on the spinning wheel, users can also customize the wheel's selection to the user's choices in mind.
