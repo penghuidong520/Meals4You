@@ -22,7 +22,9 @@ const FavoratedWheels = () => {
     return (
         <>
             <div className="saved-wheels-header"> </div>
-            {(favoriteList.length > 0) && favoriteList}
+            <div className="favorite-list">
+                {(favoriteList.length > 0) && favoriteList}
+            </div>
             {(favoriteList.length <= 0) && <h1>You don't have favorite wheels ?</h1>}
         </>
     )

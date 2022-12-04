@@ -22,7 +22,7 @@
 
 .fav-wheel-item-title-container{
     /* border: 3px solid white ; */
-    width: 70%;
+    width: 80%;
     padding-bottom: 5px;
     margin-left: 2%;
     font-size: 20px;
@@ -56,4 +56,8 @@
 
 .fav-wheel-item-title-container:hover{
     animation: .5s 1 forwards scales;
+}
+
+.favorite-list {
+    width: 400px;
 }
