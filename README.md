@@ -16,6 +16,9 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
     - able to customize the values on the wheel
     - picks random wheel from other users
 
+<img src="./readme_images/home-page.gif" width="700" alt="">
+
+
 * Wheel Interface
     - users will be able to create a new wheel for their preference
     - can edit the wheel and spin the wheel while trying to edit/create
@@ -23,6 +26,9 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 * CRUD Favorite Wheel
     - save wheels in current user's favorite list
     - CRUD functionality on saved wheels
+
+<img src="./readme_images/favorite.gif" width="700" alt="">
+
 
 * View Other Users' Wheel
     - users are able to view other users' wheels
@@ -32,6 +38,10 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 
 ### Recommendations
 * use yelp API to gerenate a list of restaurants related to the result from the wheel nearby or based on user provided loaction
+
+### Yelp Restaurants Modal
+
+<img src="./readme_images/yelp.gif" width="700" alt="">
 
 ## Group Members and Roles
 - Payton Dong (Project Lead)
