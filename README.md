@@ -23,6 +23,9 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
     - users will be able to create a new wheel for their preference
     - can edit the wheel and spin the wheel while trying to edit/create
 
+<img src="./readme_images/edit-wheel.gif" width="700" alt="">
+
+
 * CRUD Favorite Wheel
     - save wheels in current user's favorite list
     - CRUD functionality on saved wheels
@@ -33,6 +36,9 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 * View Other Users' Wheel
     - users are able to view other users' wheels
     - able to add other users wheels to current user's list
+
+<img src="./readme_images/add-new.gif" width="700" alt="">
+
 
 ## Bonus Features
 
