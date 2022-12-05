@@ -12,7 +12,7 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 
 ## Technologies
 
-MERN Stack:
+* MERN Stack
 
     - MongoDB (database)
     - Express.js (backend framework)
