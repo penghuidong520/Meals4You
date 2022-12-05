@@ -10,6 +10,17 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 - Users able to see nearby restaurants related to the result from spinning wheel
 - Users able to see restaurants related to result based on zipcode, city, or state.
 
+## Technologies
+
+MERN Stack:
+
+    - MongoDB (database)
+    - Express.js (backend framework)
+    - React with Redux (frontend framework)
+    - Node.js (JavaScript runtime environment)
+
+Render(web deployment)
+
 ## Functionality & MVP
 
 * Spinning Wheel
@@ -43,8 +54,9 @@ Meals 4 You is an app that simulates a spinning wheel to help its users decide w
 
 ## Bonus Features
 
-### Recommendations
-* use yelp API to gerenate a list of restaurants related to the result from the wheel nearby or based on user provided loaction
+* Implemented API to gerenate a list of restaurants related to the result from the wheel nearby or based on user provided loaction
+
+
 
 ### Yelp Restaurants Modal
 
