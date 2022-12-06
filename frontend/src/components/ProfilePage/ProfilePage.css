@@ -7,7 +7,13 @@
     flex-direction: column;
     background-color: #e0cdcf;
 }
-
+.profile-instruction{
+    line-height: 30px;
+    width: 35%;
+    border: 1px solid black;
+    height: 150px;
+    background-color: white;
+}
 .saved-wheel-and-wheel{
     display: flex;
     width: 100%;
@@ -15,10 +21,11 @@
     padding-top: 3%;
 }
 .profile-page-button{
-    width: 35%;
+    /* width: 35%; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-bottom: 10px;
+    /* margin-top: 150px; */
 }
 .save-wheels-container {
     padding-left: 5%;
@@ -169,4 +176,7 @@
     height: 65%;
 }
 
-
+/* instrution */
+#profile-instruction-button{
+    
+}

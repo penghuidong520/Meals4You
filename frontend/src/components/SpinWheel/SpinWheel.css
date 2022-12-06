@@ -21,18 +21,6 @@
 /* border: 2px solid red; */
 width: 100%;
 }
-/* .intro1{
-font-size: 55px;
-margin-top: 10%;
-height: 40%;
-animation-name: introMove;
-animation-timing-function: linear;
-animation-duration: 2s;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-animation-fill-mode: forwards;
-} */
-
 @keyframes introMove{
 0% {transform: scale(100%)}
 50% {transform: scale(104%) }
@@ -324,7 +312,6 @@ background-color: transparent;
 border: 0px solid transparent;
 
 }
-
 #reset-text1{
   font-size: 1px;
   background-color: transparent; 
@@ -340,8 +327,6 @@ border: 0px solid transparent;
 #reset-text1:hover {
 animation-play-state: paused;
 }
-
-
 @keyframes move2{
 0% {transform: scale(3000%)}
 50% {transform: scale(4000%) }

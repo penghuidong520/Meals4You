@@ -1,6 +1,5 @@
 import wheelGif from "../../images/intro-gif.gif";
-import girl from "../../images/girl-icon.png";
-import boy from "../../images/boy-icon.png";
+import mainPageGif from '../../images/homepage-meals4u.gif'
 import linkedin from "../../images/linkedin.png";
 import github from "../../images/github.png";
 import yanxi from "../../images/yanxi.jpeg"; 
@@ -8,9 +7,6 @@ import angelist from "../../images/angelist.png";
 import ivy from "../../images/ivy.jpeg"; 
 import ronny from "../../images/ronny.jpeg";
 import payton from "../../images/payton.jpeg";
-import m4u1 from "../../images/meals4u-1.gif";
-import m4u2 from "../../images/meals4u-2.gif";
-import m4u3 from "../../images/meals4u-3.gif";
 
 const AboutPage = () => {
     return (
@@ -18,7 +14,7 @@ const AboutPage = () => {
             <div className="tab-container">
                 <div className="empty-block"></div>
                     <a className="tab-text">About Meals4U</a>
-                    <a className="tab-text">Instruction</a>
+                    <a className="tab-text" id="instruction">Instruction</a>
                     <a className="tab-text">Incentive</a>
                     <a className="tab-text">Developers</a>
                 <div className="tab-content">
@@ -36,7 +32,7 @@ const AboutPage = () => {
                             <h2 id="about-instruction-title" >How to Use</h2>
                             <div className="about-list">
                                 ● The Landing Page has a default wheel for users to try out.
-                                <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
+                                <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={mainPageGif} alt="" /> </div>
                             </div>
                             <div className="about-list"> 
                                 ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
@@ -45,6 +41,32 @@ const AboutPage = () => {
                             <div className="about-list">
                                 ● You can create a customized wheel and save it to your list !
                                 <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
+                            </div>
+                            <h2 id="about-instruction-title" >How to use Create a new wheel</h2>
+                            <div className="about-list">
+                                ● The Landing Page has a default wheel for users to try out.
+                                <div className="about-instruction-visualizer"></div>
+                            </div>
+                            <div className="about-list"> 
+                                ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
+                                <div className="about-instruction-visualizer"></div>
+                            </div>
+                            <div className="about-list">
+                                ● You can create a customized wheel and save it to your list !
+                                <div className="about-instruction-visualizer"></div>
+                            </div>
+                            <h2 id="about-instruction-title" >How to use Explore other wheels</h2>
+                            <div className="about-list">
+                                ● The Landing Page has a default wheel for users to try out.
+                                <div className="about-instruction-visualizer"></div>
+                            </div>
+                            <div className="about-list"> 
+                                ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
+                                <div className="about-instruction-visualizer"></div>
+                            </div>
+                            <div className="about-list">
+                                ● You can create a customized wheel and save it to your list !
+                                <div className="about-instruction-visualizer"></div>
                             </div>
                         </div>
                     </div> 

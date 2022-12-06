@@ -34,6 +34,7 @@ const SpinWheel = () => {
   };
 
 
+
   
   const wheelVars = {
     "--nb-item": items?.length,
@@ -64,7 +65,7 @@ const SpinWheel = () => {
                 &nbsp; &nbsp; sharing your loaction with us!
                 </li>
               </ol>
-              <p>know more about us <Link to="/about">here</Link></p>
+              <p>Learn more about instruction <Link to="/about">here</Link></p>
               </div>
           </div>
           <div className='selected-result'>

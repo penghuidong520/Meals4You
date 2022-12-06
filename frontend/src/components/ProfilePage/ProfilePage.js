@@ -16,7 +16,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
@@ -24,9 +26,13 @@ const ProfilePage = () => {
 	const sessionUser = useSelector(state => state.session.user);
 	const wheel = useSelector(state => state.wheel);
 	const [selectedItem, setSelectedItem] = useState(null);
-	
-	if (!sessionUser) {history.push("/login")}
-	
+	const [showMenu, setShowMenu] = useState(false);
+	const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+
+	const handleClose = () => {
+        setAnchorEl(null);
+    };
 	useEffect(()=>{
 		dispatch(fetchUserDishes(sessionUser?._id));
 		dispatch(fetchUserWheels(sessionUser?._id));
@@ -71,11 +77,45 @@ const [value, setValue] = React.useState(0);
     setValue(newValue);
   };
  
-
+  function openMenu() {
+	setShowMenu(prev => !prev);
+    // if (showMenu) return;
+}
+const handleClick = (e) => {
+	setAnchorEl(e.currentTarget);
+};
+  
 	return (
 	<>
 		<div className="profile-page">
 			<div className="edit-wheel-container">
+				<div className="profile-dropdown">
+						<Button
+							id="profile-instruction-button"
+							aria-controls={open ? 'basic-menu' : undefined}
+							aria-haspopup="true"
+							aria-expanded={open ? 'true' : undefined}
+							onClick={handleClick}
+						>
+							Instruction
+						</Button>
+						<Menu
+							id="profile-instruction-menu"
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+							MenuListProps={{
+							'aria-labelledby': 'basic-button',
+							}}
+						>
+							<ul>
+								<li>1. To create your own wheel. Click 'Create a new wheel'</li>
+								<li>2. Have no ideas what to put in wheel? Explore and copy others wheels.</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;Click 'Explore other wheels'</li>
+								<li>3. Learn more about instruction<Link to="/about"> here</Link></li>
+							</ul>
+						</Menu>
+					</div>
 				<div className="edit-wheel">
 					<div className='profile-page-button'>
 						<div className="new-wheel-button">

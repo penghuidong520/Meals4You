@@ -121,6 +121,7 @@
     background-color: #E0cdcf;
     height: 60vh;
     width: 60vw;
+    overflow: scroll;
 }
 
 #about-instruction-title {
