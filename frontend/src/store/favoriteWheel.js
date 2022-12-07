@@ -71,8 +71,9 @@ const favoritesReducer = (state = {}, action) => {
             nextState[action.favorite._id] = action.favorite;
             return nextState;
         case RECEIVE_USER_FAVORITES:
-            action.favorites.forEach(favorite => nextState[favorite._id] = favorite)
-            return nextState;
+            // action.favorites.forEach(favorite => nextState[favorite._id] = favorite)
+            // return nextState;
+            return {...action.favorites}
         case DELETE_FAVORITE:
             delete nextState[action.favoriteId];
             return nextState;
