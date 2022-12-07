@@ -47,11 +47,9 @@
     margin-bottom: 20px;
     transition: transform 0.2s ease-in-out;
 }
-
 #new-wheel-close-button:hover {
     transform: rotate(360deg);
 }
-
 .empty{
     margin-top: 15px;
     width: 50%;
@@ -62,7 +60,6 @@
     margin-left: 13%;
     padding-bottom: 10px;
 }
-
 #input-text{
     width: 300%;
     height: 99%;
@@ -72,7 +69,7 @@
     border: 1px solid rgba(128, 128, 128, 0.625);
     border-radius: 5px;
     z-index: 10;
-    margin-left: 23px;
+    margin-left: 5px;
 }
 
 .add-button-container{

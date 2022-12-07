@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-
+.explore-wrapper{
+    display: flex;
+    background-color: #e0cdcf;
+}
 .index-page {
     width: 100%;
     height: 900px;
-    background-color: #e0cdcf;
+    /* background-color: #e0cdcf; */
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
@@ -115,7 +118,13 @@
     padding-top: 15px;
     margin-bottom: 5px;
 }
-
 #new-wheel-name {
     width: 80%;
+}
+/* instruction */
+.explore-instruction-content li{
+    display: flex;
+}
+.explore-instruction-content span{
+    color: red;
 }

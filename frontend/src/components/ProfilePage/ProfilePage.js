@@ -17,6 +17,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
+
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
@@ -98,7 +100,7 @@ const handleClick = (e) => {
 							aria-expanded={open ? 'true' : undefined}
 							onClick={handleClick}
 						>
-							Instruction
+							<TouchAppIcon/>Instruction
 						</Button>
 						<Menu
 							id="profile-instruction-menu"
@@ -130,9 +132,6 @@ const handleClick = (e) => {
 							</Link>
 						</div>
 					</div>
-					{/* <div className="save-dish-container"> */}
-							{/* <DishIndex /> */}
-					{/* </div> */}
 				</div>
 			</div>
 			<div className='saved-wheel-and-wheel'>

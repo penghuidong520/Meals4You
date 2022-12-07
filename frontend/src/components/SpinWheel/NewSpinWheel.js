@@ -1,7 +1,6 @@
 import './NewSpinWheel.css'; 
 import { useState, useRef, useEffect } from 'react';
 import React from 'react';
-import { useSelector } from 'react-redux'
 import deleteIcon from "../../images/delete.png";
 
 
@@ -49,7 +48,6 @@ const NewSpinWheel = ({setContents}) => {
     setArr([]);
     setContents([]);
   }
-
   
   const selectItem = (e)=> {
     if (selectedItem === null) {
@@ -64,8 +62,6 @@ const NewSpinWheel = ({setContents}) => {
 
   const handleKey = e => {
     let code = e.keyCode || e.which
-    console.log(code)
-    console.log(e.target.value)
     if (code === 13) {
       onClick(e.target.value)
     }
@@ -120,8 +116,7 @@ const NewSpinWheel = ({setContents}) => {
               <div className='submit-clear-containor'>
                 <div className='newItem-submit-button'
                   onClick={onClick}
-                  value="Submit"
-                >
+                  value="Submit">
                 Add Dish
               </div>
               </div>
