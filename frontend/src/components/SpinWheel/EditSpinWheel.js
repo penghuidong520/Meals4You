@@ -1,9 +1,9 @@
 import './NewSpinWheel.css'; 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import deleteIcon from "../../images/delete.png";
-import { updateContents } from '../../store/contents';
+import './EditSpinWheel.css'
 
 
 const EditSpinWheel = ({contents, setContents}) => {

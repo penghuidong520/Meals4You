@@ -81,7 +81,6 @@
     transform: rotate(0deg);
     cursor: pointer;
   }
-
   .wheel.spinning {
     transition: transform var(--spinning-duration);
     transform: rotate(
@@ -91,7 +90,6 @@
       )
     );
   }
-
   .wheel::after {
     display: flex;
     align-items: center;
@@ -194,11 +192,10 @@
     animation-name: textMove;
     animation-timing-function: linear;
     animation-delay: 4s;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-   
 }
 #reset-text:hover {
   animation-play-state: paused;
@@ -225,7 +222,7 @@
   height: 100%;
   animation-name: profileMove;
   animation-timing-function: linear;
-  animation-duration: 7s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
   animation-direction: alternate;
   animation-fill-mode: forwards;

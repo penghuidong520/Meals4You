@@ -95,7 +95,7 @@
     background-color: rgba(170, 170, 170, 0.643);
     animation-name: yelpButton;
     animation-timing-function: linear;
-    animation-duration: 7s;
+    animation-duration: 4s;
     animation-iteration-count: 1;
     animation-direction: alternate;
     animation-fill-mode: forwards;
@@ -105,7 +105,7 @@
     align-items: center;
     font-family: 'Sriracha', cursive;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
   @keyframes yelpButton{

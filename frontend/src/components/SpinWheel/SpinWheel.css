@@ -55,8 +55,7 @@ width: 100%;
 .intro2 p{
   font-family: 'Sriracha', cursive;
   font-size: 23px;
-  text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .selected-result{
 width: auto;
@@ -89,7 +88,7 @@ font-size: 30px;
 font-weight: bold;
 animation-name: resultTextMove;
 animation-timing-function: linear;
-animation-duration: 5s;
+animation-duration: 4s;
 animation-iteration-count: 1;
 animation-direction: alternate;
 animation-fill-mode: forwards;
@@ -102,7 +101,7 @@ animation-fill-mode: forwards;
 100% {transform: scale(100%) }
 }
 .create-your-own-wheel-button-container{
-  margin-top: 85%;
+  margin-top: 75%;
   position: absolute;
 }
 .create-your-own-wheel-button{
@@ -121,7 +120,7 @@ animation-fill-mode: forwards;
   border-radius: 13px;
   animation-name: resultTextMove;
   animation-timing-function: linear;
-  animation-duration: 6s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
   animation-direction: alternate;
   animation-fill-mode: forwards;

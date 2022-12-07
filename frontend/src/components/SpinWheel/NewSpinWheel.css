@@ -11,7 +11,7 @@
   .create-spinwheel-box{
     margin-top: -7%;
     width: 650px;
-    height: 700px;
+    /* height: 700px; */
     min-height: 550px;
     min-width: 650px;
     display: flex;

@@ -1,5 +1,8 @@
 import wheelGif from "../../images/intro-gif.gif";
 import mainPageGif from '../../images/homepage-meals4u.gif'
+import createWheel from '../../images/createwheel.gif'
+import exploreWheel from '../../images/explorewheel.gif'
+import mywheel from "../../images/mywheelpage.gif"
 import linkedin from "../../images/linkedin.png";
 import github from "../../images/github.png";
 import yanxi from "../../images/yanxi.jpeg"; 
@@ -29,50 +32,63 @@ const AboutPage = () => {
                     </div>
                     <div className="tab-content-detail"> 
                         <div className="instruction-text-containoer">
-                            <h2 id="about-instruction-title" >How to Use</h2>
+                            <div className="about-instruction-visualizer-1"> 
+                                <h2 id="about-instruction-title" >How to Use wheels</h2>
+                                <div className="about-instruction-gif">
+                                    <div>
+                                        <img id="about-instruction-visualizer" src={mainPageGif} alt="" />
+                                        <p>HomePage</p>
+                                    </div>
+                                    <div>
+                                        <img id="about-instruction-visualizer" src={mywheel} alt="" />
+                                        <p>MyWheel</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="about-list">
                                 ● The Landing Page has a default wheel for users to try out.
-                                <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={mainPageGif} alt="" /> </div>
                             </div>
                             <div className="about-list"> 
                                 ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
-                                <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
+                                <div className="about-instruction-visualizer"> </div>
                             </div>
                             <div className="about-list">
                                 ● You can create a customized wheel and save it to your list !
-                                <div className="about-instruction-visualizer"> <img id="about-instruction-visualizer" src={wheelGif} alt="" /> </div>
+                                <div className="about-instruction-visualizer"> </div>
                             </div>
-                            <h2 id="about-instruction-title" >How to use Create a new wheel</h2>
-                            <div className="about-list">
-                                ● The Landing Page has a default wheel for users to try out.
-                                <div className="about-instruction-visualizer"></div>
+                            <hr className="about-divider"/>
+                            <div className="about-instruction-visualizer-1"> 
+                                <h2 id="about-instruction-title" >How to use Create a new wheel</h2>
+                                <div className="about-instruction-gif">
+                                    <img id="about-instruction-visualizer" src={createWheel} alt="" />
+                                </div>
                             </div>
                             <div className="about-list"> 
-                                ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
+                                ● Users could add dish into a new wheel, clear board and name their wheels.
                                 <div className="about-instruction-visualizer"></div>
                             </div>
                             <div className="about-list">
-                                ● You can create a customized wheel and save it to your list !
+                                ● Click on 'Save new wheel', a new wheel will be saved into 'Saved Wheels' list.
                                 <div className="about-instruction-visualizer"></div>
                             </div>
-                            <h2 id="about-instruction-title" >How to use Explore other wheels</h2>
-                            <div className="about-list">
-                                ● The Landing Page has a default wheel for users to try out.
-                                <div className="about-instruction-visualizer"></div>
-                            </div>
-                            <div className="about-list"> 
-                                ● MyWheel allows users to choose a saved wheel or edit an existing wheel.
-                                <div className="about-instruction-visualizer"></div>
-                            </div>
-                            <div className="about-list">
-                                ● You can create a customized wheel and save it to your list !
+                            <hr className="about-divider"/>
+                            <div className="about-instruction-visualizer-1"> 
+                                <h2 id="about-instruction-title" >How to use Explore other wheels</h2>
+                                <div className="about-instruction-gif">
+                                    <img id="about-instruction-visualizer" src={exploreWheel} alt="" />
+                                </div>
+                            </div>                           
+                             <div className="about-list">
+                                ● Users could explore wheels from other users and save these wheels as their own wheels.
                                 <div className="about-instruction-visualizer"></div>
                             </div>
                         </div>
                     </div> 
                             <div className="tab-content-detail">
                                 <div className="incentive-container">
-                                <p>Everyday we have the same question: What's for lunch today? <br />That's the reason we create this app</p>
+                                <p>Everyday we have the same question: What to eat today? <br />
+                                The time we spend on deciding what to eat is much more than we think.<br/>
+                                That's the reason we create this app, to relief our users from struggling on making decisions on their daily foods.</p>
                                 </div>
                             </div>
                     <div className="tab-content-detail">

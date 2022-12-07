@@ -133,11 +133,11 @@
     width: 100%;
     height: 10vh;
     display: flex;
-    justify-content:space-around;
+    /* justify-content:space-around; */
     align-items: center;
 }
 .edit-wheel {
-    width: 90%;
+    width: 80%;
     height: 85%;
     display: flex;
     flex-direction: column;
@@ -152,12 +152,13 @@
     margin-top: 20px;
     font-family: 'Sriracha', cursive;
     font-size: 23px;
-    width: 250px;
+    width: 240px;
     height: 50px;
     box-shadow: 0 1px 6px 0 #22222226;
     border: 1px solid #22222226;
     border-radius: 16px;
     cursor: pointer;
+    margin-left: 10px;
     transition: 0.4s;
 }
 #new-wheel-button,
@@ -178,5 +179,15 @@
 
 /* instrution */
 #profile-instruction-button{
-    
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+#profile-instruction-button:hover{
+    background-color: gray;
+    color: white;
+}
+.instruction-content li span{
+    color: red;
 }
