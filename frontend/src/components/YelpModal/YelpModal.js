@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import Modal from '@mui/material/Modal';
-import "./YelpModal.css";
 import CloseIcon from '@mui/icons-material/Close';
 import YelpList from "./YelpList";
-import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../store/yelp";
 import { getRestaurants } from "../../store/yelp";
-import CircularProgress from '@mui/material/CircularProgress';
-import YelpZipList from "./YelpZipList";
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
+import "./YelpModal.css";
 
 const YelpModal = ({ item, lat, log }) => {
 

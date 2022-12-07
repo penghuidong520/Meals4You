@@ -4,13 +4,15 @@ import React from 'react';
 import { useSelector } from 'react-redux'
 import welcomeInfo from '../../images/welcome-info.png';
 // import introGif from '../../images/intro-gif.gif';
+import YelpModal from '../YelpModal/YelpModal';
 import spoonFork from '../../images/spoon-and-fork.png';
 import { Link } from 'react-router-dom';
 
 const SpinWheel = () => {
   const sessionUser = useSelector(state => state.session.user);
   const defaultContents = useSelector(state => state.wheel);
-
+  const [lat, setLat] = useState();
+  const [log, setLog] = useState();
   // const items = ["Pizza", "Halal", "Bagel", "Chicken Over Rice", "Sandwich",  "Ramen", "Dumpling"];  
   const items = defaultContents.contents;
 
@@ -32,8 +34,6 @@ const SpinWheel = () => {
       wheelRef.current.addEventListener('click', selectItem);
       setSelectedItem(null);
   };
-
-
   
   const wheelVars = {
     "--nb-item": items?.length,
@@ -51,29 +51,28 @@ const SpinWheel = () => {
               <br/>
               We got you!
               <ol>
-                <li>
-                1. Spin the wheel.
-                </li>
-                <li>
-                2. We choose the food for you!
-                </li>
-                <li>
-                &nbsp; &nbsp; sharing your loaction with us!
-                </li>
+                <li>1. Spin the wheel.</li>
+                <li>2. We choose the food for you!</li>
+                <li>3. Please turn on your loaction in order to search restaurants!</li>
               </ol>
               <p>Know more about how to use <Link to="/about">here</Link></p>
-              </div>
+            </div>
           </div>
           <div className='selected-result'>
             {selectedItem !== null && (
             <div className='result-homepage'>
-              <div className='result-img'>
-                <img id='result-img' src={spoonFork} alt="" />
+              <div className='result-top'>
+                <div className='result-img'>
+                  <img id='result-img' src={spoonFork} alt="" />
+                </div>
+                <div className='result-text'>
+                  Time to eat 
+                  <br />
+                  {items[selectedItem]}
+                </div>
               </div>
-              <div className='result-text'>
-                Time to eat 
-                <br />
-                {items[selectedItem]}
+              <div className="explore-restaurant-container-homepage">
+                <YelpModal item={items[selectedItem]} lat={lat} log={log}/>
               </div>
             </div>)}
           </div>
@@ -108,9 +107,6 @@ const SpinWheel = () => {
       {selectedItem !== null && (
         <div className='reset-button1'onClick={handleReset}>
             <p>Reset</p>
-          {/* <button id="reset-button1" onClick={handleReset}>
-            <p id="reset-text1">Reset</p>
-          </button> */}
         </div>
       )}
       </div>

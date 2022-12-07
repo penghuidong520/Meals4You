@@ -9,7 +9,6 @@ import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoginPage from './components/SessionPage/LoginPage';
 import SignUpPage from './components/SessionPage/SignUpPage';
 import WheelIndexPage from './components/WheelIndexPage/WheelIndexPage';
-import YelpPage from './components/YelpModal/YelpModal';
 import { fetchUserDishes } from './store/dishes';
 import { getCurrentUser } from './store/session';
 

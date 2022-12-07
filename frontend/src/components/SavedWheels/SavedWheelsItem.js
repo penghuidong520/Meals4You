@@ -1,19 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { updateContents } from "../../store/contents";
 import { deleteWheel } from "../../store/wheels";
-import "./SavedWheels.css"
-import savedWheelIcon from "../../images/tableware.png"
 import deleteIcon from "../../images/delete.png";
 import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import React, {useState} from "react";
-import unfav from "../../images/fav.png";
-import fav from "../../images/unfav.png";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { createFavorite, deleteFavorite } from "../../store/favoriteWheel";
-import { RECEIVE_USER_LOGOUT } from "../../store/session";
 import { getFavorites } from "../../store/favoriteWheel";
 import { useEffect } from "react";
+import "./SavedWheels.css"
 
 
 const SavedWheelsItem = ({wheel}) => {
@@ -41,11 +37,8 @@ const SavedWheelsItem = ({wheel}) => {
         e.preventDefault();
         dispatch(updateContents({title: wheel.title, contents: wheel.contents}));
     }
-        
-    
 
     const handleFavorate = (e) => {
-
         e.preventDefault();
         const favId = favorites.filter(favorite => 
             (
@@ -79,10 +72,6 @@ const SavedWheelsItem = ({wheel}) => {
             <button className="deleteButton" onClick={handleDelete} >
                 <img id="deleteIcon" src={deleteIcon} alt=""/>
             </button>
-           
-            
-
-
         </div>
     )
 }

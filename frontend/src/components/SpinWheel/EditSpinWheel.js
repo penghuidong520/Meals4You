@@ -1,13 +1,13 @@
-import './NewSpinWheel.css'; 
 import { useState, useRef } from 'react';
 import React from 'react';
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import deleteIcon from "../../images/delete.png";
+import './NewSpinWheel.css'; 
 import './EditSpinWheel.css'
 
 
 const EditSpinWheel = ({contents, setContents}) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
   const [arr, setArr] = useState(contents);

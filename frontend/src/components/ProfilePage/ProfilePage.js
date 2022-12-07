@@ -1,8 +1,7 @@
 import './ProfilePage.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleClick, useEffect, useState } from 'react';
-import { fetchUserDishes, getDishes } from '../../store/dishes';
-import DishIndex from '../DishIndex';
+import { useEffect, useState } from 'react';
+import { fetchUserDishes } from '../../store/dishes';
 import NewWheelModal from '../NewWheelModal/NewWheelModal';
 import ProfileSpin from '../SpinWheel/ProfileSpin';
 import SavedWheels from '../SavedWheels';
@@ -18,7 +17,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 
 const ProfilePage = () => {
 	const dispatch = useDispatch();
@@ -116,7 +114,7 @@ const handleClick = (e) => {
 								<li>2. Have no ideas what to put in wheel? Explore and copy others wheels.</li>
 								<li>&nbsp;&nbsp;&nbsp;&nbsp;Click <span>'Explore other wheels'</span> </li>
 								<li>3. After dish selection, explore nearby restaurants </li>
-								<li>&nbsp;&nbsp;&nbsp;&nbsp;(Please allow <span>sharing your loaction</span> for this feature.) </li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;(Please allow our<span> access to your loaction</span> for this feature.) </li>
 								<li>4. Learn more about instruction<Link to="/about"> here</Link></li>
 							</ul>
 						</Menu>

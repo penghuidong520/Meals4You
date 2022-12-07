@@ -17,50 +17,32 @@
   position: relative;
   margin-top: 15%;
 }
-.welcome-mess{
+/* .welcome-mess{ */
 /* border: 2px solid red; */
-width: 100%;
-}
+/* width: 100%; */
+/* } */
 @keyframes introMove{
 0% {transform: scale(100%)}
 50% {transform: scale(104%) }
 100% {transform: scale(100%) }
 }
+/* result */
 .result-homepage{
   display: flex;
+  flex-direction: column;
   text-align: center;
 }
-.intro2{
-  font-family: 'Sriracha', cursive;
+.result-top{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 1px 6px 0 #1a191980;
-  border: 1px solid #22222226;  
-  margin-top: 5%;
-  font-size: 35px;
-  width: 400px;
-  height: 80%;
-  padding: 20px;
-  border-radius: 13px;
 }
-.intro2 ol{
-  font-size: 23px;
-}
-.intro2 ol li{
-  font-family: 'Sriracha', cursive;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.intro2 p{
-  font-family: 'Sriracha', cursive;
-  font-size: 23px;
-  margin-top: 20px;
+.explore-restaurant-container-homepage {
+  display: flex;
+  align-self: center;
 }
 .selected-result{
 width: auto;
 display: flex;
-margin-top: 25%;
+margin-top: 20%;
 }
 .result-img{
 width: 80px;
@@ -70,7 +52,7 @@ width: 80px;
 height: 80px;
 animation-name: resultTextMove;
 animation-timing-function: linear;
-animation-duration: 5s;
+animation-duration: 4s;
 animation-iteration-count: 1;
 animation-direction: alternate;
 animation-fill-mode: forwards;
@@ -101,7 +83,7 @@ animation-fill-mode: forwards;
 100% {transform: scale(100%) }
 }
 .create-your-own-wheel-button-container{
-  margin-top: 75%;
+  margin-top: 70%;
   position: absolute;
 }
 .create-your-own-wheel-button{
@@ -127,6 +109,34 @@ animation-fill-mode: forwards;
 }
 .create-your-own-wheel-button button:hover{
   background-color: #d4babe;
+}
+/* instruction */
+.intro2{
+  font-family: 'Sriracha', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 6px 0 #1a191980;
+  border: 1px solid #22222226;  
+  /* margin-top: 5%; */
+  font-size: 35px;
+  width: 400px;
+  height: 80%;
+  padding: 20px;
+  border-radius: 13px;
+}
+.intro2 ol{
+  font-size: 23px;
+}
+.intro2 ol li{
+  font-family: 'Sriracha', cursive;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.intro2 p{
+  font-family: 'Sriracha', cursive;
+  font-size: 23px;
+  margin-top: 20px;
 }
 .spinwheel-box1{
   margin-left: -10%;
