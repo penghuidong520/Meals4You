@@ -114,7 +114,7 @@ const handleClick = (e) => {
 								<li>2. Have no ideas what to put in wheel? Explore and copy others wheels.</li>
 								<li>&nbsp;&nbsp;&nbsp;&nbsp;Click <span>'Explore other wheels'</span> </li>
 								<li>3. After dish selection, explore nearby restaurants </li>
-								<li>&nbsp;&nbsp;&nbsp;&nbsp;(Please allow our<span> access to your loaction</span> for this feature.) </li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;(Please turn on<span> your loaction</span> for this feature.) </li>
 								<li>4. Learn more about instruction<Link to="/about"> here</Link></li>
 							</ul>
 						</Menu>
