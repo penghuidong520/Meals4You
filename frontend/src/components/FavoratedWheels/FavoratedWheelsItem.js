@@ -8,12 +8,13 @@ import EditWheelModal from "../NewWheelModal/EditWheelModal";
 import { deleteFavorite } from "../../store/favoriteWheel";
 
 
-const FavoratedWheelsItem = ({wheel}) => {
+const FavoratedWheelsItem = ({wheel, setddd}) => {
     const dispatch = useDispatch();
 
     const handleDelete = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         dispatch(deleteFavorite(wheel._id))
+        setddd(cur => !cur)
     }
 
     const handleClickTitle = (e) => {

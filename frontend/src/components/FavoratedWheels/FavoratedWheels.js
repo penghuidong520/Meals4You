@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserFavorites, getFavorites } from "../../store/favoriteWheel";
 import FavoratedWheelsItem from "./FavoratedWheelsItem";
@@ -8,16 +8,18 @@ const FavoratedWheels = () => {
     const sessionUser = useSelector(state => state.session.user);
     // const wheels = useSelector(getWheels);
     // const wheelList = wheels.map((wheel, index) => <FavoratedWheelsItem key={index} wheel={wheel} />);
+    const [ddd, setddd] = useState(false)
     
     const favorites = useSelector(getFavorites);
     const favoriteList = favorites.map((favorite, index) => {
-            return <FavoratedWheelsItem key={index} wheel={favorite} /> 
+            return <FavoratedWheelsItem key={index} wheel={favorite} setddd={setddd}/> 
         }
     );
 
-    // useEffect(() => {
-    //     dispatch(fetchUserFavorites());
-    // }, [dispatch, sessionUser])
+    useEffect(() => {
+        setddd(true)
+        dispatch(fetchUserFavorites());
+    }, [dispatch, sessionUser, ddd])
 
     return (
         <>
