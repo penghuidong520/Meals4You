@@ -12,6 +12,8 @@ const EditSpinWheel = ({contents, setContents}) => {
   const wheelRef = useRef();
   const [arr, setArr] = useState(contents);
   const [value, setValue] = useState("");
+  const [dishErr, setDishErr] = useState(false);
+
   
   const handleRemoveItem = (e) => {
     e.preventDefault();
@@ -45,11 +47,16 @@ const EditSpinWheel = ({contents, setContents}) => {
 
   const onClick = (e) => {
     // e.preventDefault();
-    const tmp = arr;
-    tmp.push(value);
-    setArr(tmp);
-    setContents(tmp);
-    setValue("");
+    if (value) {
+      const tmp = arr;
+      tmp.push(value);
+      setArr(tmp);
+      setContents(tmp);
+      setValue("");
+      setDishErr(false);
+    } else {
+      setDishErr(true);
+    }
   };
 
   const handleClear = (e) => {
@@ -124,6 +131,8 @@ const EditSpinWheel = ({contents, setContents}) => {
               onChange={handleChange}
               onKeyPress={handleKey}
             />
+            {dishErr && <span id="dish-name-err">Invalid item name</span>}
+
             <div className='submit-clear-box'>
             <div className='submit-clear-containor'>
               <div className='newItem-submit-button'
