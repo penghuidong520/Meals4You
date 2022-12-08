@@ -17,6 +17,12 @@ const WheelIndexPage = () => {
     const [showSaved, setShowSaved] = useState(false)
 	const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    const userWheels = useSelector(state => Object.values(state.wheels))
+
+    const filterWheels = Object.values(randWheels).filter(wheel => 
+            userWheels.every(userWheel => userWheel.title !== wheel.title)
+        )
+    console.log(filterWheels)
 
     useEffect(() => {
         dispatch(fetchRandomWheels()).then(() => 
@@ -79,7 +85,7 @@ const WheelIndexPage = () => {
                             <button id='refresh-button' onClick={handleRefresh}><RefreshIcon /></button>
                         </div>
                         <div className="index-buttons">
-                            {randWheels?.map(randWheel => 
+                            {filterWheels?.map(randWheel => 
                                 (<ButtonContent key={randWheel._id} randWheel={randWheel} handleMessage={handleMessage}/>)
                             )}
                         </div>
