@@ -1,11 +1,12 @@
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 import NewSpinWheel from '../SpinWheel/NewSpinWheel'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createWheel } from '../../store/wheels';
 import { updateContents } from '../../store/contents';
 import CloseIcon from '@mui/icons-material/Close';
 import './NewWheelModal.css';
+import { getWheels } from '../../store/wheels';
 
 const style = {
     position: 'absolute',
@@ -26,20 +27,34 @@ const AddNewWheelModal = () => {
     const handleClose = () => setOpenModal(false);
     const [contents, setContents] = useState([]);
     const [title, setTitle] = useState('');
+    const [existWheelTitle, setExistWheelTitle] = useState(false);
+
+    const wheelsList = useSelector(getWheels);
+    // debugger
     
     const handleSaveWheel = (e) => {
         // e.preventDefault();
-        if (!title){alert('Give your precious wheel a name')
-            handleOpen()}
-        else if (contents.length === 0 || contents === []) {alert('Add some food in your wheel')
-            handleOpen()}
-        else if (contents.length < 2) {alert('You need to have at Least 2 items in your wheel')
-            handleOpen()}
-        else{
-            dispatch(createWheel({title, contents}));
-            dispatch(updateContents({title, contents}));
-            setTitle('');
-            handleClose()
+        let hasErr = false;
+        wheelsList.forEach(wheel => {
+            if (wheel.title === title) {
+                setExistWheelTitle(true);
+                hasErr = true;
+            }
+        })
+        if (!hasErr) {
+            if (!title){alert('Give your precious wheel a name')
+                handleOpen()}
+            else if (contents.length === 0 || contents === []) {alert('Add some food in your wheel')
+                handleOpen()}
+            else if (contents.length < 2) {alert('You need to have at Least 2 items in your wheel')
+                handleOpen()}
+            else{
+                dispatch(createWheel({title, contents}));
+                dispatch(updateContents({title, contents}));
+                setTitle('');
+                handleClose()
+            }
+            setExistWheelTitle(false);
         }
     }
 
@@ -81,6 +96,7 @@ const AddNewWheelModal = () => {
                             <button className="save-button" onClick={handleSaveWheel} >Save new wheel</button>
                         </div>
                     </div>
+                    {existWheelTitle && <span id='title-exist' >You already have a wheel with same title</span>}
                 </div>
                     < NewSpinWheel setContents={setContents} /> 
             </div>

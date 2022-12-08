@@ -10,6 +10,7 @@ const NewSpinWheel = ({setContents}) => {
   const wheelRef = useRef();
   const [arr, setArr] = useState([]);
   const [value, setValue] = useState("");
+  const [dishErr, setDishErr] = useState(false);
   
   const handleRemoveItem = (e) => {
     e.preventDefault();
@@ -33,15 +34,24 @@ const NewSpinWheel = ({setContents}) => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
+    setDishErr(false);
   };
 
   const onClick = (e) => {
     // e.preventDefault();
-    const tmp = arr;
-    tmp.push(value);
-    setArr(tmp);
-    setContents(tmp);
-    setValue("");
+    // debugger
+    if (value) {
+      const tmp = arr;
+      tmp.push(value);
+      setArr(tmp);
+      setContents(tmp);
+      setValue("");
+      setDishErr(false);
+      // debugger
+    } else {
+      // debugger
+      setDishErr(true);
+    }
   };
 
   const handleClear = (e) => {
@@ -112,13 +122,14 @@ const NewSpinWheel = ({setContents}) => {
               onChange={handleChange}
               onKeyPress={handleKey}
             />
+            {dishErr && <span id="dish-name-err">Invalid item name</span>}
             <div className='submit-clear-box'>
               <div className='submit-clear-containor'>
                 <div className='newItem-submit-button'
                   onClick={onClick}
                   value="Submit">
                 Add Dish
-              </div>
+                </div>
               </div>
               <div className='submit-clear-button'
                     onClick={handleClear}

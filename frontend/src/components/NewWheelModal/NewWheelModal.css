@@ -105,3 +105,8 @@
     color: white;
 }
 
+/* title exist error message */
+#title-exist{
+    margin-left: 13%;
+    color:rgb(240, 55, 55);
+}
