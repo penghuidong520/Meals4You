@@ -24,7 +24,8 @@ const HeaderProfile = ({sessionUser}) => {
 
     const handleLogout = () => {
         setAnchorEl(null);
-        dispatch(logout());
+        dispatch(logout())
+        window.location.reload(false);
     }
 
     const handleClose = () => {
