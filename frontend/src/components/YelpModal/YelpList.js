@@ -16,7 +16,6 @@ const YelpList = ({ item, restaurants}) => {
                     :
                     <div className="no-restaurants">
                         Sorry, there is nothing match your result nearby...<br/>
-                        or Please turn on your location.
                     </div>
                     }
                 </div>

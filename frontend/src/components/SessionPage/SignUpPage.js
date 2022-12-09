@@ -106,6 +106,9 @@ const ConfirmField = styled(TextField)({
     // '& label': {
     //     color: 'grey',
     // },
+    '& .MuiFormHelperText-root': {
+      color: 'green',
+    },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'blue',
     },
@@ -191,7 +194,6 @@ const SignUpPage = () => {
         } else {
             setPasswordError(false)
         }
-
         setPassword(e.target.value);
     }
 
@@ -202,7 +204,7 @@ const SignUpPage = () => {
     }, [dispatch]);
 
     const handleConfirmPw = (e) => {
-        if (((e.target.value) === password) && (confirmPassword !== 0)) {
+        if (((e.target.value) === password) && (password.length !== 0)) {
             setConfirmPwError(false)
             setConfirmPwMsg("Your passwords match!")
         } else {
@@ -279,6 +281,7 @@ const SignUpPage = () => {
                                 onChange={handleFname}
                                 variant="outlined"
                                 error={fNameError}
+                                helperText={fNameError ? "Please enter your first name" : ""}
                             />
                         </div>
                         <div className="sign-up-lname">
@@ -290,6 +293,7 @@ const SignUpPage = () => {
                                 onChange={handleLname}
                                 variant="outlined" 
                                 error={lNameError}
+                                helperText={lNameError ? "Please enter your last name" : ""}
                             />
                         </div>
                         <div className="sign-up-email">
@@ -301,6 +305,7 @@ const SignUpPage = () => {
                                 onChange={handleEmail}
                                 variant="outlined" 
                                 error={emailError}
+                                helperText={emailError? "Please enter a valid email" : ""}
                             />
                         </div>
                         <div className="sign-up-password">
@@ -313,6 +318,7 @@ const SignUpPage = () => {
                                 variant="outlined"
                                 type="password"
                                 error={passwordError}
+                                helperText={passwordError ? "Please enter a password at lease 6 charaters" : ""}
                             />
                         </div>
                         <div className="sign-up-confirm-password">
@@ -325,6 +331,7 @@ const SignUpPage = () => {
                                 variant="outlined" 
                                 type="password"
                                 error={confirmPwError}
+                                helperText={confirmPwMsg}
                             />
                         </div>
                         <div className="sign-up-button-container">

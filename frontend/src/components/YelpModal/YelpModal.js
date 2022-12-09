@@ -8,7 +8,7 @@ import { getRestaurants } from "../../store/yelp";
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import "./YelpModal.css";
 
-const YelpModal = ({ item, lat, log }) => {
+const YelpModal = ({ item, outLog, outLat }) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [zipcode, setZipcode] = useState("");
@@ -19,6 +19,9 @@ const YelpModal = ({ item, lat, log }) => {
     const dispatch = useDispatch();
     const restaurants = useSelector(getRestaurants)
     const [searchByGPS, setSearchByGPS] = useState(false)
+    const [log, setLog] = useState(outLog);
+    const [lat, setLat] = useState(outLat);
+    console.log(log, lat)
 
     const handleCurrentOpen = () => {
         setLoaded(true);  
@@ -42,6 +45,10 @@ const YelpModal = ({ item, lat, log }) => {
             dispatch(fetchRestaurants({ item: item, lat: lat, log: log }))
         } else {
             navigator.geolocation.getCurrentPosition(function(pos) {
+                if (!lat || !log) {
+                    setLat(pos.coords.latitude)
+                    setLog(pos.coords.longitude)
+                }
                 dispatch(fetchRestaurants({ item: item, lat: pos.coords.latitude, log: pos.coords.longitude }))
             })
         }
@@ -54,6 +61,10 @@ const YelpModal = ({ item, lat, log }) => {
             dispatch(fetchRestaurants({ item: item, lat: lat, log: log }))
         } else {
             navigator.geolocation.getCurrentPosition(function(pos) {
+                if (!lat || !log) {
+                    setLat(pos.coords.latitude)
+                    setLog(pos.coords.longitude)
+                }
                 dispatch(fetchRestaurants({ item: item, lat: pos.coords.latitude, log: pos.coords.longitude }))
             })
         }
@@ -89,7 +100,14 @@ const YelpModal = ({ item, lat, log }) => {
                         </div>
                         <button onClick={handleUpdate} id="update-button">Update Location</button>
                     </div>
-                    <YelpList restaurants={restaurants}/>
+                    {(log && lat) ? <YelpList restaurants={restaurants}/> : 
+                    <div className="getting-location">
+                        <div className="loc-1">Please share your location with us by pressing the allow button that popped up on </div>
+                        <div className="loc-2">the upper left corner, you should see the restaurants after few seconds!!</div>
+                        <div className="loc-3">If you did not see the pop up, try clicking the locate button<GpsFixedIcon id="gps-icon"/> above.</div>
+                    </div>
+                    }
+                    
                 </div>
             </Modal>
         </div>

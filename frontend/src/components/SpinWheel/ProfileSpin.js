@@ -12,15 +12,15 @@ const ProfileSpin = ({wheel}) => {
   const items = wheel.contents;  
   const [selectedItem, setSelectedItem] = useState(null);
   const wheelRef = useRef();
-  const [lat, setLat] = useState();
-  const [log, setLog] = useState();
+  const [outLat, setOutLat] = useState();
+  const [outLog, setOutLog] = useState();
 
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(function(pos) {
-  //     setLat(pos.coords.latitude)
-  //     setLog(pos.coords.longitude)
-  // })
-  // }, [])
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      setOutLat(pos.coords.latitude)
+      setOutLog(pos.coords.longitude)
+  })
+  }, [])
 
   const selectItem = (e)=> {
     if (selectedItem === null) {
@@ -61,7 +61,7 @@ const ProfileSpin = ({wheel}) => {
               </div>
             </div>
             <div className="explore-restaurant-container">
-              <YelpModal item={items[selectedItem]} lat={lat} log={log}/>
+              <YelpModal item={items[selectedItem]} outLat={outLat} outLog={outLog}/>
             </div>
           </div>
         </div>
