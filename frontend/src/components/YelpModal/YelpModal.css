@@ -222,3 +222,36 @@
     background-color: rgba(40, 40, 40, 0.5);
     color: white;
 }
+
+.getting-location {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  justify-content: space-around;
+  font-size: x-large;
+  color: black;
+}
+
+.loc-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gps-icon {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 1.5rem;
+  color: black;
+  background-color: transparent;
+}
+
+.loc-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  color: red;
+}
