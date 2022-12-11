@@ -36,8 +36,9 @@
 
 .tab-content-detail{
     position: absolute;
-    margin-left: 20vw;
-    margin-top: -30vh;
+    margin-left: 20%;
+    /* margin-top: -30vh; */
+    top: 10%;
     background-color: #E0cdcf;
     min-width: 70vw;
     min-height: 80vh;

@@ -16,10 +16,10 @@ const AboutPage = () => {
         <div className="about-container">
             <div className="tab-container">
                 <div className="empty-block"></div>
-                    <a className="tab-text">About Meals4U</a>
-                    <a className="tab-text" id="instruction">Instruction</a>
-                    <a className="tab-text">Incentive</a>
-                    <a className="tab-text">Developers</a>
+                <a className="tab-text">About Meals4U</a>
+                <a className="tab-text" id="instruction">Instruction</a>
+                <a className="tab-text">Incentive</a>
+                <a className="tab-text">Developers</a>
                 <div className="tab-content">
                     <div className="empty-block"></div>
                     <div className="tab-content-detail">
