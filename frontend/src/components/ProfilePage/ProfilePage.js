@@ -102,13 +102,6 @@ const handleClick = (e) => {
 								<button id="explore-wheels-button" >Explore Other Wheels</button>
 							</Link>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div className='saved-wheel-and-wheel'>
-				<div className="save-wheels-container">
-				<Box className="save-wheels" sx={{ width: '100%' }}>
-					<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 				<div className="profile-dropdown">
 						<Button
 							id="profile-instruction-button"
@@ -138,6 +131,13 @@ const handleClick = (e) => {
 							</ul>
 						</Menu>
 					</div>
+					</div>
+				</div>
+			</div>
+			<div className='saved-wheel-and-wheel'>
+				<div className="save-wheels-container">
+				<Box className="save-wheels" sx={{ width: '100%' }}>
+					<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 						<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
 							<Tab label="Saved Wheels" {...a11yProps(0)} />
 							<Tab label="Favorited Wheels" {...a11yProps(1)} />

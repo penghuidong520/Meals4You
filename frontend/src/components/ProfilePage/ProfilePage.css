@@ -14,6 +14,12 @@
     height: 150px;
     background-color: white;
 }
+.save-wheels{
+    box-shadow: 0 1px 6px 0 #22222226;
+    border: 1px solid #22222226;
+    border-radius: 16px;
+    overflow: scroll;
+}
 .saved-wheel-and-wheel{
     display: flex;
     width: 100%;
@@ -26,6 +32,8 @@
     /* justify-content: space-between; */
     margin-bottom: 10px;
     /* margin-top: 150px; */
+    align-items: center;
+    margin-top: 20px;
 }
 .save-wheels-container {
     padding-left: 5%;
@@ -103,12 +111,7 @@
     max-height: 85%;
 }
 .saved-wheel-list {
-    /* position: absolute; */
-    /* margin-top: -30%; */
-    /* width: 100%; */
-    /* height: 100%; */
     border-radius: 13px;
-    /* border: 1px solid rgba(0, 0, 0, 0.409); */
     overflow: auto;
     background-color: #e0cdcf;
     width: 100%;
@@ -116,18 +119,13 @@
     /* display: none; */
     /* z-index: 20; */
 }
-
-
 .favorate-wheel-list{
     position: absolute;
     border-radius: 13px;
-    /* border: 1px solid rgba(0, 0, 0, 0.409); */
     overflow: auto;
     background-color: #e0cdcf;
     margin-top: -100%;
     width: 100%;
-    /* display: none; */
-    /* z-index: -10; */
 }
 .edit-wheel-container {
     width: 100%;
@@ -137,7 +135,7 @@
     align-items: center;
 }
 .edit-wheel {
-    width: 90%;
+    width: 100%;
     height: 85%;
     display: flex;
     flex-direction: column;
@@ -149,7 +147,6 @@
 }
 #new-wheel-button,
 #explore-wheels-button {
-    margin-top: 20px;
     font-family: 'Sriracha', cursive;
     font-size: 23px;
     width: 240px;
@@ -181,6 +178,8 @@
 .profile-dropdown{
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 #profile-instruction-button{
     color: black;
