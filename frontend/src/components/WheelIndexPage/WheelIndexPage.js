@@ -49,6 +49,7 @@ const WheelIndexPage = () => {
     return loadedWheels && (
         <div className='explore-wrapper'>
             {showSaved ? <Alert severity="success" id="save-alert">This wheel has been saved into your wheel collection</Alert> : ""}
+                    <div className="index-page">
                     <div className="profile-dropdown">
                             <Button
                                 id="profile-instruction-button"
@@ -76,7 +77,6 @@ const WheelIndexPage = () => {
                                 </ul>
                             </Menu>
                     </div>
-                    <div className="index-page">
                         <div className="index-title">
                             Check out some of our users's wheels.
                         </div>

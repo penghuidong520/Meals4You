@@ -137,7 +137,7 @@
     align-items: center;
 }
 .edit-wheel {
-    width: 80%;
+    width: 90%;
     height: 85%;
     display: flex;
     flex-direction: column;
@@ -178,11 +178,14 @@
 }
 
 /* instrution */
+.profile-dropdown{
+    display: flex;
+    justify-content: center;
+}
 #profile-instruction-button{
     color: black;
     font-size: 20px;
     font-weight: 700;
-    margin-left: 10px;
 }
 #profile-instruction-button:hover{
     background-color: gray;
