@@ -64,6 +64,6 @@ Render(web deployment)
 
 ## Group Members and Roles
 - Payton Dong (Project Lead)
-- Ronny Deng (Frontend Lead)
-- Ivy Liu (Backend Lead)
+- Ronny Deng (Backend Lead)
+- Ivy Liu (Frontend Lead)
 - Yanxi Lin (Flex Lead)

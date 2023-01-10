@@ -5,6 +5,7 @@
   /* height: 90vh; */
   display: flex;
   justify-content: space-around;
+  /* justify-content: center; */
 }
 .left-column{
   /* height: 650px; */
@@ -145,7 +146,6 @@ animation-fill-mode: forwards;
   left: 45%;
   display:flex ;
   align-self: center;
-
 }
 .spinwheel-box1{
   margin-left: -5%;

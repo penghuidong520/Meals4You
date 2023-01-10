@@ -1,4 +1,3 @@
-import wheelGif from "../../images/intro-gif.gif";
 import mainPageGif from '../../images/homepage-meals4u.gif'
 import createWheel from '../../images/createwheel.gif'
 import exploreWheel from '../../images/explorewheel.gif'
