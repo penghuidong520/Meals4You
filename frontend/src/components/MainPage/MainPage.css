@@ -26,7 +26,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color:black;
+    ;
 }
 .mainpage-bottom h1{
     text-align: center;
@@ -37,7 +38,10 @@
     flex-direction: column;
     font-size: 30px;
 }
-
+.mainpage-bottom p{
+    font-size: 25px;
+    margin-top: 10px;
+}
 /* footer  */
 .footer{
     background-color:#d4babe ;

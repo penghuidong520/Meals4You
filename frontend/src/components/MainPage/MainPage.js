@@ -1,5 +1,6 @@
 import Header from "../Header/Header";
 import SpinWheel from "../SpinWheel/SpinWheel";
+import { Link } from 'react-router-dom';
 import './MainPage.css'; 
 
 
@@ -18,9 +19,12 @@ function MainPage() {
               <li>2. We choose the food for you!</li>
               <li>3. Please turn on your loaction to search for restaurants!</li>
               </ol>
+              <p>Learn more about how to use <Link to="/about">here</Link></p>
             </div>
           </div>
-          <div className="footer">profile</div>
+          <footer className="footer">
+            <div>11</div>
+          </footer>
       </div>
     );
   }
