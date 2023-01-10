@@ -28,13 +28,16 @@
     justify-content: center;
     color: white;
 }
-.mainpage-bottom span{
+.mainpage-bottom h1{
+    text-align: center;
+}
+.mainpage-bottom ol{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
 }
-.mainpage-bottom span p{
-    margin: 20px;
-}
+
 /* footer  */
 .footer{
     background-color:#d4babe ;

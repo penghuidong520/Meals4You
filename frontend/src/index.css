@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: 'Sriracha', cursive;
 }
 ol, ul {
