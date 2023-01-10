@@ -26,7 +26,11 @@
   },
   "homepage": "https://github.com/penghuidong520/Meals4You#readme",
   "dependencies": {
+    "@mui/icons-material": "^5.11.0",
+    "install": "^0.13.0",
     "mongoose-simple-random": "^0.4.1",
+    "mui": "^0.0.1",
+    "npm": "^9.2.0",
     "yelpv3": "^1.2.1"
   },
   "devDependencies": {
