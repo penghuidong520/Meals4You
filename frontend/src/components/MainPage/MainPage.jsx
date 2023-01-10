@@ -34,8 +34,8 @@ function MainPage() {
                   Food selected!</div>
                 <div id="info-3" className="info-box">
                   <Looks3OutlinedIcon className="info-pic" sx={{ fontSize: 50 }} />
-                  Turn on loaction to search for restaurants!</div>
-                <div id="info-4" className="info-box">Explore more? Learn more about how to use <Link to="/about">here</Link></div>
+                  Turn on loaction for restaurants!</div>
+                <div id="info-4" className="info-box">Explore more? Checkout <Link to="/about">here</Link></div>
             </div>
           </div>
           <footer className="footer">
