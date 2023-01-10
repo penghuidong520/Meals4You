@@ -18,7 +18,7 @@
     box-shadow: 0 1px 6px 0 #22222226;
     border: 1px solid #22222226;
     border-radius: 16px;
-    overflow: scroll;
+    overflow: auto;
 }
 .saved-wheel-and-wheel{
     display: flex;
