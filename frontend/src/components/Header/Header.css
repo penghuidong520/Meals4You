@@ -1,6 +1,6 @@
 
 .header{
-    background-color: #d4babe;
+    background-color: #be9ea3;
     width: 100%;
     min-width: 850px;
     height: 10vh;
@@ -20,7 +20,7 @@
 }
 #header-logo{
     height: auto;
-    width: 30%;
+    width: 40%;
     margin-left: 10%;
 }
 
@@ -28,7 +28,7 @@
     display: flex;
     flex: right; 
     height: 9vh;
-    width: 30%;
+    /* width: 25%; */
     min-width: 500px;
     justify-content: space-around;
     display: flex;
@@ -38,10 +38,10 @@
 
 .header-button{
     background-color: #a29e9e5c;
-    width: 20%;
+    /* width: 15%; */
     min-width: 150px;
-    height: 40%;
-    border-radius: 35px;
+    height: 55%;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,8 +51,9 @@
     color: black;
     cursor: pointer;
     transition: 0.4s;
+    /* padding: 5px; */
+    border: 1px solid white;
 }
-
 .header-button:hover {
     background-color: rgba(40, 40, 40, 0.5);
     color: white;

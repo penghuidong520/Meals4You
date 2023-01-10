@@ -2,31 +2,30 @@
 .spin-container{
   /* border: 2px solid red; */
   width: 100vw;
-  height: 90vh;
+  /* height: 90vh; */
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  min-height: 600px;
 }
 .left-column{
-  height: 650px;
+  /* height: 650px; */
   width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 15%;
+  /* margin-top: 15%; */
+  height: 80%;
 }
-/* .welcome-mess{ */
-/* border: 2px solid red; */
-/* width: 100%; */
-/* } */
 @keyframes introMove{
 0% {transform: scale(100%)}
 50% {transform: scale(104%) }
 100% {transform: scale(100%) }
 }
 /* result */
+.welcome-mess{
+  font-size: 50px;
+  margin-top: 50%;
+}
 .result-homepage{
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@
 .selected-result{
 width: auto;
 display: flex;
-margin-top: 20%;
+/* margin-top: 25%; */
 }
 .result-img{
 width: 80px;
@@ -83,7 +82,7 @@ animation-fill-mode: forwards;
 100% {transform: scale(100%) }
 }
 .create-your-own-wheel-button-container{
-  margin-top: 70%;
+  margin-top: 100%;
   position: absolute;
 }
 .create-your-own-wheel-button{
@@ -116,14 +115,15 @@ animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 1px 6px 0 #1a191980;
-  border: 1px solid #22222226;  
-  /* margin-top: 5%; */
+  /* box-shadow: 0 1px 6px 0 white; */
+  border: 1px solid white;  
+  margin-top: 20%;
   font-size: 35px;
   width: 400px;
-  height: 80%;
+  /* height: 80%; */
   padding: 20px;
-  border-radius: 13px;
+  border-radius: 5px;
+  color: black;
 }
 .intro2 ol{
   font-size: 23px;
@@ -138,10 +138,20 @@ animation-fill-mode: forwards;
   font-size: 23px;
   margin-top: 20px;
 }
+.mainpage-divider{
+  border-left: 2px solid lightgray;
+  height: 600px;
+  position: absolute;
+  left: 45%;
+  display:flex ;
+  align-self: center;
+
+}
 .spinwheel-box1{
-  margin-left: -10%;
+  margin-left: -5%;
+  margin-right: -3%;
   min-width: 650px;
-  height: 650px;
+  /* height: 650px; */
   min-height: 650px;
   min-width: 650px;
   display: flex;
@@ -283,8 +293,6 @@ animation-fill-mode: forwards;
   
 .reset-containor1{
   position: relative;
-  /* height: 100px;
-  width: 650px; */
   display: flex;
   align-items: center;
   justify-content: center;

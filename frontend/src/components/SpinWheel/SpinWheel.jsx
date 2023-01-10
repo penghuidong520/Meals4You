@@ -43,20 +43,21 @@ const SpinWheel = () => {
   const spinning = selectedItem !== null ? "spinning" : "";
   
   return (
+    <>
     <div className='spin-container'>
         <div className='left-column'>
           <div className='welcome-mess'>
-            <div className='intro2'>
+            {/* <div className='intro2'>
               Don't know what to eat?
               <br/>
-              We got you!
               <ol>
-                <li>1. Spin the wheel.</li>
-                <li>2. We choose the food for you!</li>
-                <li>3. Please turn on your loaction in order to search restaurants!</li>
+              <li>1. Spin the wheel.</li>
+              <li>2. We choose the food for you!</li>
+              <li>3. Please turn on your loaction to search for restaurants!</li>
               </ol>
               <p>Know more about how to use <Link to="/about">here</Link></p>
-            </div>
+            </div> */}
+            <h1>Time to eat...</h1>
           </div>
           <div className='selected-result'>
             {selectedItem !== null && (
@@ -66,8 +67,6 @@ const SpinWheel = () => {
                   <img id='result-img' src={spoonFork} alt="" />
                 </div>
                 <div className='result-text'>
-                  Time to eat 
-                  <br />
                   {items[selectedItem]}
                 </div>
               </div>
@@ -84,6 +83,7 @@ const SpinWheel = () => {
                 </Link>
               </div> )}
           </div>
+          <div className='mainpage-divider'></div>
     <div className='spinwheel-box1'>
       <div className="wheel-container">
         <div
@@ -112,6 +112,7 @@ const SpinWheel = () => {
       </div>
       </div>
     </div>
+    </>
   );
 }
 
