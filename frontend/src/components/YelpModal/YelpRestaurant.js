@@ -2,7 +2,6 @@ import './YelpRestaurant.css';
 import Rating from '@mui/material/Rating';
 
 const YelpRestaurant = ({ restaurant }) => {
-    // console.log(restaurant)
     return (
         <div className="restaurant-container">
             <div className="restaurant-img">

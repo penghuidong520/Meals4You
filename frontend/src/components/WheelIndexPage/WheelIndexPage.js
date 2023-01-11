@@ -22,7 +22,6 @@ const WheelIndexPage = () => {
     const filterWheels = Object.values(randWheels).filter(wheel => 
             userWheels.every(userWheel => userWheel.title !== wheel.title)
         )
-    console.log(filterWheels)
 
     useEffect(() => {
         dispatch(fetchRandomWheels()).then(() => 

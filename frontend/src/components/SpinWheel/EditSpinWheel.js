@@ -78,8 +78,6 @@ const EditSpinWheel = ({contents, setContents}) => {
 
   const handleKey = e => {
     let code = e.keyCode || e.which
-    // console.log(code)
-    // console.log(e.target.value)
     if (code === 13) {
       onClick(e.target.value)
     }

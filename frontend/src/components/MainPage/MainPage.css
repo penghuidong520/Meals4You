@@ -96,13 +96,17 @@
     align-items: center;
     text-align: left;
 }
-.homepage-profile span{
+.homepage-profile div{
     display: flex;
     align-items: center;
     font-size: 30px;
     color:gray ;
 }
-.homepage-profile span p p{
+.homepage-profile div p{
+    display: flex;
+    flex-direction: column;
+}
+.homepage-profile div p span{
     font-size: 15px;
     margin-top: 5px;
     color: black;

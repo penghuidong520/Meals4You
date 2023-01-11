@@ -21,7 +21,6 @@ const YelpModal = ({ item, outLog, outLat }) => {
     const [searchByGPS, setSearchByGPS] = useState(false)
     const [log, setLog] = useState(outLog);
     const [lat, setLat] = useState(outLat);
-    console.log(log, lat)
 
     const handleCurrentOpen = () => {
         setLoaded(true);  

@@ -2,7 +2,6 @@ import "./YelpModal.css";
 import YelpRestaurant from "./YelpRestaurant";
 
 const YelpList = ({ item, restaurants}) => {
-    // console.log(restaurants)
     return (
         <div className="yelp-modal-content">
             <div className="yelp-box">
