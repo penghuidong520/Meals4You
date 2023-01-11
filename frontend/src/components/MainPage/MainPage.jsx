@@ -27,13 +27,13 @@ function MainPage() {
             </div>
             <div className="info-container">
                 <div id="info-1" className="info-box">
-                  <LooksOneOutlinedIcon className="info-pic" sx={{ fontSize: 50 }} />
+                  <LooksOneOutlinedIcon className="info-pic" sx={{ fontSize: 60 }} />
                   Spin the wheel.</div>
                 <div id="info-2" className="info-box">
-                  <LooksTwoOutlinedIcon className="info-pic" sx={{ fontSize: 50 }} />
+                  <LooksTwoOutlinedIcon className="info-pic" sx={{ fontSize: 60 }} />
                   Food selected!</div>
                 <div id="info-3" className="info-box">
-                  <Looks3OutlinedIcon className="info-pic" sx={{ fontSize: 50 }} />
+                  <Looks3OutlinedIcon className="info-pic" sx={{ fontSize: 60 }} />
                   Turn on loaction for restaurants!</div>
                 <div id="info-4" className="info-box">Explore more? Checkout <Link to="/about">here</Link></div>
             </div>
